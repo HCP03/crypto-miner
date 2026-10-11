@@ -1,0 +1,23 @@
+binance_collector/
+├── config.py                 # Símbolos (BTC, ETH), rutas y parámetros de tiempo
+├── core/
+│   ├── db_manager.py         # Wrapper de DuckDB con buffer de inserción por lotes (Batching)
+│   ├── rest_client.py        # Tu RestClient con semáforo, rate-limit y manejo de ZIPs
+│   └── ws_client.py          # Cliente WebSocket genérico con auto-reconexión infinita
+├── markets/
+│   ├── futures/
+│   │   ├── rest_futures.py   # Descargas Vision (trades, oi, depth) + API Funding
+│   │   └── ws_futures.py     # Stream de liquidaciones en tiempo real
+│   ├── spot/
+│   │   ├── rest_spot.py      # Descarga Vision (trades) + Snapshot Orderbook (/api/v3)
+│   │   └── ws_spot.py        # Stream de delta orderbook
+│   └── options/
+│       ├── rest_options.py   # Polling de griegas (/eapi/v1/mark)
+│       └── ws_options.py     # Streams de trades y delta orderbook de opciones
+├── workers/                  # Scripts ejecutables (1 por terminal / servicio systemd)
+│   ├── run_futures.py        # Dueño único de futures.db
+│   ├── run_spot.py           # Dueño único de spot.db
+│   └── run_options.py        # Dueño único de options.db
+└── data/
+    ├── db/                   # spot.db, futures.db, options.db
+    └── tmp_zips/             # Carpeta temporal para descargar/extraer CSVs y borrarlos
