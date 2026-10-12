@@ -157,8 +157,14 @@ async def run_futures_worker(underlying: str = "BTC", fallback_days_back: int = 
     ]
 
     loop = asyncio.get_running_loop()
+    closing = False
+    
     def _signal_handler():
-        db.log.info("Parada recibida. Cerrando Futures Worker...")
+        nonlocal closing
+        if closing:
+            return
+        closing = True
+        db.log.info("Parada recibida. Vaciando buffers y eliminando .wal")
         for t in tasks:
             t.cancel()
 

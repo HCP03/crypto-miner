@@ -115,7 +115,7 @@ class DB_Manager:
 
             if cycles >= 180:
                 try:
-                    self.con.execute("CHECKPOINT;")
+                    self.con.execute("FORCE CHECKPOINT;")
                     self.log.debug("CHECKPOINT ejecutado en DuckDB.")
                 except Exception:
                     pass
@@ -175,5 +175,17 @@ class DB_Manager:
                 print(f"[EXPORT] {self.db_type}.{table} exportado ({last_ts} -> {max_ts}) -> {out_file}", flush=True)
 
     def close(self):
-        self.flush_all()
-        self.con.close()
+        if getattr(self, "_closed", False):
+            return
+        self._closed = True
+        try:
+            self.flush_all()
+            self.con.execute("FORCE CHECKPOINT;")
+        except Exception as e:
+            self.log.error(f"Error en FORCE CHECKPOINT al cerrar: {e}")
+        finally:
+            try:
+                self.con.close()
+                self.log.info("Base de datos cerrada y .wal consolidado.")
+            except Exception:
+                pass

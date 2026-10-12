@@ -191,8 +191,14 @@ async def run_spot_worker(underlying: str = "BTC", snapshot_interval_min: int = 
     ]
 
     loop = asyncio.get_running_loop()
+    closing = False
+
     def _signal_handler():
-        print("\nSenal de parada recibida en Spot Worker. Volcando buffers...")
+        nonlocal closing
+        if closing:
+            return
+        closing = True
+        db.log.info("Parada recibida. Vaciando buffers y eliminando .wal")
         for t in tasks:
             t.cancel()
 

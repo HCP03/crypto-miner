@@ -133,7 +133,8 @@ async def spawn_worker(
         *cmd,
         stdout=asyncio.subprocess.PIPE,
         stderr=asyncio.subprocess.STDOUT,
-        env=env
+        env=env,
+        start_new_session=True
     )
     log_task = asyncio.create_task(stream_process_logs(proc_key, proc.stdout, t0_event))
     print(f"[MAIN] Proceso {proc_key} iniciado (PID: {proc.pid}).", flush=True)
@@ -164,7 +165,6 @@ async def run_supervisor(underlyings: list[str], sync_env: dict[str, str]):
     )
     print("=" * 75, flush=True)
 
-    # Diccionarios indexados por (underlying, worker_name), ej: ("BTC", "FUTURES")
     processes: dict[tuple[str, str], asyncio.subprocess.Process] = {}
     log_tasks: dict[tuple[str, str], asyncio.Task] = {}
     stop_event = asyncio.Event()
@@ -186,7 +186,6 @@ async def run_supervisor(underlyings: list[str], sync_env: dict[str, str]):
             if stop_event.is_set():
                 break
 
-            # Escalonamos 5 segundos entre activos para no solapar picos de peticiones REST
             if idx > 0:
                 await asyncio.sleep(5)
 
@@ -200,7 +199,6 @@ async def run_supervisor(underlyings: list[str], sync_env: dict[str, str]):
                 init_log.cancel()
                 print(f"[MAIN] Primer snapshot de {underlying} completado y DB cerrada.", flush=True)
                 
-            # 2. Lanzar FUTURES y SPOT para este activo y esperar lectura de T0
             fut_t0_ready = asyncio.Event()
             spt_t0_ready = asyncio.Event()
 
@@ -224,7 +222,6 @@ async def run_supervisor(underlyings: list[str], sync_env: dict[str, str]):
             except asyncio.TimeoutError:
                 pass
 
-            # 3. Lanzar OPTIONS continuo para este activo
             if not stop_event.is_set():
                 proc_opt, log_opt = await spawn_worker(
                     f"OPT-{underlying}", WORKERS_CONFIG["OPTIONS"], underlying, sync_env
@@ -232,7 +229,6 @@ async def run_supervisor(underlyings: list[str], sync_env: dict[str, str]):
                 processes[(underlying, "OPTIONS")] = proc_opt
                 log_tasks[(underlying, "OPTIONS")] = log_opt
 
-        # 4. Bucle Watchdog para todos los activos y mercados
         while not stop_event.is_set():
             for (underlying, w_name), proc in list(processes.items()):
                 if proc and proc.returncode is not None and not stop_event.is_set():
@@ -257,13 +253,37 @@ async def run_supervisor(underlyings: list[str], sync_env: dict[str, str]):
                 pass
 
     finally:
+        print("\n[MAIN] Esperando a que los workers consoliden el .wal y cierren DuckDB...", flush=True)
+
+        for (und, w_name), proc in processes.items():
+            if proc and proc.returncode is None:
+                try:
+                    proc.terminate()
+                except ProcessLookupError:
+                    pass
+
+        async def _wait_or_kill(label: str, proc: asyncio.subprocess.Process):
+            if not proc or proc.returncode is not None:
+                return
+            try:
+                await asyncio.wait_for(proc.wait(), timeout=15.0)
+            except asyncio.TimeoutError:
+                print(f"[MAIN] Timeout esperando a {label}. Forzando cierre (kill)...", flush=True)
+                try:
+                    proc.kill()
+                    await proc.wait()
+                except ProcessLookupError:
+                    pass
+
         await asyncio.gather(
-            *(terminate_process(f"{w_name[:3]}-{und}", proc) for (und, w_name), proc in processes.items()),
+            *(_wait_or_kill(f"{w_name[:3]}-{und}", proc) for (und, w_name), proc in processes.items()),
             return_exceptions=True
         )
+
         for t in log_tasks.values():
             t.cancel()
-        print("[MAIN] Todos los workers se han detenido y las bases de datos estan cerradas.", flush=True)
+
+        print("[MAIN] Todos los workers se han detenido y los archivos .wal se han eliminado.", flush=True)
 
 
 if __name__ == "__main__":
