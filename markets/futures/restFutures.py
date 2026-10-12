@@ -255,7 +255,7 @@ class RestFutures(RestClient):
             if csv_path:
                 try:
                     query = sql_fn(csv_path, date_obj)
-                    db.execute_query(query)
+                    db.execute_query(query, table_name=table_name)
                     db.mark_day_ingested(table_name, date_obj)
                     if table_name == "trades":
                         day_had_data = True

@@ -85,7 +85,7 @@ class RestSpot(RestClient):
         if csv_path:
             try:
                 query = cls.get_trades_sql(csv_path, date_obj)
-                db.execute_query(query)
+                db.execute_query(query, table_name=table_name)
                 db.mark_day_ingested(table_name, date_obj)
                 return True
             finally:

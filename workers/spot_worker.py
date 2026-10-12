@@ -52,7 +52,6 @@ async def periodic_snapshot_spot(db: Spot_DB, symbol: str, t_minute: int = 30):
                     ob_dict["asks"]
                 )
                 db.insert_many("ob_snapshot", [row_tuple])
-                print(f"[{symbol}] [{datetime.now(timezone.utc).strftime('%H:%M:%S')}] Snapshot SPOT guardado.")
         except asyncio.CancelledError:
             break
         except Exception as e:

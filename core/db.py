@@ -3,14 +3,18 @@ import os
 import asyncio
 from collections import defaultdict
 from datetime import datetime
-
+from core.logger import get_logger
 
 class DB_Manager:
     def __init__(self, underlying: str, db_type: str):
-        self.DB_path = f'data/{underlying}/{db_type}_data.db'
-        os.makedirs(f'data/{underlying}', exist_ok=True)
+        self.underlying = underlying.upper()
+        self.db_type = db_type
+        self.log = get_logger(f"{self.db_type.upper()}-{self.underlying}")
+        self.DB_path = f'data/{self.underlying}/{db_type}_data.db'
+        os.makedirs(f'data/{self.underlying}', exist_ok=True)
         self.con = db.connect(self.DB_path)
         self._buffers = defaultdict(list)
+        self._minute_counts = defaultdict(int)
         self._init_control_tables()
         self.create_tables()
     
@@ -28,9 +32,16 @@ class DB_Manager:
     def create_tables(self):
         pass
 
-    def execute_query(self, query: str):
-        """Ejecuta una consulta SQL directa (ideal para ingesta masiva con read_csv)."""
-        self.con.execute(query)
+    def execute_query(self, query: str, table_name: str = None):
+        if table_name:
+            before = self.con.execute(f"SELECT COUNT(*) FROM {table_name};").fetchone()[0]
+            self.con.execute(query)
+            after = self.con.execute(f"SELECT COUNT(*) FROM {table_name};").fetchone()[0]
+            added = max(0, after - before)
+            if added > 0:
+                self._minute_counts[table_name] += added
+        else:
+            self.con.execute(query)
 
     def insert_many(self, table_name: str, data_list: list[tuple]):
         if not data_list:
@@ -40,6 +51,7 @@ class DB_Manager:
 
         query = f"INSERT INTO {table_name} VALUES ({placeholders}) ON CONFLICT DO NOTHING;"
         self.con.executemany(query, data_list)
+        self._minute_counts[table_name] += len(data_list)
 
     def get_last_ts(self, table_name: str):
         result = self.con.execute(f"SELECT MAX(timestamp) FROM {table_name};").fetchone()
@@ -92,21 +104,30 @@ class DB_Manager:
             await asyncio.sleep(interval)
             self.flush_all()
             cycles += 1
-            if cycles >= 180:  # Cada 15 min: CHECKPOINT
+
+            if cycles % 12 == 0:
+                if self._minute_counts:
+                    stats = " | ".join([f"{tbl}: +{cnt:,}" for tbl, cnt in sorted(self._minute_counts.items())])
+                    self.log.info(f"STATUS 1m -> {stats}")
+                    self._minute_counts.clear()
+                else:
+                    self.log.info("STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)")
+
+            if cycles >= 180:
                 try:
                     self.con.execute("CHECKPOINT;")
+                    self.log.debug("CHECKPOINT ejecutado en DuckDB.")
                 except Exception:
                     pass
                 cycles = 0
 
-            # Si creas un archivo o carpeta llamada 'trigger_export', exporta en caliente sin parar los WS
             trigger_file = f"data/{self.underlying}/EXPORT_{self.db_type.upper()}"
             if os.path.exists(trigger_file):
                 try:
                     os.remove(trigger_file)
                     self.export_incremental_parquet(export_dir=f"exports/{self.underlying}")
                 except Exception as e:
-                    print(f"[EXPORT ERROR] {e}", flush=True)
+                    self.log.error(f"Error exportando Parquet: {e}")
 
     def export_incremental_parquet(self, export_dir: str = "exports"):
         """
@@ -132,7 +153,6 @@ class DB_Manager:
             cols = [r[0] for r in self.con.execute(f"DESCRIBE {table};").fetchall()]
             out_file = os.path.join(export_dir, f"{self.underlying}_{self.db_type}_{table}_{now_tag}.parquet")
 
-            # Si la tabla no tiene columna timestamp (ej. options.options), la exporta entera (es muy pequena)
             if "timestamp" not in cols:
                 self.con.execute(f"COPY {table} TO '{out_file}' (FORMAT PARQUET, COMPRESSION ZSTD);")
                 continue

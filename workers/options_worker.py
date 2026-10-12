@@ -191,10 +191,7 @@ def select_active_liquidity_surface(db: Options_DB, underlying: str) -> tuple[li
             if opt_type == 'P' and exp_date in structural_exps:
                 selected_symbols.append(symbol)
 
-    print(
-        f"[Superficie Activa {underlying}] Vencimientos clave: {sorted(target_exps)} | "
-        f"Contratos seleccionados: {len(selected_symbols)} (Rapidos 1s: {len(fast_symbols)}, Normales 5s: {len(selected_symbols) - len(fast_symbols)})"
-    )
+    print(f"[Superficie {underlying}] {len(target_exps)} vencimientos | {len(selected_symbols)} contratos activos (Fast: {len(fast_symbols)})")
     return selected_symbols, fast_symbols
 
 
@@ -273,11 +270,9 @@ async def snapshot_options_loop(
 ):
     while True:
         try:
-            print(f"[{underlying}] Actualizando snapshot REST de Opciones (Contratos, Griegas, OI, Ticker 24h)...")
             await execute_single_options_snapshot(db, underlying, cache=cache)
             if active_contracts_event and not active_contracts_event.is_set():
                 active_contracts_event.set()
-            print(f"[{underlying}] [{datetime.now(timezone.utc).strftime('%H:%M:%S')}] Snapshot REST y cache sincronizados.")
         except asyncio.CancelledError:
             break
         except Exception as e:
