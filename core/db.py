@@ -1,3 +1,4 @@
+import atexit
 import duckdb as db
 import os
 import asyncio
@@ -15,8 +16,10 @@ class DB_Manager:
         self.con = db.connect(self.DB_path)
         self._buffers = defaultdict(list)
         self._minute_counts = defaultdict(int)
+        self._closed = False
         self._init_control_tables()
         self.create_tables()
+        atexit.register(self.close)
     
     def _init_control_tables(self):
         """Tabla interna para registrar que dias de Binance Vision ya fueron procesados."""
@@ -181,6 +184,7 @@ class DB_Manager:
         try:
             self.flush_all()
             self.con.execute("FORCE CHECKPOINT;")
+            self.con.execute("CHECKPOINT;")
         except Exception as e:
             self.log.error(f"Error en FORCE CHECKPOINT al cerrar: {e}")
         finally:

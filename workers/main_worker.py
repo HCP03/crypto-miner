@@ -131,6 +131,7 @@ async def spawn_worker(
 
     proc = await asyncio.create_subprocess_exec(
         *cmd,
+        stdin=asyncio.subprocess.PIPE,
         stdout=asyncio.subprocess.PIPE,
         stderr=asyncio.subprocess.STDOUT,
         env=env,
@@ -170,10 +171,13 @@ async def run_supervisor(underlyings: list[str], sync_env: dict[str, str]):
     stop_event = asyncio.Event()
 
     loop = asyncio.get_running_loop()
-    def _on_shutdown_signal():
+    def _on_shutdown_signal(signum, frame):
         if not stop_event.is_set():
             print("\n[MAIN] Senal de apagado recibida. Cerrando todos los workers...", flush=True)
-            stop_event.set()
+            loop.call_soon_threadsafe(stop_event.set)
+
+    signal.signal(signal.SIGINT, _on_shutdown_signal)
+    signal.signal(signal.SIGTERM, _on_shutdown_signal)
 
     for sig in (signal.SIGINT, signal.SIGTERM):
         try:
@@ -258,8 +262,11 @@ async def run_supervisor(underlyings: list[str], sync_env: dict[str, str]):
         for (und, w_name), proc in processes.items():
             if proc and proc.returncode is None:
                 try:
-                    proc.terminate()
-                except ProcessLookupError:
+                    if proc.stdin:
+                        proc.stdin.write(b"STOP\n")
+                        await proc.stdin.drain()
+                        proc.stdin.close()
+                except Exception:
                     pass
 
         async def _wait_or_kill(label: str, proc: asyncio.subprocess.Process):
@@ -268,11 +275,11 @@ async def run_supervisor(underlyings: list[str], sync_env: dict[str, str]):
             try:
                 await asyncio.wait_for(proc.wait(), timeout=15.0)
             except asyncio.TimeoutError:
-                print(f"[MAIN] Timeout esperando a {label}. Forzando cierre (kill)...", flush=True)
+                print(f"[MAIN] Timeout esperando a {label}. Forzando cierre...", flush=True)
                 try:
-                    proc.kill()
+                    proc.terminate()
                     await proc.wait()
-                except ProcessLookupError:
+                except Exception:
                     pass
 
         await asyncio.gather(
