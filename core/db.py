@@ -11,8 +11,11 @@ class DB_Manager:
         self.underlying = underlying.upper()
         self.db_type = db_type
         self.log = get_logger(f"{self.db_type.upper()}-{self.underlying}")
-        self.DB_path = f'data/{self.underlying}/{db_type}_data.db'
-        os.makedirs(f'data/{self.underlying}', exist_ok=True)
+
+        self.data_dir = os.getenv("DATA_DIR", "data")
+        self.DB_path = f'{self.data_dir}/{self.underlying}/{db_type}_data.db'
+        os.makedirs(f'{self.data_dir}/{self.underlying}', exist_ok=True)
+
         self.con = db.connect(self.DB_path)
         self._buffers = defaultdict(list)
         self._minute_counts = defaultdict(int)
@@ -124,7 +127,7 @@ class DB_Manager:
                     pass
                 cycles = 0
 
-            trigger_file = f"data/{self.underlying}/EXPORT_{self.db_type.upper()}"
+            trigger_file = f"{self.data_dir}/{self.underlying}/EXPORT_{self.db_type.upper()}"
             if os.path.exists(trigger_file):
                 try:
                     os.remove(trigger_file)

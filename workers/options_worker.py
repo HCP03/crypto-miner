@@ -1,12 +1,14 @@
 import asyncio
 import calendar
-import signal
 import sys
 import os
 from datetime import datetime, timezone, date
+
 from markets.options.optionsDB import Options_DB
 from markets.options.restOptions import RestOptions
 from markets.options.wsOptions import WSOptions
+from core.lifecycle import WorkerLifecycle
+from core.routines import RoutineManager
 
 
 class SurfaceStateCache:
@@ -196,7 +198,6 @@ def select_active_liquidity_surface(db: Options_DB, underlying: str) -> tuple[li
 
 
 async def execute_single_options_snapshot(db: Options_DB, underlying: str, cache: SurfaceStateCache = None):
-    """Realiza una descarga completa de Contratos, Griegas, OI y Tickers y los guarda en DB."""
     raw_contracts = await RestOptions.fetch_contracts()
     if not raw_contracts:
         return
@@ -249,7 +250,6 @@ async def execute_single_options_snapshot(db: Options_DB, underlying: str, cache
 
 
 async def run_initial_snapshot_and_close(underlying: str = "BTC"):
-    """Modo --init-only: toma el primer snapshot de Griegas (T0) y cierra la DB para liberar el bloqueo."""
     underlying = underlying.upper().replace("USDT", "")
     print(f"[OPTIONS INIT] Guardando primer snapshot (T0) para {underlying}...")
     db = Options_DB(underlying=underlying)
@@ -259,26 +259,6 @@ async def run_initial_snapshot_and_close(underlying: str = "BTC"):
     finally:
         db.close()
         await RestOptions.close_session()
-
-
-async def snapshot_options_loop(
-    db: Options_DB,
-    cache: SurfaceStateCache,
-    underlying: str = "BTC",
-    t_minute: int = 15,
-    active_contracts_event: asyncio.Event = None
-):
-    while True:
-        try:
-            await execute_single_options_snapshot(db, underlying, cache=cache)
-            if active_contracts_event and not active_contracts_event.is_set():
-                active_contracts_event.set()
-        except asyncio.CancelledError:
-            break
-        except Exception as e:
-            print(f"Error en snapshot_options_loop: {e}")
-            
-        await asyncio.sleep(60 * t_minute)
 
 
 async def manage_options_orderbook_ws(
@@ -319,21 +299,26 @@ async def manage_options_orderbook_ws(
 
 async def run_options_worker(underlying: str = "BTC", snapshot_interval_min: int = 15):
     underlying = underlying.upper().replace("USDT", "")
-    print(f"Iniciando Options Worker Institucional para {underlying}...")
+    print(f"Iniciando Options Worker Institucional para {underlying}...", flush=True)
 
     db = Options_DB(underlying=underlying)
     cache = SurfaceStateCache()
     contracts_ready = asyncio.Event()
+
+    # Función adaptadora para el snapshot periódico usando RoutineManager
+    async def _snapshot_action():
+        await execute_single_options_snapshot(db, underlying, cache=cache)
+        if not contracts_ready.is_set():
+            contracts_ready.set()
 
     trades_handler = db.make_ws_handler(table_name="trades", batch_size=100)
     raw_ob_db_handler = db.make_ws_handler(table_name="top_orderbook", batch_size=50)
     enriched_ob_handler = cache.make_enriched_ob_handler(raw_ob_db_handler)
 
     tasks = [
-        asyncio.create_task(
-            snapshot_options_loop(db, cache, underlying, t_minute=snapshot_interval_min, active_contracts_event=contracts_ready),
-            name="rest_options_snapshot"
-        ),
+        asyncio.create_task(RoutineManager.periodic_snapshot_loop(
+            db, _snapshot_action, snapshot_interval_min
+        ), name="rest_options_snapshot"),
         asyncio.create_task(
             WSOptions.stream_griegas(underlying, cache.update_from_ws_griegas),
             name="ws_options_griegas_cache"
@@ -349,30 +334,8 @@ async def run_options_worker(underlying: str = "BTC", snapshot_interval_min: int
         asyncio.create_task(db.auto_flush_loop(interval=5), name="db_auto_flush"),
     ]
 
-    loop = asyncio.get_running_loop()
-    closing = False
-    def _signal_handler():
-        nonlocal closing
-        if closing:
-            return
-        closing = True
-        db.log.info("Parada recibida. Vaciando buffers y eliminando .wal")
-        for t in tasks:
-            t.cancel()
-
-    for sig in (signal.SIGINT, signal.SIGTERM):
-        try:
-            loop.add_signal_handler(sig, _signal_handler)
-        except NotImplementedError:
-            pass
-
-    try:
-        await asyncio.gather(*tasks, return_exceptions=True)
-    finally:
-        print("Guardando datos pendientes de Opciones en DuckDB...")
-        db.close()
-        await RestOptions.close_session()
-        print(f"Options Worker ({underlying}) detenido correctamente.")
+    lifecycle = WorkerLifecycle(db, RestOptions, "Options Worker", underlying)
+    await lifecycle.run(tasks)
 
 
 if __name__ == "__main__":

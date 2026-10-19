@@ -1,0 +1,32 @@
+global:
+  log_level: "INFO"
+  export_dir: "exports"
+  data_dir: ""
+
+exchanges:
+  binance:
+    enabled: true
+    symbols: ["BTC"]
+    sync_mode: "live_only"      # Opciones: greeks, range, from_date, backfill_max, live_only
+    sync_start: ""              # Solo util si usas range o from_date (ej. "2026-09-01")
+    sync_end: ""                # Solo util si usas range
+    max_gap_days: 3
+    workers:
+      options:
+        enabled: true
+        snapshot_interval_min: 15
+      futures:
+        enabled: true
+        fallback_days_back: 3
+      spot:
+        enabled: true
+        snapshot_interval_min: 30
+
+  deribit:
+    enabled: false             
+    symbols: ["BTC"]
+    sync_mode: "live_only"
+    workers:
+      options:
+        enabled: true
+        snapshot_interval_min: 5

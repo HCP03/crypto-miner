@@ -1,131 +1,1166 @@
-2026-10-12 21:45:40 | FUTURES-BTC | INFO    | Iniciando Futures Worker...
-2026-10-12 21:45:40 | FUTURES-BTC | INFO    | T0 leido correctamente | Modo: live_only (Vision desactivado)
-2026-10-12 21:45:41 | WS         | INFO    | Conectado -> fstream[btcusdt@forceOrder]
-2026-10-12 21:45:41 | WS         | DEBUG   | Full URL conectada: wss://fstream.binance.com/ws/btcusdt@forceOrder
-2026-10-12 21:45:46 | WS         | INFO    | Conectado -> fstream[/marketbtcusdt@optionMarkPrice]
-2026-10-12 21:45:46 | WS         | DEBUG   | Full URL conectada: wss://fstream.binance.com/market/ws/btcusdt@optionMarkPrice
-2026-10-12 21:45:46 | WS         | INFO    | Conectado -> fstream[/publicbtcusdt@optionTrade]
-2026-10-12 21:45:46 | WS         | DEBUG   | Full URL conectada: wss://fstream.binance.com/public/ws/btcusdt@optionTrade
-2026-10-12 21:45:58 | WS         | WARNING | Inactividad (1800s) en stream[btcusdt@depth]. Refrescando...
-2026-10-12 21:46:00 | WS         | INFO    | Conectado -> fstream[btc-261225-85000-c..+24 @depth5]
-2026-10-12 21:46:00 | WS         | DEBUG   | Full URL conectada: wss://fstream.binance.com/public/stream?streams=btc-261225-85000-c@depth5@100ms/btc-261225-85000-p@depth5@100ms/btc-261225-80000-c@depth5@100ms/btc-261225-80000-p@depth5@100ms/btc-261225-90000-c@depth5@100ms/btc-261225-95000-c@depth5@100ms/btc-261225-60000-p@depth5@100ms/btc-261225-100000-c@depth5@100ms/btc-261225-90000-p@depth5@100ms/btc-261225-70000-p@depth5@100ms/btc-261225-105000-c@depth5@100ms/btc-261225-65000-p@depth5@100ms/btc-261225-55000-p@depth5@100ms/btc-261225-75000-p@depth5@100ms/btc-261225-72000-p@depth5@100ms/btc-261225-68000-p@depth5@100ms/btc-261225-82000-c@depth5@100ms/btc-261225-82000-p@depth5@100ms/btc-261225-78000-p@depth5@100ms/btc-261225-54000-p@depth5@100ms/btc-261225-88000-c@depth5@100ms/btc-261225-88000-p@depth5@100ms/btc-261225-62000-p@depth5@100ms/btc-270326-100000-c@depth5@100ms/btc-270326-50000-p@depth5@100ms
-2026-10-12 21:46:00 | WS         | INFO    | Conectado -> fstream[btc-270326-120000-c..+24 @depth5]
-2026-10-12 21:46:00 | WS         | DEBUG   | Full URL conectada: wss://fstream.binance.com/public/stream?streams=btc-270326-120000-c@depth5@100ms/btc-270326-66000-p@depth5@100ms/btc-270326-60000-p@depth5@100ms/btc-270326-82000-c@depth5@100ms/btc-270326-82000-p@depth5@100ms/btc-270326-110000-c@depth5@100ms/btc-270326-86000-c@depth5@100ms/btc-270326-86000-p@depth5@100ms/btc-270326-78000-p@depth5@100ms/btc-270326-62000-p@depth5@100ms/btc-270326-64000-p@depth5@100ms/btc-270326-72000-p@depth5@100ms/btc-270326-76000-p@depth5@100ms/btc-270326-90000-c@depth5@100ms/btc-270326-95000-c@depth5@100ms/btc-270326-90000-p@depth5@100ms/btc-270326-74000-p@depth5@100ms/btc-270326-95000-p@depth5@100ms/btc-270326-115000-c@depth5@100ms/btc-270326-55000-p@depth5@100ms/btc-261225-86000-c@depth5@100ms/btc-261225-84000-c@depth5@100ms/btc-261225-86000-p@depth5@100ms/btc-261225-76000-p@depth5@100ms/btc-261225-84000-p@depth5@100ms
-2026-10-12 21:46:00 | WS         | INFO    | Conectado -> stream[btcusdt@depth]
-2026-10-12 21:46:00 | WS         | DEBUG   | Full URL conectada: wss://stream.binance.com:9443/ws/btcusdt@depth
-2026-10-12 21:46:00 | WS         | INFO    | Conectado -> fstream[btc-270326-80000-c..+24 @depth5]
-2026-10-12 21:46:00 | WS         | DEBUG   | Full URL conectada: wss://fstream.binance.com/public/stream?streams=btc-270326-80000-c@depth5@100ms/btc-261225-74000-p@depth5@100ms/btc-270326-80000-p@depth5@100ms/btc-270326-70000-p@depth5@100ms/btc-270326-94000-c@depth5@100ms/btc-270326-98000-c@depth5@100ms/btc-270326-94000-p@depth5@100ms/btc-270326-105000-c@depth5@100ms/btc-270326-92000-c@depth5@100ms/btc-261225-98000-c@depth5@100ms/btc-270326-92000-p@depth5@100ms/btc-270326-84000-c@depth5@100ms/btc-270326-88000-c@depth5@100ms/btc-261225-92000-c@depth5@100ms/btc-270326-84000-p@depth5@100ms/btc-270326-88000-p@depth5@100ms/btc-270326-56000-p@depth5@100ms/btc-270326-65000-p@depth5@100ms/btc-270326-58000-p@depth5@100ms/btc-270326-54000-p@depth5@100ms/btc-270326-68000-p@depth5@100ms/btc-270326-52000-p@depth5@100ms/btc-261225-64000-p@depth5@100ms/btc-261225-58000-p@depth5@100ms/btc-261225-66000-p@depth5@100ms
-2026-10-12 21:46:01 | WS         | INFO    | Conectado -> fstream[btc-261030-86000-c..+24 @depth5]
-2026-10-12 21:46:01 | WS         | DEBUG   | Full URL conectada: wss://fstream.binance.com/public/stream?streams=btc-261030-86000-c@depth5@100ms/btc-261030-70000-p@depth5@100ms/btc-261030-80000-p@depth5@100ms/btc-261030-72000-p@depth5@100ms/btc-261030-68000-p@depth5@100ms/btc-261030-76000-p@depth5@100ms/btc-261030-74000-p@depth5@100ms/btc-261030-90000-c@depth5@100ms/btc-261030-71000-p@depth5@100ms/btc-261030-75000-p@depth5@100ms/btc-261225-96000-c@depth5@100ms/btc-261030-73000-p@depth5@100ms/btc-261030-69000-p@depth5@100ms/btc-261030-84000-c@depth5@100ms/btc-261030-84000-p@depth5@100ms/btc-261030-78000-p@depth5@100ms/btc-261030-82000-c@depth5@100ms/btc-261030-82000-p@depth5@100ms/btc-261030-85000-c@depth5@100ms/btc-261030-85000-p@depth5@100ms/btc-261030-88000-c@depth5@100ms/btc-261030-77000-p@depth5@100ms/btc-261030-79000-p@depth5@100ms/btc-261030-81000-c@depth5@100ms/btc-261030-81000-p@depth5@100ms
-2026-10-12 21:46:01 | WS         | INFO    | Conectado -> fstream[btc-261030-87000-c..+24 @depth5]
-2026-10-12 21:46:01 | WS         | DEBUG   | Full URL conectada: wss://fstream.binance.com/public/stream?streams=btc-261030-87000-c@depth5@100ms/btc-270326-96000-c@depth5@100ms/btc-270326-96000-p@depth5@100ms/btc-261225-102000-c@depth5@100ms/btc-261030-83000-c@depth5@100ms/btc-261030-83000-p@depth5@100ms/btc-270326-85000-c@depth5@100ms/btc-270326-85000-p@depth5@100ms/btc-261225-94000-c@depth5@100ms/btc-261225-106000-c@depth5@100ms/btc-261030-89000-c@depth5@100ms/btc-261030-91000-c@depth5@100ms/btc-261016-84000-c@depth5@100ms/btc-261016-80000-p@depth5@100ms/btc-261016-86000-c@depth5@100ms/btc-261016-82000-c@depth5@100ms/btc-261016-82000-p@depth5@100ms/btc-261016-83000-c@depth5@100ms/btc-261016-83000-p@depth5@100ms/btc-261016-85000-c@depth5@100ms/btc-261016-79000-p@depth5@100ms/btc-261023-79000-p@depth5@100ms/btc-261023-81000-p@depth5@100ms/btc-261023-80000-p@depth5@100ms/btc-261023-78000-p@depth5@100ms
-2026-10-12 21:46:01 | WS         | INFO    | Conectado -> fstream[btc-261023-82000-c..+22 @depth5]
-2026-10-12 21:46:01 | WS         | DEBUG   | Full URL conectada: wss://fstream.binance.com/public/stream?streams=btc-261023-82000-c@depth5@100ms/btc-261023-82000-p@depth5@100ms/btc-261023-83000-c@depth5@100ms/btc-261023-83000-p@depth5@100ms/btc-261023-85000-c@depth5@100ms/btc-261023-84000-c@depth5@100ms/btc-261023-84000-p@depth5@100ms/btc-261023-86000-c@depth5@100ms/btc-261023-87000-c@depth5@100ms/btc-261023-88000-c@depth5@100ms/btc-261023-89000-c@depth5@100ms/btc-261016-81000-p@depth5@100ms/btc-261013-82000-p@depth5@100ms/btc-261013-83000-c@depth5@100ms/btc-261013-83000-p@depth5@100ms/btc-261013-82500-p@depth5@100ms/btc-261013-83500-c@depth5@100ms/btc-261014-83500-c@depth5@100ms/btc-261014-83000-c@depth5@100ms/btc-261014-82000-p@depth5@100ms/btc-261014-84500-c@depth5@100ms/btc-261014-81500-p@depth5@100ms/btc-261014-83000-p@depth5@100ms
-2026-10-12 21:51:12 | FUTURES-BTC | INFO    | Iniciando Futures Worker...
-2026-10-12 21:51:12 | FUTURES-BTC | INFO    | T0 leido correctamente | Modo: live_only (Vision desactivado)
-2026-10-12 21:51:13 | WS         | INFO    | Conectado -> fstream[btcusdt@forceOrder]
-2026-10-12 21:51:13 | WS         | DEBUG   | Full URL conectada: wss://fstream.binance.com/ws/btcusdt@forceOrder
-2026-10-12 21:51:18 | FUTURES-ETH | INFO    | Iniciando Futures Worker...
-2026-10-12 21:51:18 | FUTURES-ETH | INFO    | T0 leido correctamente | Modo: live_only (Vision desactivado)
-2026-10-12 21:51:19 | WS         | INFO    | Conectado -> fstream[ethusdt@forceOrder]
-2026-10-12 21:51:19 | WS         | DEBUG   | Full URL conectada: wss://fstream.binance.com/ws/ethusdt@forceOrder
-2026-10-12 21:51:29 | WS         | WARNING | Inactividad (1800s) en fstream[/marketbtcusdt@optionMarkPrice]. Refrescando...
-2026-10-12 21:51:29 | WS         | WARNING | Inactividad (1800s) en fstream[/publicbtcusdt@optionTrade]. Refrescando...
-2026-10-12 21:51:35 | WS         | WARNING | Inactividad (1800s) en fstream[/marketethusdt@optionMarkPrice]. Refrescando...
-2026-10-12 21:51:35 | WS         | WARNING | Inactividad (1800s) en fstream[/publicethusdt@optionTrade]. Refrescando...
-2026-10-12 21:51:36 | WS         | INFO    | Conectado -> fstream[/marketbtcusdt@optionMarkPrice]
-2026-10-12 21:51:36 | WS         | DEBUG   | Full URL conectada: wss://fstream.binance.com/market/ws/btcusdt@optionMarkPrice
-2026-10-12 21:51:36 | WS         | INFO    | Conectado -> fstream[/publicbtcusdt@optionTrade]
-2026-10-12 21:51:36 | WS         | DEBUG   | Full URL conectada: wss://fstream.binance.com/public/ws/btcusdt@optionTrade
-2026-10-12 21:51:36 | WS         | INFO    | Conectado -> fstream[btc-261225-85000-c..+24 @depth5]
-2026-10-12 21:51:36 | WS         | DEBUG   | Full URL conectada: wss://fstream.binance.com/public/stream?streams=btc-261225-85000-c@depth5@100ms/btc-261225-85000-p@depth5@100ms/btc-261225-80000-c@depth5@100ms/btc-261225-80000-p@depth5@100ms/btc-261225-90000-c@depth5@100ms/btc-261225-95000-c@depth5@100ms/btc-261225-60000-p@depth5@100ms/btc-261225-100000-c@depth5@100ms/btc-261225-90000-p@depth5@100ms/btc-261225-70000-p@depth5@100ms/btc-261225-105000-c@depth5@100ms/btc-261225-65000-p@depth5@100ms/btc-261225-55000-p@depth5@100ms/btc-261225-75000-p@depth5@100ms/btc-261225-72000-p@depth5@100ms/btc-261225-68000-p@depth5@100ms/btc-261225-82000-c@depth5@100ms/btc-261225-82000-p@depth5@100ms/btc-261225-78000-p@depth5@100ms/btc-261225-54000-p@depth5@100ms/btc-261225-88000-c@depth5@100ms/btc-261225-88000-p@depth5@100ms/btc-261225-62000-p@depth5@100ms/btc-270326-100000-c@depth5@100ms/btc-270326-50000-p@depth5@100ms
-2026-10-12 21:51:37 | WS         | INFO    | Conectado -> fstream[btc-270326-120000-c..+24 @depth5]
-2026-10-12 21:51:37 | WS         | DEBUG   | Full URL conectada: wss://fstream.binance.com/public/stream?streams=btc-270326-120000-c@depth5@100ms/btc-270326-66000-p@depth5@100ms/btc-270326-60000-p@depth5@100ms/btc-270326-82000-c@depth5@100ms/btc-270326-82000-p@depth5@100ms/btc-270326-110000-c@depth5@100ms/btc-270326-86000-c@depth5@100ms/btc-270326-86000-p@depth5@100ms/btc-270326-78000-p@depth5@100ms/btc-270326-62000-p@depth5@100ms/btc-270326-64000-p@depth5@100ms/btc-270326-72000-p@depth5@100ms/btc-270326-76000-p@depth5@100ms/btc-270326-90000-c@depth5@100ms/btc-270326-95000-c@depth5@100ms/btc-270326-90000-p@depth5@100ms/btc-270326-74000-p@depth5@100ms/btc-270326-95000-p@depth5@100ms/btc-270326-115000-c@depth5@100ms/btc-270326-55000-p@depth5@100ms/btc-261225-86000-c@depth5@100ms/btc-261225-84000-c@depth5@100ms/btc-261225-86000-p@depth5@100ms/btc-261225-76000-p@depth5@100ms/btc-261225-84000-p@depth5@100ms
-2026-10-12 21:51:37 | WS         | INFO    | Conectado -> fstream[btc-270326-80000-c..+24 @depth5]
-2026-10-12 21:51:37 | WS         | DEBUG   | Full URL conectada: wss://fstream.binance.com/public/stream?streams=btc-270326-80000-c@depth5@100ms/btc-261225-74000-p@depth5@100ms/btc-270326-80000-p@depth5@100ms/btc-270326-70000-p@depth5@100ms/btc-270326-94000-c@depth5@100ms/btc-270326-98000-c@depth5@100ms/btc-270326-94000-p@depth5@100ms/btc-270326-105000-c@depth5@100ms/btc-270326-92000-c@depth5@100ms/btc-261225-98000-c@depth5@100ms/btc-270326-92000-p@depth5@100ms/btc-270326-84000-c@depth5@100ms/btc-270326-88000-c@depth5@100ms/btc-261225-92000-c@depth5@100ms/btc-270326-84000-p@depth5@100ms/btc-270326-88000-p@depth5@100ms/btc-270326-56000-p@depth5@100ms/btc-270326-65000-p@depth5@100ms/btc-270326-58000-p@depth5@100ms/btc-270326-54000-p@depth5@100ms/btc-270326-68000-p@depth5@100ms/btc-270326-52000-p@depth5@100ms/btc-261225-64000-p@depth5@100ms/btc-261225-58000-p@depth5@100ms/btc-261225-66000-p@depth5@100ms
-2026-10-12 21:51:37 | WS         | INFO    | Conectado -> fstream[btc-261030-86000-c..+24 @depth5]
-2026-10-12 21:51:37 | WS         | DEBUG   | Full URL conectada: wss://fstream.binance.com/public/stream?streams=btc-261030-86000-c@depth5@100ms/btc-261030-70000-p@depth5@100ms/btc-261030-80000-p@depth5@100ms/btc-261030-72000-p@depth5@100ms/btc-261030-68000-p@depth5@100ms/btc-261030-76000-p@depth5@100ms/btc-261030-74000-p@depth5@100ms/btc-261030-90000-c@depth5@100ms/btc-261030-71000-p@depth5@100ms/btc-261030-75000-p@depth5@100ms/btc-261225-96000-c@depth5@100ms/btc-261030-73000-p@depth5@100ms/btc-261030-69000-p@depth5@100ms/btc-261030-84000-c@depth5@100ms/btc-261030-84000-p@depth5@100ms/btc-261030-78000-p@depth5@100ms/btc-261030-82000-c@depth5@100ms/btc-261030-82000-p@depth5@100ms/btc-261030-85000-c@depth5@100ms/btc-261030-85000-p@depth5@100ms/btc-261030-88000-c@depth5@100ms/btc-261030-77000-p@depth5@100ms/btc-261030-79000-p@depth5@100ms/btc-261030-81000-c@depth5@100ms/btc-261030-81000-p@depth5@100ms
-2026-10-12 21:51:37 | WS         | INFO    | Conectado -> fstream[btc-261030-87000-c..+24 @depth5]
-2026-10-12 21:51:37 | WS         | DEBUG   | Full URL conectada: wss://fstream.binance.com/public/stream?streams=btc-261030-87000-c@depth5@100ms/btc-270326-96000-c@depth5@100ms/btc-270326-96000-p@depth5@100ms/btc-261225-102000-c@depth5@100ms/btc-261030-83000-c@depth5@100ms/btc-261030-83000-p@depth5@100ms/btc-270326-85000-c@depth5@100ms/btc-270326-85000-p@depth5@100ms/btc-261225-94000-c@depth5@100ms/btc-261225-106000-c@depth5@100ms/btc-261030-89000-c@depth5@100ms/btc-261030-91000-c@depth5@100ms/btc-261016-84000-c@depth5@100ms/btc-261016-80000-p@depth5@100ms/btc-261016-86000-c@depth5@100ms/btc-261016-82000-c@depth5@100ms/btc-261016-82000-p@depth5@100ms/btc-261016-83000-c@depth5@100ms/btc-261016-83000-p@depth5@100ms/btc-261016-85000-c@depth5@100ms/btc-261023-79000-p@depth5@100ms/btc-261023-81000-p@depth5@100ms/btc-261023-80000-p@depth5@100ms/btc-261023-78000-p@depth5@100ms/btc-261023-82000-c@depth5@100ms
-2026-10-12 21:51:38 | WS         | INFO    | Conectado -> fstream[btc-261023-82000-p..+21 @depth5]
-2026-10-12 21:51:38 | WS         | DEBUG   | Full URL conectada: wss://fstream.binance.com/public/stream?streams=btc-261023-82000-p@depth5@100ms/btc-261023-83000-c@depth5@100ms/btc-261023-83000-p@depth5@100ms/btc-261023-85000-c@depth5@100ms/btc-261023-84000-c@depth5@100ms/btc-261023-84000-p@depth5@100ms/btc-261023-86000-c@depth5@100ms/btc-261023-87000-c@depth5@100ms/btc-261023-88000-c@depth5@100ms/btc-261023-89000-c@depth5@100ms/btc-261016-81000-p@depth5@100ms/btc-261013-82000-p@depth5@100ms/btc-261013-83000-c@depth5@100ms/btc-261013-83000-p@depth5@100ms/btc-261013-82500-p@depth5@100ms/btc-261013-83500-c@depth5@100ms/btc-261014-83500-c@depth5@100ms/btc-261014-83000-c@depth5@100ms/btc-261014-82000-p@depth5@100ms/btc-261014-84500-c@depth5@100ms/btc-261014-81500-p@depth5@100ms/btc-261014-83000-p@depth5@100ms
-2026-10-12 21:51:38 | WS         | WARNING | Inactividad (1800s) en stream[btcusdt@depth]. Refrescando...
-2026-10-12 21:51:40 | WS         | INFO    | Conectado -> stream[btcusdt@depth]
-2026-10-12 21:51:40 | WS         | DEBUG   | Full URL conectada: wss://stream.binance.com:9443/ws/btcusdt@depth
-2026-10-12 21:51:41 | WS         | INFO    | Conectado -> fstream[/marketethusdt@optionMarkPrice]
-2026-10-12 21:51:41 | WS         | DEBUG   | Full URL conectada: wss://fstream.binance.com/market/ws/ethusdt@optionMarkPrice
-2026-10-12 21:51:41 | WS         | INFO    | Conectado -> fstream[/publicethusdt@optionTrade]
-2026-10-12 21:51:41 | WS         | DEBUG   | Full URL conectada: wss://fstream.binance.com/public/ws/ethusdt@optionTrade
-2026-10-12 21:51:41 | WS         | INFO    | Conectado -> fstream[eth-261225-2400-c..+24 @depth5]
-2026-10-12 21:51:41 | WS         | DEBUG   | Full URL conectada: wss://fstream.binance.com/public/stream?streams=eth-261225-2400-c@depth5@100ms/eth-261225-2800-c@depth5@100ms/eth-261225-2400-p@depth5@100ms/eth-261225-3600-c@depth5@100ms/eth-261225-2800-p@depth5@100ms/eth-261225-3400-c@depth5@100ms/eth-261225-2000-p@depth5@100ms/eth-261225-3000-c@depth5@100ms/eth-261225-3200-c@depth5@100ms/eth-261225-2600-c@depth5@100ms/eth-261225-2600-p@depth5@100ms/eth-261225-1600-p@depth5@100ms/eth-261225-1800-p@depth5@100ms/eth-261225-2200-p@depth5@100ms/eth-261225-2500-c@depth5@100ms/eth-261225-2500-p@depth5@100ms/eth-261225-3500-c@depth5@100ms/eth-261225-1500-p@depth5@100ms/eth-261225-2300-p@depth5@100ms/eth-261225-1900-p@depth5@100ms/eth-261225-1700-p@depth5@100ms/eth-261225-2100-p@depth5@100ms/eth-270326-4200-c@depth5@100ms/eth-270326-2100-p@depth5@100ms/eth-270326-2800-c@depth5@100ms
-2026-10-12 21:51:42 | WS         | INFO    | Conectado -> fstream[eth-270326-2800-p..+24 @depth5]
-2026-10-12 21:51:42 | WS         | DEBUG   | Full URL conectada: wss://fstream.binance.com/public/stream?streams=eth-270326-2800-p@depth5@100ms/eth-270326-3200-c@depth5@100ms/eth-270326-1900-p@depth5@100ms/eth-270326-1400-p@depth5@100ms/eth-270326-3600-c@depth5@100ms/eth-270326-3000-c@depth5@100ms/eth-270326-3000-p@depth5@100ms/eth-270326-1700-p@depth5@100ms/eth-270326-2400-c@depth5@100ms/eth-270326-2600-c@depth5@100ms/eth-270326-1800-p@depth5@100ms/eth-270326-1600-p@depth5@100ms/eth-270326-2400-p@depth5@100ms/eth-270326-2600-p@depth5@100ms/eth-270326-3400-c@depth5@100ms/eth-270326-3800-c@depth5@100ms/eth-270326-2500-c@depth5@100ms/eth-270326-2200-p@depth5@100ms/eth-270326-2300-p@depth5@100ms/eth-270326-2500-p@depth5@100ms/eth-270326-1500-p@depth5@100ms/eth-261225-2900-c@depth5@100ms/eth-261225-3100-c@depth5@100ms/eth-261225-2700-c@depth5@100ms/eth-261225-3300-c@depth5@100ms
-2026-10-12 21:51:42 | WS         | INFO    | Conectado -> fstream[eth-270326-2900-c..+24 @depth5]
-2026-10-12 21:51:42 | WS         | DEBUG   | Full URL conectada: wss://fstream.binance.com/public/stream?streams=eth-270326-2900-c@depth5@100ms/eth-270326-4000-c@depth5@100ms/eth-261225-2700-p@depth5@100ms/eth-270326-3100-c@depth5@100ms/eth-270326-3500-c@depth5@100ms/eth-270326-4500-c@depth5@100ms/eth-270326-3300-c@depth5@100ms/eth-270326-2900-p@depth5@100ms/eth-270326-2700-c@depth5@100ms/eth-270326-3100-p@depth5@100ms/eth-270326-2700-p@depth5@100ms/eth-270326-2000-p@depth5@100ms/eth-270326-4400-c@depth5@100ms/eth-270326-1200-p@depth5@100ms/eth-270326-1300-p@depth5@100ms/eth-261030-2050-p@depth5@100ms/eth-261030-1950-p@depth5@100ms/eth-261030-2600-c@depth5@100ms/eth-261030-2400-p@depth5@100ms/eth-261030-2600-p@depth5@100ms/eth-261030-2200-p@depth5@100ms/eth-261030-2500-c@depth5@100ms/eth-261030-2500-p@depth5@100ms/eth-261030-2300-p@depth5@100ms/eth-261030-2000-p@depth5@100ms
-2026-10-12 21:51:42 | WS         | INFO    | Conectado -> fstream[eth-261030-2800-c..+24 @depth5]
-2026-10-12 21:51:42 | WS         | DEBUG   | Full URL conectada: wss://fstream.binance.com/public/stream?streams=eth-261030-2800-c@depth5@100ms/eth-261030-2100-p@depth5@100ms/eth-261030-2150-p@depth5@100ms/eth-261030-2250-p@depth5@100ms/eth-261030-2350-p@depth5@100ms/eth-261030-2700-c@depth5@100ms/eth-261030-2450-c@depth5@100ms/eth-261030-2450-p@depth5@100ms/eth-261030-2550-c@depth5@100ms/eth-261030-2550-p@depth5@100ms/eth-261030-2900-c@depth5@100ms/eth-261030-2850-c@depth5@100ms/eth-261030-2750-c@depth5@100ms/eth-261030-2650-c@depth5@100ms/eth-261016-2500-c@depth5@100ms/eth-261016-2400-p@depth5@100ms/eth-261016-2500-p@depth5@100ms/eth-261016-2600-c@depth5@100ms/eth-261016-2650-c@depth5@100ms/eth-261016-2550-c@depth5@100ms/eth-261016-2550-p@depth5@100ms/eth-261023-2700-c@depth5@100ms/eth-261023-2400-p@depth5@100ms/eth-261023-2300-p@depth5@100ms/eth-261023-2500-c@depth5@100ms
-2026-10-12 21:51:42 | WS         | INFO    | Conectado -> fstream[eth-261023-2500-p..+14 @depth5]
-2026-10-12 21:51:42 | WS         | DEBUG   | Full URL conectada: wss://fstream.binance.com/public/stream?streams=eth-261023-2500-p@depth5@100ms/eth-261023-2600-c@depth5@100ms/eth-261023-2750-c@depth5@100ms/eth-261023-2550-c@depth5@100ms/eth-261023-2550-p@depth5@100ms/eth-261023-2650-c@depth5@100ms/eth-261016-2375-p@depth5@100ms/eth-261023-2450-p@depth5@100ms/eth-261023-2375-p@depth5@100ms/eth-261016-2450-p@depth5@100ms/eth-261013-2500-p@depth5@100ms/eth-261013-2550-c@depth5@100ms/eth-261014-2500-p@depth5@100ms/eth-261023-2350-p@depth5@100ms/eth-270326-3700-c@depth5@100ms
-2026-10-12 21:51:46 | WS         | WARNING | Inactividad (1800s) en stream[ethusdt@depth]. Refrescando...
-2026-10-12 21:51:48 | WS         | INFO    | Conectado -> stream[ethusdt@depth]
-2026-10-12 21:51:48 | WS         | DEBUG   | Full URL conectada: wss://stream.binance.com:9443/ws/ethusdt@depth
-2026-10-12 21:52:12 | FUTURES-BTC | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
-2026-10-12 21:52:18 | FUTURES-ETH | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
-2026-10-12 21:52:48 | SPOT-BTC   | INFO    | STATUS 1m -> ob_diff: +66 | ob_snapshot: +1
-2026-10-12 21:52:50 | OPTIONS-BTC | INFO    | STATUS 1m -> griegas: +630 | oi: +630 | options: +630 | top_orderbook: +1,404 | trades: +1
-2026-10-12 21:52:55 | SPOT-ETH   | INFO    | STATUS 1m -> ob_diff: +66 | ob_snapshot: +1
-2026-10-12 21:53:12 | FUTURES-BTC | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
-2026-10-12 21:53:17 | OPTIONS-ETH | INFO    | STATUS 1m -> griegas: +540 | oi: +540 | options: +540 | top_orderbook: +2,290 | trades: +2
-2026-10-12 21:53:18 | FUTURES-ETH | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
-2026-10-12 21:54:06 | FUTURES-BTC | INFO    | Iniciando Futures Worker...
-2026-10-12 21:54:06 | FUTURES-BTC | INFO    | T0 leido correctamente | Modo: greeks (Base: 2026-10-12)
-2026-10-12 21:54:06 | FUTURES-BTC | INFO    | Vision Sync [Default T0]: 2026-10-12 -> 2026-10-11
-2026-10-12 21:54:06 | FUTURES-BTC | INFO    | Vision al dia. Proxima revision en 8.1h (04:00 UTC).
-2026-10-12 21:54:07 | WS         | INFO    | Conectado -> fstream[btcusdt@forceOrder]
-2026-10-12 21:54:07 | WS         | DEBUG   | Full URL conectada: wss://fstream.binance.com/ws/btcusdt@forceOrder
-2026-10-12 21:54:12 | FUTURES-ETH | INFO    | Iniciando Futures Worker...
-2026-10-12 21:54:12 | FUTURES-ETH | INFO    | T0 leido correctamente | Modo: greeks (Base: 2026-10-12)
-2026-10-12 21:54:12 | FUTURES-ETH | INFO    | Vision Sync [Default T0]: 2026-10-12 -> 2026-10-11
-2026-10-12 21:54:12 | FUTURES-ETH | INFO    | Vision al dia. Proxima revision en 8.1h (04:00 UTC).
-2026-10-12 21:54:13 | WS         | INFO    | Conectado -> fstream[ethusdt@forceOrder]
-2026-10-12 21:54:13 | WS         | DEBUG   | Full URL conectada: wss://fstream.binance.com/ws/ethusdt@forceOrder
-2026-10-12 21:54:23 | WS         | WARNING | Inactividad (1800s) en fstream[/marketbtcusdt@optionMarkPrice]. Refrescando...
-2026-10-12 21:54:23 | WS         | WARNING | Inactividad (1800s) en fstream[/publicbtcusdt@optionTrade]. Refrescando...
-2026-10-12 21:54:29 | WS         | WARNING | Inactividad (1800s) en fstream[/marketethusdt@optionMarkPrice]. Refrescando...
-2026-10-12 21:54:29 | WS         | WARNING | Inactividad (1800s) en fstream[/publicethusdt@optionTrade]. Refrescando...
-2026-10-12 21:54:30 | WS         | INFO    | Conectado -> fstream[/publicbtcusdt@optionTrade]
-2026-10-12 21:54:30 | WS         | DEBUG   | Full URL conectada: wss://fstream.binance.com/public/ws/btcusdt@optionTrade
-2026-10-12 21:54:30 | WS         | INFO    | Conectado -> fstream[/marketbtcusdt@optionMarkPrice]
-2026-10-12 21:54:30 | WS         | DEBUG   | Full URL conectada: wss://fstream.binance.com/market/ws/btcusdt@optionMarkPrice
-2026-10-12 21:54:30 | WS         | INFO    | Conectado -> fstream[btc-261225-85000-c..+24 @depth5]
-2026-10-12 21:54:30 | WS         | DEBUG   | Full URL conectada: wss://fstream.binance.com/public/stream?streams=btc-261225-85000-c@depth5@100ms/btc-261225-85000-p@depth5@100ms/btc-261225-80000-c@depth5@100ms/btc-261225-80000-p@depth5@100ms/btc-261225-90000-c@depth5@100ms/btc-261225-95000-c@depth5@100ms/btc-261225-60000-p@depth5@100ms/btc-261225-100000-c@depth5@100ms/btc-261225-90000-p@depth5@100ms/btc-261225-70000-p@depth5@100ms/btc-261225-105000-c@depth5@100ms/btc-261225-65000-p@depth5@100ms/btc-261225-55000-p@depth5@100ms/btc-261225-75000-p@depth5@100ms/btc-261225-72000-p@depth5@100ms/btc-261225-68000-p@depth5@100ms/btc-261225-82000-c@depth5@100ms/btc-261225-82000-p@depth5@100ms/btc-261225-78000-p@depth5@100ms/btc-261225-54000-p@depth5@100ms/btc-261225-88000-c@depth5@100ms/btc-261225-88000-p@depth5@100ms/btc-261225-62000-p@depth5@100ms/btc-270326-100000-c@depth5@100ms/btc-270326-50000-p@depth5@100ms
-2026-10-12 21:54:31 | WS         | INFO    | Conectado -> fstream[btc-270326-120000-c..+24 @depth5]
-2026-10-12 21:54:31 | WS         | DEBUG   | Full URL conectada: wss://fstream.binance.com/public/stream?streams=btc-270326-120000-c@depth5@100ms/btc-270326-66000-p@depth5@100ms/btc-270326-60000-p@depth5@100ms/btc-270326-82000-c@depth5@100ms/btc-270326-82000-p@depth5@100ms/btc-270326-110000-c@depth5@100ms/btc-270326-86000-c@depth5@100ms/btc-270326-86000-p@depth5@100ms/btc-270326-78000-p@depth5@100ms/btc-270326-62000-p@depth5@100ms/btc-270326-64000-p@depth5@100ms/btc-270326-72000-p@depth5@100ms/btc-270326-76000-p@depth5@100ms/btc-270326-90000-c@depth5@100ms/btc-270326-95000-c@depth5@100ms/btc-270326-90000-p@depth5@100ms/btc-270326-74000-p@depth5@100ms/btc-270326-95000-p@depth5@100ms/btc-270326-115000-c@depth5@100ms/btc-270326-55000-p@depth5@100ms/btc-261225-86000-c@depth5@100ms/btc-261225-84000-c@depth5@100ms/btc-261225-86000-p@depth5@100ms/btc-261225-76000-p@depth5@100ms/btc-261225-84000-p@depth5@100ms
-2026-10-12 21:54:31 | WS         | INFO    | Conectado -> fstream[btc-270326-80000-c..+24 @depth5]
-2026-10-12 21:54:31 | WS         | DEBUG   | Full URL conectada: wss://fstream.binance.com/public/stream?streams=btc-270326-80000-c@depth5@100ms/btc-261225-74000-p@depth5@100ms/btc-270326-80000-p@depth5@100ms/btc-270326-70000-p@depth5@100ms/btc-270326-94000-c@depth5@100ms/btc-270326-98000-c@depth5@100ms/btc-270326-94000-p@depth5@100ms/btc-270326-105000-c@depth5@100ms/btc-270326-92000-c@depth5@100ms/btc-261225-98000-c@depth5@100ms/btc-270326-92000-p@depth5@100ms/btc-270326-84000-c@depth5@100ms/btc-270326-88000-c@depth5@100ms/btc-261225-92000-c@depth5@100ms/btc-270326-84000-p@depth5@100ms/btc-270326-88000-p@depth5@100ms/btc-270326-56000-p@depth5@100ms/btc-270326-65000-p@depth5@100ms/btc-270326-58000-p@depth5@100ms/btc-270326-54000-p@depth5@100ms/btc-270326-68000-p@depth5@100ms/btc-270326-52000-p@depth5@100ms/btc-261225-64000-p@depth5@100ms/btc-261225-58000-p@depth5@100ms/btc-261225-66000-p@depth5@100ms
-2026-10-12 21:54:31 | WS         | INFO    | Conectado -> fstream[btc-261030-86000-c..+24 @depth5]
-2026-10-12 21:54:31 | WS         | DEBUG   | Full URL conectada: wss://fstream.binance.com/public/stream?streams=btc-261030-86000-c@depth5@100ms/btc-261030-70000-p@depth5@100ms/btc-261030-80000-p@depth5@100ms/btc-261030-72000-p@depth5@100ms/btc-261030-68000-p@depth5@100ms/btc-261030-76000-p@depth5@100ms/btc-261030-74000-p@depth5@100ms/btc-261030-90000-c@depth5@100ms/btc-261030-71000-p@depth5@100ms/btc-261030-75000-p@depth5@100ms/btc-261225-96000-c@depth5@100ms/btc-261030-73000-p@depth5@100ms/btc-261030-69000-p@depth5@100ms/btc-261030-84000-c@depth5@100ms/btc-261030-84000-p@depth5@100ms/btc-261030-78000-p@depth5@100ms/btc-261030-82000-c@depth5@100ms/btc-261030-82000-p@depth5@100ms/btc-261030-85000-c@depth5@100ms/btc-261030-85000-p@depth5@100ms/btc-261030-88000-c@depth5@100ms/btc-261030-77000-p@depth5@100ms/btc-261030-79000-p@depth5@100ms/btc-261030-81000-c@depth5@100ms/btc-261030-81000-p@depth5@100ms
-2026-10-12 21:54:31 | WS         | INFO    | Conectado -> fstream[btc-261030-87000-c..+24 @depth5]
-2026-10-12 21:54:31 | WS         | DEBUG   | Full URL conectada: wss://fstream.binance.com/public/stream?streams=btc-261030-87000-c@depth5@100ms/btc-270326-96000-c@depth5@100ms/btc-270326-96000-p@depth5@100ms/btc-261225-102000-c@depth5@100ms/btc-261030-83000-c@depth5@100ms/btc-261030-83000-p@depth5@100ms/btc-270326-85000-c@depth5@100ms/btc-270326-85000-p@depth5@100ms/btc-261225-94000-c@depth5@100ms/btc-261225-106000-c@depth5@100ms/btc-261030-89000-c@depth5@100ms/btc-261030-91000-c@depth5@100ms/btc-261016-84000-c@depth5@100ms/btc-261016-80000-p@depth5@100ms/btc-261016-86000-c@depth5@100ms/btc-261016-82000-c@depth5@100ms/btc-261016-82000-p@depth5@100ms/btc-261016-83000-c@depth5@100ms/btc-261016-83000-p@depth5@100ms/btc-261016-85000-c@depth5@100ms/btc-261023-79000-p@depth5@100ms/btc-261023-81000-p@depth5@100ms/btc-261023-80000-p@depth5@100ms/btc-261023-78000-p@depth5@100ms/btc-261023-82000-c@depth5@100ms
-2026-10-12 21:54:32 | WS         | INFO    | Conectado -> fstream[btc-261023-82000-p..+21 @depth5]
-2026-10-12 21:54:32 | WS         | DEBUG   | Full URL conectada: wss://fstream.binance.com/public/stream?streams=btc-261023-82000-p@depth5@100ms/btc-261023-83000-c@depth5@100ms/btc-261023-83000-p@depth5@100ms/btc-261023-85000-c@depth5@100ms/btc-261023-84000-c@depth5@100ms/btc-261023-84000-p@depth5@100ms/btc-261023-86000-c@depth5@100ms/btc-261023-87000-c@depth5@100ms/btc-261023-88000-c@depth5@100ms/btc-261023-89000-c@depth5@100ms/btc-261016-81000-p@depth5@100ms/btc-261013-82000-p@depth5@100ms/btc-261013-83000-c@depth5@100ms/btc-261013-83000-p@depth5@100ms/btc-261013-82500-p@depth5@100ms/btc-261013-83500-c@depth5@100ms/btc-261014-83500-c@depth5@100ms/btc-261014-83000-c@depth5@100ms/btc-261014-82000-p@depth5@100ms/btc-261014-84500-c@depth5@100ms/btc-261014-81500-p@depth5@100ms/btc-261014-83000-p@depth5@100ms
-2026-10-12 21:54:33 | WS         | WARNING | Inactividad (1800s) en stream[btcusdt@depth]. Refrescando...
-2026-10-12 21:54:34 | WS         | INFO    | Conectado -> fstream[/marketethusdt@optionMarkPrice]
-2026-10-12 21:54:34 | WS         | DEBUG   | Full URL conectada: wss://fstream.binance.com/market/ws/ethusdt@optionMarkPrice
-2026-10-12 21:54:35 | WS         | INFO    | Conectado -> fstream[/publicethusdt@optionTrade]
-2026-10-12 21:54:35 | WS         | DEBUG   | Full URL conectada: wss://fstream.binance.com/public/ws/ethusdt@optionTrade
-2026-10-12 21:54:35 | WS         | INFO    | Conectado -> stream[btcusdt@depth]
-2026-10-12 21:54:35 | WS         | DEBUG   | Full URL conectada: wss://stream.binance.com:9443/ws/btcusdt@depth
-2026-10-12 21:54:35 | WS         | INFO    | Conectado -> fstream[eth-261225-2400-c..+24 @depth5]
-2026-10-12 21:54:35 | WS         | DEBUG   | Full URL conectada: wss://fstream.binance.com/public/stream?streams=eth-261225-2400-c@depth5@100ms/eth-261225-2800-c@depth5@100ms/eth-261225-2400-p@depth5@100ms/eth-261225-3600-c@depth5@100ms/eth-261225-2800-p@depth5@100ms/eth-261225-3400-c@depth5@100ms/eth-261225-2000-p@depth5@100ms/eth-261225-3000-c@depth5@100ms/eth-261225-3200-c@depth5@100ms/eth-261225-2600-c@depth5@100ms/eth-261225-2600-p@depth5@100ms/eth-261225-1600-p@depth5@100ms/eth-261225-1800-p@depth5@100ms/eth-261225-2200-p@depth5@100ms/eth-261225-2500-c@depth5@100ms/eth-261225-2500-p@depth5@100ms/eth-261225-3500-c@depth5@100ms/eth-261225-1500-p@depth5@100ms/eth-261225-2300-p@depth5@100ms/eth-261225-1900-p@depth5@100ms/eth-261225-1700-p@depth5@100ms/eth-261225-2100-p@depth5@100ms/eth-270326-4200-c@depth5@100ms/eth-270326-2100-p@depth5@100ms/eth-270326-2800-c@depth5@100ms
-2026-10-12 21:54:35 | WS         | INFO    | Conectado -> fstream[eth-270326-2800-p..+24 @depth5]
-2026-10-12 21:54:35 | WS         | DEBUG   | Full URL conectada: wss://fstream.binance.com/public/stream?streams=eth-270326-2800-p@depth5@100ms/eth-270326-3200-c@depth5@100ms/eth-270326-1900-p@depth5@100ms/eth-270326-1400-p@depth5@100ms/eth-270326-3600-c@depth5@100ms/eth-270326-3000-c@depth5@100ms/eth-270326-3000-p@depth5@100ms/eth-270326-1700-p@depth5@100ms/eth-270326-2400-c@depth5@100ms/eth-270326-2600-c@depth5@100ms/eth-270326-1800-p@depth5@100ms/eth-270326-1600-p@depth5@100ms/eth-270326-2400-p@depth5@100ms/eth-270326-2600-p@depth5@100ms/eth-270326-3400-c@depth5@100ms/eth-270326-3800-c@depth5@100ms/eth-270326-2500-c@depth5@100ms/eth-270326-2200-p@depth5@100ms/eth-270326-2300-p@depth5@100ms/eth-270326-2500-p@depth5@100ms/eth-270326-1500-p@depth5@100ms/eth-261225-2900-c@depth5@100ms/eth-261225-3100-c@depth5@100ms/eth-261225-2700-c@depth5@100ms/eth-261225-3300-c@depth5@100ms
-2026-10-12 21:54:36 | WS         | INFO    | Conectado -> fstream[eth-270326-2900-c..+24 @depth5]
-2026-10-12 21:54:36 | WS         | DEBUG   | Full URL conectada: wss://fstream.binance.com/public/stream?streams=eth-270326-2900-c@depth5@100ms/eth-270326-4000-c@depth5@100ms/eth-261225-2700-p@depth5@100ms/eth-270326-3100-c@depth5@100ms/eth-270326-3500-c@depth5@100ms/eth-270326-4500-c@depth5@100ms/eth-270326-3300-c@depth5@100ms/eth-270326-2900-p@depth5@100ms/eth-270326-2700-c@depth5@100ms/eth-270326-3100-p@depth5@100ms/eth-270326-2700-p@depth5@100ms/eth-270326-2000-p@depth5@100ms/eth-270326-4400-c@depth5@100ms/eth-270326-1200-p@depth5@100ms/eth-270326-1300-p@depth5@100ms/eth-261030-2050-p@depth5@100ms/eth-261030-1950-p@depth5@100ms/eth-261030-2600-c@depth5@100ms/eth-261030-2400-p@depth5@100ms/eth-261030-2600-p@depth5@100ms/eth-261030-2200-p@depth5@100ms/eth-261030-2500-c@depth5@100ms/eth-261030-2500-p@depth5@100ms/eth-261030-2300-p@depth5@100ms/eth-261030-2000-p@depth5@100ms
-2026-10-12 21:54:36 | WS         | INFO    | Conectado -> fstream[eth-261030-2800-c..+24 @depth5]
-2026-10-12 21:54:36 | WS         | DEBUG   | Full URL conectada: wss://fstream.binance.com/public/stream?streams=eth-261030-2800-c@depth5@100ms/eth-261030-2100-p@depth5@100ms/eth-261030-2150-p@depth5@100ms/eth-261030-2250-p@depth5@100ms/eth-261030-2350-p@depth5@100ms/eth-261030-2700-c@depth5@100ms/eth-261030-2450-c@depth5@100ms/eth-261030-2450-p@depth5@100ms/eth-261030-2550-c@depth5@100ms/eth-261030-2550-p@depth5@100ms/eth-261030-2900-c@depth5@100ms/eth-261030-2850-c@depth5@100ms/eth-261030-2750-c@depth5@100ms/eth-261030-2650-c@depth5@100ms/eth-261016-2500-c@depth5@100ms/eth-261016-2400-p@depth5@100ms/eth-261016-2500-p@depth5@100ms/eth-261016-2600-c@depth5@100ms/eth-261016-2650-c@depth5@100ms/eth-261016-2550-c@depth5@100ms/eth-261016-2550-p@depth5@100ms/eth-261023-2700-c@depth5@100ms/eth-261023-2400-p@depth5@100ms/eth-261023-2300-p@depth5@100ms/eth-261023-2500-c@depth5@100ms
-2026-10-12 21:54:36 | WS         | INFO    | Conectado -> fstream[eth-261023-2500-p..+14 @depth5]
-2026-10-12 21:54:36 | WS         | DEBUG   | Full URL conectada: wss://fstream.binance.com/public/stream?streams=eth-261023-2500-p@depth5@100ms/eth-261023-2600-c@depth5@100ms/eth-261023-2750-c@depth5@100ms/eth-261023-2550-c@depth5@100ms/eth-261023-2550-p@depth5@100ms/eth-261023-2650-c@depth5@100ms/eth-261016-2375-p@depth5@100ms/eth-261023-2450-p@depth5@100ms/eth-261023-2375-p@depth5@100ms/eth-261016-2450-p@depth5@100ms/eth-261013-2500-p@depth5@100ms/eth-261013-2550-c@depth5@100ms/eth-261014-2500-p@depth5@100ms/eth-261023-2350-p@depth5@100ms/eth-270326-3700-c@depth5@100ms
-2026-10-12 21:54:39 | WS         | WARNING | Inactividad (1800s) en stream[ethusdt@depth]. Refrescando...
-2026-10-12 21:54:41 | WS         | INFO    | Conectado -> stream[ethusdt@depth]
-2026-10-12 21:54:41 | WS         | DEBUG   | Full URL conectada: wss://stream.binance.com:9443/ws/ethusdt@depth
+2026-10-18 19:03:06 | FUTURES-BTC | INFO    | Iniciando Futures Worker...
+2026-10-18 19:03:06 | FUTURES-BTC | INFO    | T0 leido correctamente | Modo: live_only (Vision desactivado)
+2026-10-18 19:03:07 | WS         | INFO    | Conectado -> fstream[btcusdt@forceOrder]
+2026-10-18 19:03:07 | WS         | DEBUG   | Full URL conectada: wss://fstream.binance.com/ws/btcusdt@forceOrder
+2026-10-18 19:03:10 | WS         | INFO    | Conectado -> stream[btcusdt@depth]
+2026-10-18 19:03:10 | WS         | DEBUG   | Full URL conectada: wss://stream.binance.com:9443/ws/btcusdt@depth
+2026-10-18 19:03:11 | WS         | INFO    | Conectado -> fstream[/publicbtcusdt@optionTrade]
+2026-10-18 19:03:11 | WS         | DEBUG   | Full URL conectada: wss://fstream.binance.com/public/ws/btcusdt@optionTrade
+2026-10-18 19:03:11 | WS         | INFO    | Conectado -> fstream[/marketbtcusdt@optionMarkPrice]
+2026-10-18 19:03:11 | WS         | DEBUG   | Full URL conectada: wss://fstream.binance.com/market/ws/btcusdt@optionMarkPrice
+2026-10-18 19:03:21 | WS         | INFO    | Conectado -> fstream[btc-261225-85000-c..+24 @depth5]
+2026-10-18 19:03:21 | WS         | DEBUG   | Full URL conectada: wss://fstream.binance.com/public/stream?streams=btc-261225-85000-c@depth5@100ms/btc-261225-85000-p@depth5@100ms/btc-261225-80000-c@depth5@100ms/btc-261225-80000-p@depth5@100ms/btc-261225-90000-c@depth5@100ms/btc-261225-95000-c@depth5@100ms/btc-261225-60000-p@depth5@100ms/btc-261225-100000-c@depth5@100ms/btc-261225-70000-p@depth5@100ms/btc-261225-65000-p@depth5@100ms/btc-261225-55000-p@depth5@100ms/btc-261225-75000-p@depth5@100ms/btc-261225-72000-p@depth5@100ms/btc-261225-68000-p@depth5@100ms/btc-261225-82000-c@depth5@100ms/btc-261225-82000-p@depth5@100ms/btc-261225-78000-p@depth5@100ms/btc-261225-54000-p@depth5@100ms/btc-261225-88000-c@depth5@100ms/btc-261225-88000-p@depth5@100ms/btc-261225-62000-p@depth5@100ms/btc-270326-100000-c@depth5@100ms/btc-270326-50000-p@depth5@100ms/btc-270326-66000-p@depth5@100ms/btc-270326-60000-p@depth5@100ms
+2026-10-18 19:03:21 | WS         | INFO    | Conectado -> fstream[btc-270326-82000-c..+24 @depth5]
+2026-10-18 19:03:21 | WS         | DEBUG   | Full URL conectada: wss://fstream.binance.com/public/stream?streams=btc-270326-82000-c@depth5@100ms/btc-270326-82000-p@depth5@100ms/btc-270326-110000-c@depth5@100ms/btc-270326-86000-c@depth5@100ms/btc-270326-78000-c@depth5@100ms/btc-270326-86000-p@depth5@100ms/btc-270326-78000-p@depth5@100ms/btc-270326-62000-p@depth5@100ms/btc-270326-64000-p@depth5@100ms/btc-270326-72000-p@depth5@100ms/btc-270326-76000-p@depth5@100ms/btc-270326-90000-c@depth5@100ms/btc-270326-95000-c@depth5@100ms/btc-270326-90000-p@depth5@100ms/btc-270326-74000-p@depth5@100ms/btc-270326-115000-c@depth5@100ms/btc-270326-55000-p@depth5@100ms/btc-261225-86000-c@depth5@100ms/btc-261225-84000-c@depth5@100ms/btc-261225-86000-p@depth5@100ms/btc-261225-76000-p@depth5@100ms/btc-261225-84000-p@depth5@100ms/btc-270326-80000-c@depth5@100ms/btc-261225-74000-p@depth5@100ms/btc-270326-80000-p@depth5@100ms
+2026-10-18 19:03:22 | WS         | INFO    | Conectado -> fstream[btc-270326-85000-p..+24 @depth5]
+2026-10-18 19:03:22 | WS         | DEBUG   | Full URL conectada: wss://fstream.binance.com/public/stream?streams=btc-270326-85000-p@depth5@100ms/btc-261225-94000-c@depth5@100ms/btc-261023-79000-p@depth5@100ms/btc-261023-81000-c@depth5@100ms/btc-261023-81000-p@depth5@100ms/btc-261023-80000-p@depth5@100ms/btc-261023-78000-p@depth5@100ms/btc-261023-82000-c@depth5@100ms/btc-261023-82000-p@depth5@100ms/btc-261023-83000-c@depth5@100ms/btc-261023-85000-c@depth5@100ms/btc-261023-84000-c@depth5@100ms/btc-261023-83500-c@depth5@100ms/btc-261023-81500-c@depth5@100ms/btc-261023-81500-p@depth5@100ms/btc-261023-82500-c@depth5@100ms/btc-261023-84500-c@depth5@100ms/btc-261019-80000-p@depth5@100ms/btc-261019-81000-c@depth5@100ms/btc-261019-81000-p@depth5@100ms/btc-261019-82000-c@depth5@100ms/btc-261020-80000-p@depth5@100ms/btc-261020-80500-c@depth5@100ms/btc-261020-80500-p@depth5@100ms/btc-261020-81000-c@depth5@100ms
+2026-10-18 19:03:22 | WS         | INFO    | Conectado -> fstream[btc-270326-70000-p..+24 @depth5]
+2026-10-18 19:03:22 | WS         | DEBUG   | Full URL conectada: wss://fstream.binance.com/public/stream?streams=btc-270326-70000-p@depth5@100ms/btc-270326-94000-c@depth5@100ms/btc-270326-98000-c@depth5@100ms/btc-270326-94000-p@depth5@100ms/btc-270326-105000-c@depth5@100ms/btc-270326-92000-c@depth5@100ms/btc-261225-98000-c@depth5@100ms/btc-270326-92000-p@depth5@100ms/btc-270326-84000-c@depth5@100ms/btc-270326-88000-c@depth5@100ms/btc-261225-92000-c@depth5@100ms/btc-270326-84000-p@depth5@100ms/btc-270326-88000-p@depth5@100ms/btc-270326-56000-p@depth5@100ms/btc-270326-65000-p@depth5@100ms/btc-270326-58000-p@depth5@100ms/btc-270326-54000-p@depth5@100ms/btc-270326-68000-p@depth5@100ms/btc-270326-52000-p@depth5@100ms/btc-261225-64000-p@depth5@100ms/btc-261225-58000-p@depth5@100ms/btc-261225-66000-p@depth5@100ms/btc-261030-86000-c@depth5@100ms/btc-261030-70000-p@depth5@100ms/btc-261030-80000-c@depth5@100ms
+2026-10-18 19:03:22 | WS         | INFO    | Conectado -> fstream[btc-261020-81000-p..+9 @depth5]
+2026-10-18 19:03:22 | WS         | DEBUG   | Full URL conectada: wss://fstream.binance.com/public/stream?streams=btc-261020-81000-p@depth5@100ms/btc-261020-82000-c@depth5@100ms/btc-261020-83000-c@depth5@100ms/btc-261020-83500-c@depth5@100ms/btc-261020-82500-c@depth5@100ms/btc-261020-79000-p@depth5@100ms/btc-261020-81500-c@depth5@100ms/btc-261020-81500-p@depth5@100ms/btc-261020-79500-p@depth5@100ms/btc-261020-78500-p@depth5@100ms
+2026-10-18 19:03:22 | WS         | INFO    | Conectado -> fstream[btc-261030-80000-p..+24 @depth5]
+2026-10-18 19:03:22 | WS         | DEBUG   | Full URL conectada: wss://fstream.binance.com/public/stream?streams=btc-261030-80000-p@depth5@100ms/btc-261030-72000-p@depth5@100ms/btc-261030-68000-p@depth5@100ms/btc-261030-76000-p@depth5@100ms/btc-261030-74000-p@depth5@100ms/btc-261030-71000-p@depth5@100ms/btc-261030-75000-p@depth5@100ms/btc-261225-96000-c@depth5@100ms/btc-261030-73000-p@depth5@100ms/btc-261030-69000-p@depth5@100ms/btc-261030-84000-c@depth5@100ms/btc-261030-78000-p@depth5@100ms/btc-261030-82000-c@depth5@100ms/btc-261030-82000-p@depth5@100ms/btc-261030-85000-c@depth5@100ms/btc-261030-88000-c@depth5@100ms/btc-261030-77000-p@depth5@100ms/btc-261030-79000-p@depth5@100ms/btc-261030-81000-c@depth5@100ms/btc-261030-81000-p@depth5@100ms/btc-261030-87000-c@depth5@100ms/btc-270326-96000-c@depth5@100ms/btc-261030-83000-c@depth5@100ms/btc-261030-83000-p@depth5@100ms/btc-270326-85000-c@depth5@100ms
+2026-10-18 19:04:06 | FUTURES-BTC | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-18 19:04:10 | SPOT-BTC   | INFO    | STATUS 1m -> ob_diff: +59 | ob_snapshot: +1
+2026-10-18 19:04:22 | OPTIONS-BTC | INFO    | STATUS 1m -> griegas: +646 | oi: +646 | options: +646 | top_orderbook: +2,284 | trades: +5
+2026-10-18 19:05:06 | FUTURES-BTC | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-18 19:05:15 | SPOT-BTC   | INFO    | STATUS 1m -> ob_diff: +65
+2026-10-18 19:05:33 | OPTIONS-BTC | INFO    | STATUS 1m -> top_orderbook: +3,168 | trades: +13
+2026-10-18 19:06:06 | FUTURES-BTC | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-18 19:06:19 | SPOT-BTC   | INFO    | STATUS 1m -> ob_diff: +65
+2026-10-18 19:06:49 | OPTIONS-BTC | INFO    | STATUS 1m -> top_orderbook: +2,903 | trades: +5
+2026-10-18 19:07:06 | FUTURES-BTC | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-18 19:07:24 | SPOT-BTC   | INFO    | STATUS 1m -> ob_diff: +65
+2026-10-18 19:07:59 | OPTIONS-BTC | INFO    | STATUS 1m -> top_orderbook: +2,137 | trades: +2
+2026-10-18 19:08:06 | FUTURES-BTC | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-18 19:08:27 | SPOT-BTC   | INFO    | STATUS 1m -> ob_diff: +63
+2026-10-18 19:09:06 | OPTIONS-BTC | INFO    | STATUS 1m -> top_orderbook: +1,919
+2026-10-18 19:09:06 | FUTURES-BTC | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-18 19:09:31 | SPOT-BTC   | INFO    | STATUS 1m -> ob_diff: +63
+2026-10-18 19:10:06 | FUTURES-BTC | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-18 19:10:15 | OPTIONS-BTC | INFO    | STATUS 1m -> top_orderbook: +1,600 | trades: +2
+2026-10-18 19:10:34 | SPOT-BTC   | INFO    | STATUS 1m -> ob_diff: +64
+2026-10-18 19:11:06 | FUTURES-BTC | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-18 19:11:25 | OPTIONS-BTC | INFO    | STATUS 1m -> top_orderbook: +1,681 | trades: +1
+2026-10-18 19:11:37 | SPOT-BTC   | INFO    | STATUS 1m -> ob_diff: +63
+2026-10-18 19:12:06 | FUTURES-BTC | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-18 19:12:35 | OPTIONS-BTC | INFO    | STATUS 1m -> top_orderbook: +1,393 | trades: +1
+2026-10-18 19:12:41 | SPOT-BTC   | INFO    | STATUS 1m -> ob_diff: +63
+2026-10-18 19:13:06 | FUTURES-BTC | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-18 19:13:45 | SPOT-BTC   | INFO    | STATUS 1m -> ob_diff: +65
+2026-10-18 19:13:48 | OPTIONS-BTC | INFO    | STATUS 1m -> top_orderbook: +2,517
+2026-10-18 19:14:06 | FUTURES-BTC | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-18 19:14:50 | SPOT-BTC   | INFO    | STATUS 1m -> ob_diff: +64
+2026-10-18 19:15:03 | OPTIONS-BTC | INFO    | STATUS 1m -> top_orderbook: +2,496 | trades: +1
+2026-10-18 19:15:07 | FUTURES-BTC | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-18 19:15:54 | SPOT-BTC   | INFO    | STATUS 1m -> ob_diff: +65
+2026-10-18 19:16:07 | FUTURES-BTC | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-18 19:16:16 | OPTIONS-BTC | INFO    | STATUS 1m -> top_orderbook: +2,335 | trades: +2
+2026-10-18 19:16:59 | SPOT-BTC   | INFO    | STATUS 1m -> ob_diff: +64
+2026-10-18 19:17:07 | FUTURES-BTC | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-18 19:17:27 | OPTIONS-BTC | INFO    | STATUS 1m -> top_orderbook: +1,981 | trades: +1
+2026-10-18 19:18:03 | SPOT-BTC   | INFO    | STATUS 1m -> ob_diff: +65
+2026-10-18 19:18:07 | FUTURES-BTC | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-18 19:18:07 | FUTURES-BTC | DEBUG   | CHECKPOINT ejecutado en DuckDB.
+2026-10-18 19:18:48 | OPTIONS-BTC | INFO    | STATUS 1m -> griegas: +646 | oi: +646 | options: +646 | top_orderbook: +2,389 | trades: +3
+2026-10-18 19:19:07 | FUTURES-BTC | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-18 19:19:08 | SPOT-BTC   | INFO    | STATUS 1m -> ob_diff: +64
+2026-10-18 19:19:08 | SPOT-BTC   | DEBUG   | CHECKPOINT ejecutado en DuckDB.
+2026-10-18 19:19:59 | OPTIONS-BTC | INFO    | STATUS 1m -> top_orderbook: +1,944 | trades: +3
+2026-10-18 19:20:07 | FUTURES-BTC | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-18 19:20:13 | SPOT-BTC   | INFO    | STATUS 1m -> ob_diff: +65
+2026-10-18 19:21:07 | FUTURES-BTC | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-18 19:21:08 | OPTIONS-BTC | INFO    | STATUS 1m -> top_orderbook: +1,649 | trades: +1
+2026-10-18 19:21:08 | OPTIONS-BTC | DEBUG   | CHECKPOINT ejecutado en DuckDB.
+2026-10-18 19:21:16 | SPOT-BTC   | INFO    | STATUS 1m -> ob_diff: +64
+2026-10-18 19:22:07 | FUTURES-BTC | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-18 19:22:19 | OPTIONS-BTC | INFO    | STATUS 1m -> top_orderbook: +1,496 | trades: +1
+2026-10-18 19:22:21 | SPOT-BTC   | INFO    | STATUS 1m -> ob_diff: +64
+2026-10-18 19:23:07 | FUTURES-BTC | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-18 19:23:26 | SPOT-BTC   | INFO    | STATUS 1m -> ob_diff: +65
+2026-10-18 19:23:35 | OPTIONS-BTC | INFO    | STATUS 1m -> top_orderbook: +2,231
+2026-10-18 19:24:07 | FUTURES-BTC | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-18 19:24:30 | SPOT-BTC   | INFO    | STATUS 1m -> ob_diff: +65
+2026-10-18 19:24:50 | OPTIONS-BTC | INFO    | STATUS 1m -> top_orderbook: +2,218 | trades: +1
+2026-10-18 19:25:07 | FUTURES-BTC | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-18 19:25:35 | SPOT-BTC   | INFO    | STATUS 1m -> ob_diff: +65
+2026-10-18 19:26:00 | OPTIONS-BTC | INFO    | STATUS 1m -> top_orderbook: +1,651 | trades: +2
+2026-10-18 19:26:07 | FUTURES-BTC | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-18 19:26:40 | SPOT-BTC   | INFO    | STATUS 1m -> ob_diff: +65
+2026-10-18 19:27:07 | FUTURES-BTC | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-18 19:27:12 | OPTIONS-BTC | INFO    | STATUS 1m -> top_orderbook: +1,560 | trades: +1
+2026-10-18 19:27:45 | SPOT-BTC   | INFO    | STATUS 1m -> ob_diff: +64
+2026-10-18 19:28:07 | FUTURES-BTC | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-18 19:28:25 | OPTIONS-BTC | INFO    | STATUS 1m -> top_orderbook: +1,502
+2026-10-18 19:28:49 | SPOT-BTC   | INFO    | STATUS 1m -> ob_diff: +65
+2026-10-18 19:29:07 | FUTURES-BTC | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-18 19:29:33 | OPTIONS-BTC | INFO    | STATUS 1m -> top_orderbook: +1,167 | trades: +5
+2026-10-18 19:29:53 | SPOT-BTC   | INFO    | STATUS 1m -> ob_diff: +64
+2026-10-18 19:30:07 | FUTURES-BTC | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-18 19:30:56 | OPTIONS-BTC | INFO    | STATUS 1m -> top_orderbook: +2,353 | trades: +5
+2026-10-18 19:31:01 | SPOT-BTC   | INFO    | STATUS 1m -> ob_diff: +67
+2026-10-18 19:31:07 | FUTURES-BTC | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-18 19:32:08 | FUTURES-BTC | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-18 19:32:08 | SPOT-BTC   | INFO    | STATUS 1m -> ob_diff: +68
+2026-10-18 19:32:35 | OPTIONS-BTC | INFO    | STATUS 1m -> top_orderbook: +5,268 | trades: +4
+2026-10-18 19:33:08 | FUTURES-BTC | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-18 19:33:08 | FUTURES-BTC | DEBUG   | CHECKPOINT ejecutado en DuckDB.
+2026-10-18 19:33:12 | WS         | WARNING | Inactividad (1800s) en fstream[btcusdt@forceOrder]. Refrescando...
+2026-10-18 19:33:15 | WS         | INFO    | Reconectado -> fstream[btcusdt@forceOrder]
+2026-10-18 19:33:15 | WS         | DEBUG   | Full URL conectada: wss://fstream.binance.com/ws/btcusdt@forceOrder
+2026-10-18 19:33:16 | SPOT-BTC   | INFO    | STATUS 1m -> ob_diff: +67 | ob_snapshot: +1
+2026-10-18 19:33:25 | WS         | DEBUG   | Cerrando socket por parada: fstream[btc-261225-85000-c..+24 @depth5]
+2026-10-18 19:33:25 | WS         | DEBUG   | Cerrando socket por parada: fstream[btc-270326-82000-c..+24 @depth5]
+2026-10-18 19:33:25 | WS         | DEBUG   | Cerrando socket por parada: fstream[btc-270326-70000-p..+24 @depth5]
+2026-10-18 19:33:25 | WS         | DEBUG   | Cerrando socket por parada: fstream[btc-261030-80000-p..+24 @depth5]
+2026-10-18 19:33:25 | WS         | DEBUG   | Cerrando socket por parada: fstream[btc-270326-85000-p..+24 @depth5]
+2026-10-18 19:33:25 | WS         | DEBUG   | Cerrando socket por parada: fstream[btc-261020-81000-p..+9 @depth5]
+2026-10-18 19:33:51 | OPTIONS-BTC | INFO    | STATUS 1m -> options: +646 | top_orderbook: +1,750 | trades: +5
+2026-10-18 19:34:08 | FUTURES-BTC | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-18 19:34:25 | SPOT-BTC   | INFO    | STATUS 1m -> ob_diff: +68
+2026-10-18 19:35:01 | OPTIONS-BTC | INFO    | STATUS 1m -> griegas: +646 | oi: +646
+2026-10-18 19:35:08 | FUTURES-BTC | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-18 19:35:32 | SPOT-BTC   | INFO    | STATUS 1m -> ob_diff: +68
+2026-10-18 19:35:32 | SPOT-BTC   | DEBUG   | CHECKPOINT ejecutado en DuckDB.
+2026-10-18 19:36:01 | OPTIONS-BTC | INFO    | STATUS 1m -> trades: +1
+2026-10-18 19:36:08 | FUTURES-BTC | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-18 19:36:39 | SPOT-BTC   | INFO    | STATUS 1m -> ob_diff: +67
+2026-10-18 19:37:01 | OPTIONS-BTC | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-18 19:37:08 | FUTURES-BTC | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-18 19:37:44 | SPOT-BTC   | INFO    | STATUS 1m -> ob_diff: +65
+2026-10-18 19:38:01 | OPTIONS-BTC | INFO    | STATUS 1m -> trades: +2
+2026-10-18 19:38:08 | FUTURES-BTC | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-18 19:38:47 | SPOT-BTC   | INFO    | STATUS 1m -> ob_diff: +64
+2026-10-18 19:39:01 | OPTIONS-BTC | INFO    | STATUS 1m -> trades: +2
+2026-10-18 19:39:01 | OPTIONS-BTC | DEBUG   | CHECKPOINT ejecutado en DuckDB.
+2026-10-18 19:39:08 | FUTURES-BTC | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-18 19:39:51 | SPOT-BTC   | INFO    | STATUS 1m -> ob_diff: +63
+2026-10-18 19:40:01 | OPTIONS-BTC | INFO    | STATUS 1m -> trades: +1
+2026-10-18 19:40:08 | FUTURES-BTC | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-18 19:40:54 | SPOT-BTC   | INFO    | STATUS 1m -> ob_diff: +64
+2026-10-18 19:41:01 | OPTIONS-BTC | INFO    | STATUS 1m -> trades: +1
+2026-10-18 19:41:08 | FUTURES-BTC | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-18 19:41:57 | SPOT-BTC   | INFO    | STATUS 1m -> ob_diff: +63
+2026-10-18 19:42:01 | OPTIONS-BTC | INFO    | STATUS 1m -> trades: +2
+2026-10-18 19:42:08 | FUTURES-BTC | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-18 19:43:00 | SPOT-BTC   | INFO    | STATUS 1m -> ob_diff: +63
+2026-10-18 19:43:01 | OPTIONS-BTC | INFO    | STATUS 1m -> trades: +1
+2026-10-18 19:43:08 | FUTURES-BTC | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-18 19:44:01 | OPTIONS-BTC | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-18 19:44:04 | SPOT-BTC   | INFO    | STATUS 1m -> ob_diff: +63
+2026-10-18 19:44:08 | FUTURES-BTC | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-18 19:45:01 | OPTIONS-BTC | INFO    | STATUS 1m -> trades: +1
+2026-10-18 19:45:07 | SPOT-BTC   | INFO    | STATUS 1m -> ob_diff: +64
+2026-10-18 19:45:08 | FUTURES-BTC | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-18 19:46:01 | OPTIONS-BTC | INFO    | STATUS 1m -> trades: +2
+2026-10-18 19:46:08 | FUTURES-BTC | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-18 19:46:12 | SPOT-BTC   | INFO    | STATUS 1m -> ob_diff: +64
+2026-10-18 19:47:01 | OPTIONS-BTC | INFO    | STATUS 1m -> trades: +2
+2026-10-18 19:47:08 | FUTURES-BTC | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-18 19:47:16 | SPOT-BTC   | INFO    | STATUS 1m -> ob_diff: +65
+2026-10-18 19:48:01 | OPTIONS-BTC | INFO    | STATUS 1m -> trades: +1
+2026-10-18 19:48:08 | FUTURES-BTC | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-18 19:48:08 | FUTURES-BTC | DEBUG   | CHECKPOINT ejecutado en DuckDB.
+2026-10-18 19:48:21 | SPOT-BTC   | INFO    | STATUS 1m -> ob_diff: +65
+2026-10-18 19:49:01 | OPTIONS-BTC | INFO    | STATUS 1m -> trades: +2
+2026-10-18 19:49:09 | FUTURES-BTC | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-18 19:49:27 | SPOT-BTC   | INFO    | STATUS 1m -> ob_diff: +65
+2026-10-18 19:50:05 | OPTIONS-BTC | INFO    | STATUS 1m -> griegas: +646 | oi: +646 | options: +646 | trades: +1
+2026-10-18 19:50:09 | FUTURES-BTC | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-18 19:50:31 | SPOT-BTC   | INFO    | STATUS 1m -> ob_diff: +64
+2026-10-18 19:51:05 | OPTIONS-BTC | INFO    | STATUS 1m -> trades: +1
+2026-10-18 19:51:09 | FUTURES-BTC | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-18 19:51:38 | SPOT-BTC   | INFO    | STATUS 1m -> ob_diff: +67
+2026-10-18 19:51:38 | SPOT-BTC   | DEBUG   | CHECKPOINT ejecutado en DuckDB.
+2026-10-18 19:52:05 | OPTIONS-BTC | INFO    | STATUS 1m -> trades: +3
+2026-10-18 19:52:09 | FUTURES-BTC | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-18 19:52:43 | SPOT-BTC   | INFO    | STATUS 1m -> ob_diff: +66
+2026-10-18 19:53:05 | OPTIONS-BTC | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-18 19:53:09 | FUTURES-BTC | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-18 19:53:48 | SPOT-BTC   | INFO    | STATUS 1m -> ob_diff: +65
+2026-10-18 19:54:05 | OPTIONS-BTC | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-18 19:54:05 | OPTIONS-BTC | DEBUG   | CHECKPOINT ejecutado en DuckDB.
+2026-10-18 19:54:09 | FUTURES-BTC | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-18 19:54:53 | SPOT-BTC   | INFO    | STATUS 1m -> ob_diff: +64
+2026-10-18 19:55:05 | OPTIONS-BTC | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-18 21:51:41 | FUTURES-BTC | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-18 21:52:01 | WS         | WARNING | Caida en fstream[/marketbtcusdt@optionMarkPrice] (sent 1011 (internal error) keepalive ping timeout; no close frame received). Reintento en 1s...
+2026-10-18 21:52:02 | WS         | WARNING | Caida en fstream[/marketbtcusdt@optionMarkPrice] ([Errno -3] Temporary failure in name resolution). Reintento en 2s...
+2026-10-18 21:52:05 | WS         | INFO    | Reconectado -> fstream[/marketbtcusdt@optionMarkPrice]
+2026-10-18 21:52:05 | WS         | DEBUG   | Full URL conectada: wss://fstream.binance.com/market/ws/btcusdt@optionMarkPrice
+2026-10-18 21:52:07 | WS         | WARNING | Caida en fstream[/publicbtcusdt@optionTrade] (sent 1011 (internal error) keepalive ping timeout; no close frame received). Reintento en 1s...
+2026-10-18 21:52:09 | WS         | INFO    | Reconectado -> fstream[/publicbtcusdt@optionTrade]
+2026-10-18 21:52:09 | WS         | DEBUG   | Full URL conectada: wss://fstream.binance.com/public/ws/btcusdt@optionTrade
+2026-10-18 21:52:12 | WS         | WARNING | Caida en fstream[btcusdt@forceOrder] (sent 1011 (internal error) keepalive ping timeout; no close frame received). Reintento en 1s...
+2026-10-18 21:52:12 | WS         | WARNING | Caida en stream[btcusdt@depth] (sent 1011 (internal error) keepalive ping timeout; no close frame received). Reintento en 1s...
+2026-10-18 21:52:14 | WS         | INFO    | Reconectado -> fstream[btcusdt@forceOrder]
+2026-10-18 21:52:14 | WS         | INFO    | Reconectado -> stream[btcusdt@depth]
+2026-10-18 21:52:14 | WS         | DEBUG   | Full URL conectada: wss://fstream.binance.com/ws/btcusdt@forceOrder
+2026-10-18 21:52:14 | WS         | DEBUG   | Full URL conectada: wss://stream.binance.com:9443/ws/btcusdt@depth
+2026-10-18 21:52:26 | SPOT-BTC   | INFO    | STATUS 1m -> ob_diff: +22
+2026-10-18 21:52:37 | OPTIONS-BTC | INFO    | STATUS 1m -> trades: +1
+2026-10-18 21:52:41 | FUTURES-BTC | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-18 21:53:31 | SPOT-BTC   | INFO    | STATUS 1m -> ob_diff: +64
+2026-10-18 21:53:37 | OPTIONS-BTC | INFO    | STATUS 1m -> trades: +4
+2026-10-18 21:53:41 | FUTURES-BTC | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-18 21:54:37 | SPOT-BTC   | INFO    | STATUS 1m -> ob_diff: +66
+2026-10-18 21:54:37 | OPTIONS-BTC | INFO    | STATUS 1m -> trades: +13
+2026-10-18 21:54:41 | FUTURES-BTC | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-18 21:55:38 | OPTIONS-BTC | INFO    | STATUS 1m -> trades: +4
+2026-10-18 21:55:41 | FUTURES-BTC | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-18 21:55:42 | SPOT-BTC   | INFO    | STATUS 1m -> ob_diff: +65
+2026-10-18 21:56:38 | OPTIONS-BTC | INFO    | STATUS 1m -> trades: +1
+2026-10-18 21:56:41 | FUTURES-BTC | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-18 21:56:47 | SPOT-BTC   | INFO    | STATUS 1m -> ob_diff: +65
+2026-10-18 21:57:38 | OPTIONS-BTC | INFO    | STATUS 1m -> trades: +17
+2026-10-18 21:57:41 | FUTURES-BTC | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-18 21:57:55 | SPOT-BTC   | INFO    | STATUS 1m -> ob_diff: +69
+2026-10-18 21:58:38 | OPTIONS-BTC | INFO    | STATUS 1m -> trades: +4
+2026-10-18 21:58:41 | FUTURES-BTC | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-18 21:59:07 | SPOT-BTC   | INFO    | STATUS 1m -> ob_diff: +71
+2026-10-18 21:59:38 | OPTIONS-BTC | INFO    | STATUS 1m -> trades: +1
+2026-10-18 21:59:41 | FUTURES-BTC | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-18 21:59:41 | FUTURES-BTC | DEBUG   | CHECKPOINT ejecutado en DuckDB.
+2026-10-18 22:00:15 | SPOT-BTC   | INFO    | STATUS 1m -> ob_diff: +68 | ob_snapshot: +1
+2026-10-18 22:00:38 | OPTIONS-BTC | INFO    | STATUS 1m -> trades: +3
+2026-10-18 22:00:41 | FUTURES-BTC | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-18 22:01:25 | SPOT-BTC   | INFO    | STATUS 1m -> ob_diff: +70
+2026-10-18 22:01:41 | FUTURES-BTC | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-18 22:01:43 | OPTIONS-BTC | INFO    | STATUS 1m -> griegas: +646 | oi: +646 | options: +646 | trades: +26
+2026-10-18 22:02:33 | SPOT-BTC   | INFO    | STATUS 1m -> ob_diff: +68
+2026-10-18 22:02:41 | FUTURES-BTC | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-18 22:02:43 | OPTIONS-BTC | INFO    | STATUS 1m -> trades: +13
+2026-10-18 22:03:40 | SPOT-BTC   | INFO    | STATUS 1m -> ob_diff: +67
+2026-10-18 22:03:41 | FUTURES-BTC | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-18 22:03:43 | OPTIONS-BTC | INFO    | STATUS 1m -> trades: +4
+2026-10-18 22:04:41 | FUTURES-BTC | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-18 22:04:43 | OPTIONS-BTC | INFO    | STATUS 1m -> trades: +3
+2026-10-18 22:04:48 | SPOT-BTC   | INFO    | STATUS 1m -> ob_diff: +68
+2026-10-18 22:04:48 | SPOT-BTC   | DEBUG   | CHECKPOINT ejecutado en DuckDB.
+2026-10-18 22:05:41 | FUTURES-BTC | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-18 22:05:43 | OPTIONS-BTC | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-18 22:05:43 | OPTIONS-BTC | DEBUG   | CHECKPOINT ejecutado en DuckDB.
+2026-10-18 22:05:57 | SPOT-BTC   | INFO    | STATUS 1m -> ob_diff: +69
+2026-10-18 22:06:42 | FUTURES-BTC | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-18 22:06:43 | OPTIONS-BTC | INFO    | STATUS 1m -> trades: +11
+2026-10-18 22:07:04 | SPOT-BTC   | INFO    | STATUS 1m -> ob_diff: +67
+2026-10-18 22:07:42 | FUTURES-BTC | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-18 22:07:43 | OPTIONS-BTC | INFO    | STATUS 1m -> trades: +3
+2026-10-18 22:08:11 | SPOT-BTC   | INFO    | STATUS 1m -> ob_diff: +67
+2026-10-18 22:08:42 | FUTURES-BTC | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-18 22:08:43 | OPTIONS-BTC | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-18 22:09:16 | SPOT-BTC   | INFO    | STATUS 1m -> ob_diff: +65
+2026-10-18 22:09:42 | FUTURES-BTC | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-18 22:09:43 | OPTIONS-BTC | INFO    | STATUS 1m -> trades: +1
+2026-10-18 22:10:20 | SPOT-BTC   | INFO    | STATUS 1m -> ob_diff: +64
+2026-10-18 22:10:42 | FUTURES-BTC | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-18 22:10:43 | OPTIONS-BTC | INFO    | STATUS 1m -> trades: +2
+2026-10-18 22:11:25 | SPOT-BTC   | INFO    | STATUS 1m -> ob_diff: +65
+2026-10-18 22:11:42 | FUTURES-BTC | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-18 22:11:43 | OPTIONS-BTC | INFO    | STATUS 1m -> trades: +4
+2026-10-18 22:12:30 | SPOT-BTC   | INFO    | STATUS 1m -> ob_diff: +65
+2026-10-18 22:12:42 | FUTURES-BTC | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-18 22:12:44 | OPTIONS-BTC | INFO    | STATUS 1m -> trades: +4
+2026-10-18 22:13:35 | SPOT-BTC   | INFO    | STATUS 1m -> ob_diff: +65
+2026-10-18 22:13:42 | FUTURES-BTC | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-18 22:13:44 | OPTIONS-BTC | INFO    | STATUS 1m -> trades: +2
+2026-10-18 22:14:40 | SPOT-BTC   | INFO    | STATUS 1m -> ob_diff: +65
+2026-10-18 22:14:42 | FUTURES-BTC | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-18 22:14:42 | FUTURES-BTC | DEBUG   | CHECKPOINT ejecutado en DuckDB.
+2026-10-18 22:14:44 | OPTIONS-BTC | INFO    | STATUS 1m -> trades: +2
+2026-10-18 22:15:42 | FUTURES-BTC | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-18 22:15:44 | OPTIONS-BTC | INFO    | STATUS 1m -> trades: +8
+2026-10-18 22:15:46 | SPOT-BTC   | INFO    | STATUS 1m -> ob_diff: +66
+2026-10-18 22:16:42 | FUTURES-BTC | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-18 22:16:52 | OPTIONS-BTC | INFO    | STATUS 1m -> griegas: +646 | oi: +646 | options: +646 | trades: +43
+2026-10-18 22:17:06 | SPOT-BTC   | INFO    | STATUS 1m -> ob_diff: +80
+2026-10-18 22:17:42 | FUTURES-BTC | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-18 22:17:52 | OPTIONS-BTC | INFO    | STATUS 1m -> trades: +17
+2026-10-18 22:18:19 | SPOT-BTC   | INFO    | STATUS 1m -> ob_diff: +73
+2026-10-18 22:18:42 | FUTURES-BTC | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-18 22:18:52 | OPTIONS-BTC | INFO    | STATUS 1m -> trades: +3
+2026-10-18 22:19:30 | SPOT-BTC   | INFO    | STATUS 1m -> ob_diff: +71
+2026-10-18 22:19:42 | FUTURES-BTC | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-18 22:19:52 | OPTIONS-BTC | INFO    | STATUS 1m -> trades: +4
+2026-10-18 22:20:41 | SPOT-BTC   | INFO    | STATUS 1m -> ob_diff: +71
+2026-10-18 22:20:42 | FUTURES-BTC | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-18 22:20:52 | OPTIONS-BTC | INFO    | STATUS 1m -> trades: +22
+2026-10-18 22:20:52 | OPTIONS-BTC | DEBUG   | CHECKPOINT ejecutado en DuckDB.
+2026-10-18 22:21:42 | FUTURES-BTC | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-18 22:21:52 | SPOT-BTC   | INFO    | STATUS 1m -> ob_diff: +71
+2026-10-18 22:21:52 | SPOT-BTC   | DEBUG   | CHECKPOINT ejecutado en DuckDB.
+2026-10-18 22:21:53 | OPTIONS-BTC | INFO    | STATUS 1m -> trades: +18
+2026-10-18 22:22:19 | WS         | WARNING | Inactividad (1800s) en fstream[btcusdt@forceOrder]. Refrescando...
+2026-10-18 22:22:21 | WS         | INFO    | Reconectado -> fstream[btcusdt@forceOrder]
+2026-10-18 22:22:21 | WS         | DEBUG   | Full URL conectada: wss://fstream.binance.com/ws/btcusdt@forceOrder
+2026-10-18 22:22:42 | FUTURES-BTC | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-18 22:22:53 | OPTIONS-BTC | INFO    | STATUS 1m -> trades: +15
+2026-10-18 22:23:01 | SPOT-BTC   | INFO    | STATUS 1m -> ob_diff: +69
+2026-10-18 22:23:42 | FUTURES-BTC | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-18 22:23:53 | OPTIONS-BTC | INFO    | STATUS 1m -> trades: +3
+2026-10-18 22:24:08 | SPOT-BTC   | INFO    | STATUS 1m -> ob_diff: +67
+2026-10-18 22:24:42 | FUTURES-BTC | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-18 22:24:53 | OPTIONS-BTC | INFO    | STATUS 1m -> trades: +3
+2026-10-18 22:25:16 | SPOT-BTC   | INFO    | STATUS 1m -> ob_diff: +68
+2026-10-18 22:25:43 | FUTURES-BTC | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-18 22:25:53 | OPTIONS-BTC | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-18 22:26:27 | SPOT-BTC   | INFO    | STATUS 1m -> ob_diff: +70
+2026-10-18 22:26:43 | FUTURES-BTC | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-18 22:26:53 | OPTIONS-BTC | INFO    | STATUS 1m -> trades: +8
+2026-10-18 22:27:36 | SPOT-BTC   | INFO    | STATUS 1m -> ob_diff: +69
+2026-10-18 22:27:43 | FUTURES-BTC | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-18 22:27:53 | OPTIONS-BTC | INFO    | STATUS 1m -> trades: +14
+2026-10-18 22:28:43 | FUTURES-BTC | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-18 22:28:48 | SPOT-BTC   | INFO    | STATUS 1m -> ob_diff: +73
+2026-10-18 22:28:53 | OPTIONS-BTC | INFO    | STATUS 1m -> trades: +4
+2026-10-18 22:29:43 | FUTURES-BTC | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-18 22:29:43 | FUTURES-BTC | DEBUG   | CHECKPOINT ejecutado en DuckDB.
+2026-10-18 22:29:53 | OPTIONS-BTC | INFO    | STATUS 1m -> trades: +4
+2026-10-18 22:29:56 | SPOT-BTC   | INFO    | STATUS 1m -> ob_diff: +68 | ob_snapshot: +1
+2026-10-18 22:30:43 | FUTURES-BTC | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-18 22:30:54 | OPTIONS-BTC | INFO    | STATUS 1m -> trades: +2
+2026-10-18 22:31:05 | SPOT-BTC   | INFO    | STATUS 1m -> ob_diff: +68
+2026-10-19 11:11:05 | FUTURES-BTC | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-19 11:11:16 | OPTIONS-BTC | INFO    | STATUS 1m -> trades: +1
+2026-10-19 11:11:19 | WS         | WARNING | Caida en fstream[/marketbtcusdt@optionMarkPrice] (sent 1011 (internal error) keepalive ping timeout; no close frame received). Reintento en 1s...
+2026-10-19 11:11:20 | WS         | WARNING | Caida en fstream[/publicbtcusdt@optionTrade] (sent 1011 (internal error) keepalive ping timeout; no close frame received). Reintento en 1s...
+2026-10-19 11:11:20 | WS         | WARNING | Caida en fstream[/marketbtcusdt@optionMarkPrice] ([Errno -3] Temporary failure in name resolution). Reintento en 2s...
+2026-10-19 11:11:21 | WS         | WARNING | Caida en fstream[/publicbtcusdt@optionTrade] ([Errno -3] Temporary failure in name resolution). Reintento en 2s...
+2026-10-19 11:51:10 | WS         | WARNING | Caida en fstream[/marketbtcusdt@optionMarkPrice] ([Errno -3] Temporary failure in name resolution). Reintento en 4s...
+2026-10-19 11:51:11 | WS         | WARNING | Caida en fstream[/publicbtcusdt@optionTrade] ([Errno -3] Temporary failure in name resolution). Reintento en 4s...
+2026-10-19 11:51:14 | WS         | WARNING | Caida en fstream[/marketbtcusdt@optionMarkPrice] ([Errno -3] Temporary failure in name resolution). Reintento en 8s...
+2026-10-19 11:51:15 | WS         | WARNING | Caida en fstream[/publicbtcusdt@optionTrade] ([Errno -3] Temporary failure in name resolution). Reintento en 8s...
+2026-10-19 11:51:16 | WS         | WARNING | Caida en stream[btcusdt@depth] (sent 1011 (internal error) keepalive ping timeout; no close frame received). Reintento en 1s...
+2026-10-19 11:51:16 | WS         | WARNING | Caida en fstream[btcusdt@forceOrder] (sent 1011 (internal error) keepalive ping timeout; no close frame received). Reintento en 1s...
+2026-10-19 11:51:17 | WS         | WARNING | Caida en stream[btcusdt@depth] ([Errno -3] Temporary failure in name resolution). Reintento en 2s...
+2026-10-19 11:51:17 | WS         | WARNING | Caida en fstream[btcusdt@forceOrder] ([Errno -3] Temporary failure in name resolution). Reintento en 2s...
+2026-10-19 11:51:18 | SPOT-BTC   | INFO    | STATUS 1m -> ob_diff: +24
+2026-10-19 11:51:19 | WS         | WARNING | Caida en stream[btcusdt@depth] ([Errno -3] Temporary failure in name resolution). Reintento en 4s...
+2026-10-19 11:51:19 | WS         | WARNING | Caida en fstream[btcusdt@forceOrder] ([Errno -3] Temporary failure in name resolution). Reintento en 4s...
+2026-10-19 11:51:22 | WS         | WARNING | Caida en fstream[/marketbtcusdt@optionMarkPrice] ([Errno -3] Temporary failure in name resolution). Reintento en 16s...
+2026-10-19 11:51:23 | WS         | WARNING | Caida en fstream[/publicbtcusdt@optionTrade] ([Errno -3] Temporary failure in name resolution). Reintento en 16s...
+2026-10-19 11:51:23 | WS         | WARNING | Caida en stream[btcusdt@depth] ([Errno -3] Temporary failure in name resolution). Reintento en 8s...
+2026-10-19 11:51:23 | WS         | WARNING | Caida en fstream[btcusdt@forceOrder] ([Errno -3] Temporary failure in name resolution). Reintento en 8s...
+2026-10-19 11:51:31 | WS         | WARNING | Caida en stream[btcusdt@depth] ([Errno -3] Temporary failure in name resolution). Reintento en 16s...
+2026-10-19 11:51:31 | WS         | WARNING | Caida en fstream[btcusdt@forceOrder] ([Errno -3] Temporary failure in name resolution). Reintento en 16s...
+2026-10-19 11:51:38 | WS         | WARNING | Caida en fstream[/marketbtcusdt@optionMarkPrice] ([Errno -3] Temporary failure in name resolution). Reintento en 32s...
+2026-10-19 11:51:39 | WS         | WARNING | Caida en fstream[/publicbtcusdt@optionTrade] ([Errno -3] Temporary failure in name resolution). Reintento en 32s...
+2026-10-19 11:51:47 | WS         | WARNING | Caida en stream[btcusdt@depth] ([Errno -3] Temporary failure in name resolution). Reintento en 32s...
+2026-10-19 11:51:47 | WS         | WARNING | Caida en fstream[btcusdt@forceOrder] ([Errno -3] Temporary failure in name resolution). Reintento en 32s...
+2026-10-19 11:51:53 | FUTURES-BTC | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-19 11:52:04 | OPTIONS-BTC | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-19 11:52:10 | WS         | WARNING | Caida en fstream[/marketbtcusdt@optionMarkPrice] ([Errno -3] Temporary failure in name resolution). Reintento en 60s...
+2026-10-19 11:52:11 | WS         | WARNING | Caida en fstream[/publicbtcusdt@optionTrade] ([Errno -3] Temporary failure in name resolution). Reintento en 60s...
+2026-10-19 11:52:18 | SPOT-BTC   | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-19 11:52:19 | WS         | WARNING | Caida en stream[btcusdt@depth] ([Errno -3] Temporary failure in name resolution). Reintento en 60s...
+2026-10-19 11:52:19 | WS         | WARNING | Caida en fstream[btcusdt@forceOrder] ([Errno -3] Temporary failure in name resolution). Reintento en 60s...
+2026-10-19 11:52:53 | FUTURES-BTC | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-19 11:53:04 | OPTIONS-BTC | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-19 11:53:10 | WS         | WARNING | Caida en fstream[/marketbtcusdt@optionMarkPrice] ([Errno -3] Temporary failure in name resolution). Reintento en 60s...
+2026-10-19 11:53:11 | WS         | WARNING | Caida en fstream[/publicbtcusdt@optionTrade] ([Errno -3] Temporary failure in name resolution). Reintento en 60s...
+2026-10-19 11:53:18 | SPOT-BTC   | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-19 11:53:19 | WS         | WARNING | Caida en stream[btcusdt@depth] ([Errno -3] Temporary failure in name resolution). Reintento en 60s...
+2026-10-19 11:53:19 | WS         | WARNING | Caida en fstream[btcusdt@forceOrder] ([Errno -3] Temporary failure in name resolution). Reintento en 60s...
+2026-10-19 11:53:53 | FUTURES-BTC | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-19 11:54:04 | OPTIONS-BTC | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-19 11:54:10 | WS         | WARNING | Caida en fstream[/marketbtcusdt@optionMarkPrice] ([Errno -3] Temporary failure in name resolution). Reintento en 60s...
+2026-10-19 11:54:11 | WS         | WARNING | Caida en fstream[/publicbtcusdt@optionTrade] ([Errno -3] Temporary failure in name resolution). Reintento en 60s...
+2026-10-19 11:54:19 | SPOT-BTC   | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-19 11:54:19 | WS         | WARNING | Caida en stream[btcusdt@depth] ([Errno -3] Temporary failure in name resolution). Reintento en 60s...
+2026-10-19 11:54:19 | WS         | WARNING | Caida en fstream[btcusdt@forceOrder] ([Errno -3] Temporary failure in name resolution). Reintento en 60s...
+2026-10-19 11:54:53 | FUTURES-BTC | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-19 11:55:04 | OPTIONS-BTC | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-19 11:55:04 | OPTIONS-BTC | DEBUG   | CHECKPOINT ejecutado en DuckDB.
+2026-10-19 11:55:10 | WS         | WARNING | Caida en fstream[/marketbtcusdt@optionMarkPrice] ([Errno -3] Temporary failure in name resolution). Reintento en 60s...
+2026-10-19 11:55:11 | WS         | WARNING | Caida en fstream[/publicbtcusdt@optionTrade] ([Errno -3] Temporary failure in name resolution). Reintento en 60s...
+2026-10-19 11:55:19 | SPOT-BTC   | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-19 11:55:19 | WS         | WARNING | Caida en stream[btcusdt@depth] ([Errno -3] Temporary failure in name resolution). Reintento en 60s...
+2026-10-19 11:55:19 | WS         | WARNING | Caida en fstream[btcusdt@forceOrder] ([Errno -3] Temporary failure in name resolution). Reintento en 60s...
+2026-10-19 11:55:53 | FUTURES-BTC | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-19 11:56:04 | OPTIONS-BTC | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-19 11:56:10 | WS         | WARNING | Caida en fstream[/marketbtcusdt@optionMarkPrice] ([Errno -3] Temporary failure in name resolution). Reintento en 60s...
+2026-10-19 11:56:11 | WS         | WARNING | Caida en fstream[/publicbtcusdt@optionTrade] ([Errno -3] Temporary failure in name resolution). Reintento en 60s...
+2026-10-19 11:56:19 | SPOT-BTC   | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-19 11:56:19 | WS         | WARNING | Caida en stream[btcusdt@depth] ([Errno -3] Temporary failure in name resolution). Reintento en 60s...
+2026-10-19 11:56:19 | WS         | WARNING | Caida en fstream[btcusdt@forceOrder] ([Errno -3] Temporary failure in name resolution). Reintento en 60s...
+2026-10-19 11:56:54 | FUTURES-BTC | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-19 11:57:04 | OPTIONS-BTC | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-19 11:57:10 | WS         | WARNING | Caida en fstream[/marketbtcusdt@optionMarkPrice] ([Errno -3] Temporary failure in name resolution). Reintento en 60s...
+2026-10-19 11:57:11 | WS         | WARNING | Caida en fstream[/publicbtcusdt@optionTrade] ([Errno -3] Temporary failure in name resolution). Reintento en 60s...
+2026-10-19 11:57:19 | SPOT-BTC   | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-19 11:57:19 | SPOT-BTC   | DEBUG   | CHECKPOINT ejecutado en DuckDB.
+2026-10-19 11:57:19 | WS         | WARNING | Caida en stream[btcusdt@depth] ([Errno -3] Temporary failure in name resolution). Reintento en 60s...
+2026-10-19 11:57:19 | WS         | WARNING | Caida en fstream[btcusdt@forceOrder] ([Errno -3] Temporary failure in name resolution). Reintento en 60s...
+2026-10-19 11:57:54 | FUTURES-BTC | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-19 11:58:04 | OPTIONS-BTC | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-19 11:58:10 | WS         | WARNING | Caida en fstream[/marketbtcusdt@optionMarkPrice] ([Errno -3] Temporary failure in name resolution). Reintento en 60s...
+2026-10-19 11:58:11 | WS         | WARNING | Caida en fstream[/publicbtcusdt@optionTrade] ([Errno -3] Temporary failure in name resolution). Reintento en 60s...
+2026-10-19 11:58:19 | SPOT-BTC   | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-19 11:58:19 | WS         | WARNING | Caida en stream[btcusdt@depth] ([Errno -3] Temporary failure in name resolution). Reintento en 60s...
+2026-10-19 11:58:19 | WS         | WARNING | Caida en fstream[btcusdt@forceOrder] ([Errno -3] Temporary failure in name resolution). Reintento en 60s...
+2026-10-19 11:58:54 | FUTURES-BTC | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-19 11:59:04 | OPTIONS-BTC | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-19 11:59:10 | WS         | WARNING | Caida en fstream[/marketbtcusdt@optionMarkPrice] ([Errno -3] Temporary failure in name resolution). Reintento en 60s...
+2026-10-19 11:59:11 | WS         | WARNING | Caida en fstream[/publicbtcusdt@optionTrade] ([Errno -3] Temporary failure in name resolution). Reintento en 60s...
+2026-10-19 11:59:19 | SPOT-BTC   | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-19 11:59:19 | WS         | WARNING | Caida en stream[btcusdt@depth] ([Errno -3] Temporary failure in name resolution). Reintento en 60s...
+2026-10-19 11:59:19 | WS         | WARNING | Caida en fstream[btcusdt@forceOrder] ([Errno -3] Temporary failure in name resolution). Reintento en 60s...
+2026-10-19 11:59:54 | FUTURES-BTC | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-19 12:00:04 | OPTIONS-BTC | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-19 12:00:10 | WS         | WARNING | Caida en fstream[/marketbtcusdt@optionMarkPrice] ([Errno -3] Temporary failure in name resolution). Reintento en 60s...
+2026-10-19 12:00:11 | WS         | WARNING | Caida en fstream[/publicbtcusdt@optionTrade] ([Errno -3] Temporary failure in name resolution). Reintento en 60s...
+2026-10-19 12:00:19 | WS         | WARNING | Caida en stream[btcusdt@depth] ([Errno -3] Temporary failure in name resolution). Reintento en 60s...
+2026-10-19 12:00:19 | SPOT-BTC   | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-19 12:00:19 | WS         | WARNING | Caida en fstream[btcusdt@forceOrder] ([Errno -3] Temporary failure in name resolution). Reintento en 60s...
+2026-10-19 12:00:54 | FUTURES-BTC | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-19 12:01:05 | OPTIONS-BTC | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-19 12:01:10 | WS         | WARNING | Caida en fstream[/marketbtcusdt@optionMarkPrice] ([Errno -3] Temporary failure in name resolution). Reintento en 60s...
+2026-10-19 12:01:11 | WS         | WARNING | Caida en fstream[/publicbtcusdt@optionTrade] ([Errno -3] Temporary failure in name resolution). Reintento en 60s...
+2026-10-19 12:01:19 | WS         | WARNING | Caida en stream[btcusdt@depth] ([Errno -3] Temporary failure in name resolution). Reintento en 60s...
+2026-10-19 12:01:19 | SPOT-BTC   | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-19 12:01:19 | WS         | WARNING | Caida en fstream[btcusdt@forceOrder] ([Errno -3] Temporary failure in name resolution). Reintento en 60s...
+2026-10-19 12:01:54 | FUTURES-BTC | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-19 12:02:05 | OPTIONS-BTC | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-19 12:02:10 | WS         | WARNING | Caida en fstream[/marketbtcusdt@optionMarkPrice] ([Errno -3] Temporary failure in name resolution). Reintento en 60s...
+2026-10-19 12:02:11 | WS         | WARNING | Caida en fstream[/publicbtcusdt@optionTrade] ([Errno -3] Temporary failure in name resolution). Reintento en 60s...
+2026-10-19 12:02:19 | WS         | WARNING | Caida en stream[btcusdt@depth] ([Errno -3] Temporary failure in name resolution). Reintento en 60s...
+2026-10-19 12:02:19 | SPOT-BTC   | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-19 12:02:19 | WS         | WARNING | Caida en fstream[btcusdt@forceOrder] ([Errno -3] Temporary failure in name resolution). Reintento en 60s...
+2026-10-19 12:02:54 | FUTURES-BTC | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-19 12:03:05 | OPTIONS-BTC | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-19 12:03:10 | WS         | WARNING | Caida en fstream[/marketbtcusdt@optionMarkPrice] ([Errno -3] Temporary failure in name resolution). Reintento en 60s...
+2026-10-19 12:03:11 | WS         | WARNING | Caida en fstream[/publicbtcusdt@optionTrade] ([Errno -3] Temporary failure in name resolution). Reintento en 60s...
+2026-10-19 12:03:19 | WS         | WARNING | Caida en stream[btcusdt@depth] ([Errno -3] Temporary failure in name resolution). Reintento en 60s...
+2026-10-19 12:03:19 | SPOT-BTC   | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-19 12:03:19 | WS         | WARNING | Caida en fstream[btcusdt@forceOrder] ([Errno -3] Temporary failure in name resolution). Reintento en 60s...
+2026-10-19 12:03:54 | FUTURES-BTC | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-19 12:03:54 | FUTURES-BTC | DEBUG   | CHECKPOINT ejecutado en DuckDB.
+2026-10-19 12:04:05 | OPTIONS-BTC | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-19 12:04:10 | WS         | WARNING | Caida en fstream[/marketbtcusdt@optionMarkPrice] ([Errno -3] Temporary failure in name resolution). Reintento en 60s...
+2026-10-19 12:04:11 | WS         | WARNING | Caida en fstream[/publicbtcusdt@optionTrade] ([Errno -3] Temporary failure in name resolution). Reintento en 60s...
+2026-10-19 12:04:19 | WS         | WARNING | Caida en stream[btcusdt@depth] ([Errno -3] Temporary failure in name resolution). Reintento en 60s...
+2026-10-19 12:04:19 | WS         | WARNING | Caida en fstream[btcusdt@forceOrder] ([Errno -3] Temporary failure in name resolution). Reintento en 60s...
+2026-10-19 12:04:19 | SPOT-BTC   | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-19 12:04:54 | FUTURES-BTC | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-19 12:05:05 | OPTIONS-BTC | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-19 12:05:10 | WS         | WARNING | Caida en fstream[/marketbtcusdt@optionMarkPrice] ([Errno -3] Temporary failure in name resolution). Reintento en 60s...
+2026-10-19 12:05:11 | WS         | WARNING | Caida en fstream[/publicbtcusdt@optionTrade] ([Errno -3] Temporary failure in name resolution). Reintento en 60s...
+2026-10-19 12:05:19 | WS         | WARNING | Caida en stream[btcusdt@depth] ([Errno -3] Temporary failure in name resolution). Reintento en 60s...
+2026-10-19 12:05:19 | WS         | WARNING | Caida en fstream[btcusdt@forceOrder] ([Errno -3] Temporary failure in name resolution). Reintento en 60s...
+2026-10-19 12:05:19 | SPOT-BTC   | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-19 12:05:54 | FUTURES-BTC | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-19 12:06:05 | OPTIONS-BTC | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-19 12:06:11 | WS         | INFO    | Reconectado -> fstream[/marketbtcusdt@optionMarkPrice]
+2026-10-19 12:06:11 | WS         | DEBUG   | Full URL conectada: wss://fstream.binance.com/market/ws/btcusdt@optionMarkPrice
+2026-10-19 12:06:12 | WS         | INFO    | Reconectado -> fstream[/publicbtcusdt@optionTrade]
+2026-10-19 12:06:12 | WS         | DEBUG   | Full URL conectada: wss://fstream.binance.com/public/ws/btcusdt@optionTrade
+2026-10-19 12:06:20 | SPOT-BTC   | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-19 12:06:20 | WS         | INFO    | Reconectado -> stream[btcusdt@depth]
+2026-10-19 12:06:20 | WS         | DEBUG   | Full URL conectada: wss://stream.binance.com:9443/ws/btcusdt@depth
+2026-10-19 12:06:21 | WS         | INFO    | Reconectado -> fstream[btcusdt@forceOrder]
+2026-10-19 12:06:21 | WS         | DEBUG   | Full URL conectada: wss://fstream.binance.com/ws/btcusdt@forceOrder
+2026-10-19 12:06:54 | FUTURES-BTC | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-19 12:07:05 | OPTIONS-BTC | INFO    | STATUS 1m -> trades: +6
+2026-10-19 12:07:35 | SPOT-BTC   | INFO    | STATUS 1m -> ob_diff: +72
+2026-10-19 12:07:54 | FUTURES-BTC | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-19 12:08:05 | OPTIONS-BTC | INFO    | STATUS 1m -> trades: +10
+2026-10-19 12:08:49 | SPOT-BTC   | INFO    | STATUS 1m -> ob_diff: +75
+2026-10-19 12:08:54 | FUTURES-BTC | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-19 12:09:05 | OPTIONS-BTC | INFO    | STATUS 1m -> trades: +14
+2026-10-19 12:09:54 | FUTURES-BTC | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-19 12:10:04 | SPOT-BTC   | INFO    | STATUS 1m -> ob_diff: +74
+2026-10-19 12:10:05 | OPTIONS-BTC | INFO    | STATUS 1m -> trades: +4
+2026-10-19 12:10:06 | OPTIONS-BTC | DEBUG   | CHECKPOINT ejecutado en DuckDB.
+2026-10-19 12:10:54 | FUTURES-BTC | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-19 12:11:06 | OPTIONS-BTC | INFO    | STATUS 1m -> trades: +2
+2026-10-19 12:11:17 | SPOT-BTC   | INFO    | STATUS 1m -> ob_diff: +74
+2026-10-19 12:11:54 | FUTURES-BTC | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-19 12:12:06 | OPTIONS-BTC | INFO    | STATUS 1m -> trades: +8
+2026-10-19 12:12:31 | SPOT-BTC   | INFO    | STATUS 1m -> ob_diff: +74
+2026-10-19 12:12:55 | FUTURES-BTC | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-19 12:13:06 | OPTIONS-BTC | INFO    | STATUS 1m -> trades: +7
+2026-10-19 12:13:48 | SPOT-BTC   | INFO    | STATUS 1m -> ob_diff: +76
+2026-10-19 12:13:48 | SPOT-BTC   | DEBUG   | CHECKPOINT ejecutado en DuckDB.
+2026-10-19 12:13:55 | FUTURES-BTC | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-19 12:14:06 | OPTIONS-BTC | INFO    | STATUS 1m -> trades: +20
+2026-10-19 12:14:55 | FUTURES-BTC | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-19 12:15:03 | SPOT-BTC   | INFO    | STATUS 1m -> ob_diff: +75
+2026-10-19 12:15:06 | OPTIONS-BTC | INFO    | STATUS 1m -> trades: +14
+2026-10-19 12:15:55 | FUTURES-BTC | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-19 12:16:06 | OPTIONS-BTC | INFO    | STATUS 1m -> trades: +4
+2026-10-19 12:16:16 | SPOT-BTC   | INFO    | STATUS 1m -> ob_diff: +73
+2026-10-19 12:16:55 | FUTURES-BTC | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-19 12:17:07 | OPTIONS-BTC | INFO    | STATUS 1m -> trades: +9
+2026-10-19 12:17:33 | SPOT-BTC   | INFO    | STATUS 1m -> ob_diff: +77
+2026-10-19 12:17:55 | FUTURES-BTC | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-19 12:18:07 | OPTIONS-BTC | INFO    | STATUS 1m -> trades: +21
+2026-10-19 12:18:42 | SPOT-BTC   | INFO    | STATUS 1m -> ob_diff: +71
+2026-10-19 12:18:55 | FUTURES-BTC | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-19 12:18:55 | FUTURES-BTC | DEBUG   | CHECKPOINT ejecutado en DuckDB.
+2026-10-19 12:19:07 | OPTIONS-BTC | INFO    | STATUS 1m -> trades: +15
+2026-10-19 12:19:50 | SPOT-BTC   | INFO    | STATUS 1m -> ob_diff: +67 | ob_snapshot: +1
+2026-10-19 12:19:55 | FUTURES-BTC | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-19 12:20:07 | OPTIONS-BTC | INFO    | STATUS 1m -> trades: +6
+2026-10-19 12:20:55 | FUTURES-BTC | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-19 12:20:55 | SPOT-BTC   | INFO    | STATUS 1m -> ob_diff: +65
+2026-10-19 12:21:08 | OPTIONS-BTC | INFO    | STATUS 1m -> trades: +71
+2026-10-19 12:21:55 | FUTURES-BTC | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-19 12:22:08 | SPOT-BTC   | INFO    | STATUS 1m -> ob_diff: +73
+2026-10-19 12:22:09 | OPTIONS-BTC | INFO    | STATUS 1m -> trades: +75
+2026-10-19 12:22:55 | FUTURES-BTC | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-19 12:23:10 | OPTIONS-BTC | INFO    | STATUS 1m -> trades: +34
+2026-10-19 12:23:20 | SPOT-BTC   | INFO    | STATUS 1m -> ob_diff: +73
+2026-10-19 12:23:55 | FUTURES-BTC | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-19 12:24:10 | OPTIONS-BTC | INFO    | STATUS 1m -> trades: +8
+2026-10-19 12:24:29 | SPOT-BTC   | INFO    | STATUS 1m -> ob_diff: +68
+2026-10-19 12:24:55 | FUTURES-BTC | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-19 12:25:10 | OPTIONS-BTC | INFO    | STATUS 1m -> trades: +7
+2026-10-19 12:25:10 | OPTIONS-BTC | DEBUG   | CHECKPOINT ejecutado en DuckDB.
+2026-10-19 12:25:39 | SPOT-BTC   | INFO    | STATUS 1m -> ob_diff: +70
+2026-10-19 12:25:55 | FUTURES-BTC | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-19 12:26:10 | OPTIONS-BTC | INFO    | STATUS 1m -> trades: +13
+2026-10-19 12:26:48 | SPOT-BTC   | INFO    | STATUS 1m -> ob_diff: +69
+2026-10-19 12:26:55 | FUTURES-BTC | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-19 12:27:10 | OPTIONS-BTC | INFO    | STATUS 1m -> trades: +9
+2026-10-19 12:27:55 | FUTURES-BTC | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-19 12:28:01 | SPOT-BTC   | INFO    | STATUS 1m -> ob_diff: +73
+2026-10-19 12:28:11 | OPTIONS-BTC | INFO    | STATUS 1m -> trades: +32
+2026-10-19 12:28:55 | FUTURES-BTC | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-19 12:29:11 | OPTIONS-BTC | INFO    | STATUS 1m -> trades: +36
+2026-10-19 12:29:18 | SPOT-BTC   | INFO    | STATUS 1m -> ob_diff: +77
+2026-10-19 12:29:55 | FUTURES-BTC | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-19 12:30:12 | OPTIONS-BTC | INFO    | STATUS 1m -> trades: +46
+2026-10-19 12:30:33 | SPOT-BTC   | INFO    | STATUS 1m -> ob_diff: +74
+2026-10-19 12:30:56 | FUTURES-BTC | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-19 12:31:13 | OPTIONS-BTC | INFO    | STATUS 1m -> trades: +73
+2026-10-19 12:31:56 | FUTURES-BTC | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-19 12:32:02 | SPOT-BTC   | INFO    | STATUS 1m -> ob_diff: +88
+2026-10-19 12:32:02 | SPOT-BTC   | DEBUG   | CHECKPOINT ejecutado en DuckDB.
+2026-10-19 12:32:13 | OPTIONS-BTC | INFO    | STATUS 1m -> trades: +49
+2026-10-19 12:32:56 | FUTURES-BTC | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-19 12:33:14 | OPTIONS-BTC | INFO    | STATUS 1m -> trades: +34
+2026-10-19 12:33:20 | SPOT-BTC   | INFO    | STATUS 1m -> ob_diff: +79
+2026-10-19 12:33:56 | FUTURES-BTC | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-19 12:33:56 | FUTURES-BTC | DEBUG   | CHECKPOINT ejecutado en DuckDB.
+2026-10-19 12:34:14 | OPTIONS-BTC | INFO    | STATUS 1m -> trades: +37
+2026-10-19 12:34:40 | SPOT-BTC   | INFO    | STATUS 1m -> ob_diff: +80
+2026-10-19 12:34:56 | FUTURES-BTC | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-19 12:35:15 | OPTIONS-BTC | INFO    | STATUS 1m -> trades: +27
+2026-10-19 12:35:56 | FUTURES-BTC | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-19 12:36:02 | SPOT-BTC   | INFO    | STATUS 1m -> ob_diff: +82
+2026-10-19 12:36:15 | OPTIONS-BTC | INFO    | STATUS 1m -> trades: +20
+2026-10-19 12:36:26 | WS         | WARNING | Inactividad (1800s) en fstream[btcusdt@forceOrder]. Refrescando...
+2026-10-19 12:36:28 | WS         | INFO    | Reconectado -> fstream[btcusdt@forceOrder]
+2026-10-19 12:36:28 | WS         | DEBUG   | Full URL conectada: wss://fstream.binance.com/ws/btcusdt@forceOrder
+2026-10-19 12:36:56 | FUTURES-BTC | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-19 12:37:15 | OPTIONS-BTC | INFO    | STATUS 1m -> trades: +25
+2026-10-19 12:37:17 | SPOT-BTC   | INFO    | STATUS 1m -> ob_diff: +76
+2026-10-19 12:37:56 | FUTURES-BTC | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-19 12:38:16 | OPTIONS-BTC | INFO    | STATUS 1m -> trades: +26
+2026-10-19 12:38:36 | SPOT-BTC   | INFO    | STATUS 1m -> ob_diff: +76
+2026-10-19 12:38:56 | FUTURES-BTC | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-19 12:39:16 | OPTIONS-BTC | INFO    | STATUS 1m -> trades: +57
+2026-10-19 12:39:56 | FUTURES-BTC | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-19 12:40:07 | SPOT-BTC   | INFO    | STATUS 1m -> ob_diff: +93
+2026-10-19 12:40:17 | OPTIONS-BTC | INFO    | STATUS 1m -> trades: +17
+2026-10-19 12:40:17 | OPTIONS-BTC | DEBUG   | CHECKPOINT ejecutado en DuckDB.
+2026-10-19 12:40:56 | FUTURES-BTC | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-19 12:41:17 | OPTIONS-BTC | INFO    | STATUS 1m -> trades: +25
+2026-10-19 12:41:29 | SPOT-BTC   | INFO    | STATUS 1m -> ob_diff: +82
+2026-10-19 12:41:56 | FUTURES-BTC | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-19 12:42:17 | OPTIONS-BTC | INFO    | STATUS 1m -> trades: +7
+2026-10-19 12:42:50 | SPOT-BTC   | INFO    | STATUS 1m -> ob_diff: +80
+2026-10-19 12:42:56 | FUTURES-BTC | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-19 12:43:17 | OPTIONS-BTC | INFO    | STATUS 1m -> trades: +9
+2026-10-19 12:43:56 | FUTURES-BTC | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-19 12:44:16 | SPOT-BTC   | INFO    | STATUS 1m -> ob_diff: +87
+2026-10-19 12:44:18 | OPTIONS-BTC | INFO    | STATUS 1m -> trades: +10
+2026-10-19 12:44:56 | FUTURES-BTC | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-19 12:45:18 | OPTIONS-BTC | INFO    | STATUS 1m -> trades: +12
+2026-10-19 12:45:38 | SPOT-BTC   | INFO    | STATUS 1m -> ob_diff: +81
+2026-10-19 12:45:56 | FUTURES-BTC | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-19 12:46:18 | OPTIONS-BTC | INFO    | STATUS 1m -> trades: +4
+2026-10-19 12:46:30 | WS         | WARNING | Caida en stream[btcusdt@depth] (sent 1011 (internal error) keepalive ping timeout; no close frame received). Reintento en 1s...
+2026-10-19 12:46:32 | WS         | INFO    | Reconectado -> stream[btcusdt@depth]
+2026-10-19 12:46:32 | WS         | DEBUG   | Full URL conectada: wss://stream.binance.com:9443/ws/btcusdt@depth
+2026-10-19 12:46:33 | WS         | WARNING | Caida en fstream[btcusdt@forceOrder] (sent 1011 (internal error) keepalive ping timeout; no close frame received). Reintento en 1s...
+2026-10-19 12:46:36 | WS         | INFO    | Reconectado -> fstream[btcusdt@forceOrder]
+2026-10-19 12:46:36 | WS         | DEBUG   | Full URL conectada: wss://fstream.binance.com/ws/btcusdt@forceOrder
+2026-10-19 12:46:37 | WS         | WARNING | Caida en fstream[/publicbtcusdt@optionTrade] (sent 1011 (internal error) keepalive ping timeout; no close frame received). Reintento en 1s...
+2026-10-19 12:46:39 | WS         | INFO    | Reconectado -> fstream[/publicbtcusdt@optionTrade]
+2026-10-19 12:46:39 | WS         | DEBUG   | Full URL conectada: wss://fstream.binance.com/public/ws/btcusdt@optionTrade
+2026-10-19 12:46:49 | SPOT-BTC   | INFO    | STATUS 1m -> ob_diff: +41
+2026-10-19 12:46:56 | FUTURES-BTC | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-19 12:47:18 | OPTIONS-BTC | INFO    | STATUS 1m -> trades: +2
+2026-10-19 12:47:56 | FUTURES-BTC | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-19 12:48:10 | SPOT-BTC   | INFO    | STATUS 1m -> ob_diff: +80
+2026-10-19 12:48:18 | OPTIONS-BTC | INFO    | STATUS 1m -> trades: +8
+2026-10-19 12:48:57 | FUTURES-BTC | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-19 12:48:57 | FUTURES-BTC | DEBUG   | CHECKPOINT ejecutado en DuckDB.
+2026-10-19 12:49:18 | OPTIONS-BTC | INFO    | STATUS 1m -> trades: +6
+2026-10-19 12:49:33 | SPOT-BTC   | INFO    | STATUS 1m -> ob_diff: +84 | ob_snapshot: +1
+2026-10-19 12:49:57 | FUTURES-BTC | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-19 12:50:18 | OPTIONS-BTC | INFO    | STATUS 1m -> trades: +5
+2026-10-19 12:50:53 | SPOT-BTC   | INFO    | STATUS 1m -> ob_diff: +80
+2026-10-19 12:50:57 | FUTURES-BTC | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-19 12:51:19 | OPTIONS-BTC | INFO    | STATUS 1m -> trades: +6
+2026-10-19 12:51:57 | FUTURES-BTC | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-19 12:52:17 | SPOT-BTC   | INFO    | STATUS 1m -> ob_diff: +84
+2026-10-19 12:52:17 | SPOT-BTC   | DEBUG   | CHECKPOINT ejecutado en DuckDB.
+2026-10-19 12:52:19 | OPTIONS-BTC | INFO    | STATUS 1m -> trades: +5
+2026-10-19 12:52:57 | FUTURES-BTC | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-19 12:53:19 | OPTIONS-BTC | INFO    | STATUS 1m -> trades: +5
+2026-10-19 12:53:24 | SPOT-BTC   | INFO    | STATUS 1m -> ob_diff: +68
+2026-10-19 12:53:57 | FUTURES-BTC | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-19 12:54:19 | OPTIONS-BTC | INFO    | STATUS 1m -> trades: +16
+2026-10-19 12:54:31 | SPOT-BTC   | INFO    | STATUS 1m -> ob_diff: +67
+2026-10-19 12:54:57 | FUTURES-BTC | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-19 12:55:19 | OPTIONS-BTC | INFO    | STATUS 1m -> trades: +14
+2026-10-19 12:55:19 | OPTIONS-BTC | DEBUG   | CHECKPOINT ejecutado en DuckDB.
+2026-10-19 12:55:37 | SPOT-BTC   | INFO    | STATUS 1m -> ob_diff: +65
+2026-10-19 12:55:57 | FUTURES-BTC | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-19 12:56:01 | WS         | WARNING | Caida en fstream[btcusdt@forceOrder] (sent 1011 (internal error) keepalive ping timeout; no close frame received). Reintento en 1s...
+2026-10-19 12:56:02 | WS         | WARNING | Caida en fstream[btcusdt@forceOrder] ([Errno -3] Temporary failure in name resolution). Reintento en 2s...
+2026-10-19 12:56:02 | WS         | WARNING | Caida en stream[btcusdt@depth] (sent 1011 (internal error) keepalive ping timeout; no close frame received). Reintento en 1s...
+2026-10-19 12:56:03 | WS         | WARNING | Caida en stream[btcusdt@depth] ([Errno -3] Temporary failure in name resolution). Reintento en 2s...
+2026-10-19 12:56:04 | WS         | WARNING | Caida en fstream[btcusdt@forceOrder] ([Errno -3] Temporary failure in name resolution). Reintento en 4s...
+2026-10-19 12:56:04 | WS         | WARNING | Caida en fstream[/publicbtcusdt@optionTrade] (sent 1011 (internal error) keepalive ping timeout; no close frame received). Reintento en 1s...
+2026-10-19 12:56:05 | WS         | WARNING | Caida en stream[btcusdt@depth] ([Errno -3] Temporary failure in name resolution). Reintento en 4s...
+2026-10-19 12:56:06 | WS         | WARNING | Caida en fstream[/publicbtcusdt@optionTrade] ([Errno -3] Temporary failure in name resolution). Reintento en 2s...
+2026-10-19 12:56:08 | WS         | WARNING | Caida en fstream[/publicbtcusdt@optionTrade] ([Errno -3] Temporary failure in name resolution). Reintento en 4s...
+2026-10-19 12:56:08 | WS         | WARNING | Caida en fstream[btcusdt@forceOrder] ([Errno -3] Temporary failure in name resolution). Reintento en 8s...
+2026-10-19 12:56:09 | WS         | WARNING | Caida en stream[btcusdt@depth] ([Errno -3] Temporary failure in name resolution). Reintento en 8s...
+2026-10-19 12:56:12 | WS         | WARNING | Caida en fstream[/publicbtcusdt@optionTrade] ([Errno -3] Temporary failure in name resolution). Reintento en 8s...
+2026-10-19 12:56:16 | WS         | WARNING | Caida en fstream[btcusdt@forceOrder] ([Errno -3] Temporary failure in name resolution). Reintento en 16s...
+2026-10-19 12:56:17 | WS         | WARNING | Caida en fstream[/marketbtcusdt@optionMarkPrice] (sent 1011 (internal error) keepalive ping timeout; no close frame received). Reintento en 1s...
+2026-10-19 12:56:17 | WS         | WARNING | Caida en stream[btcusdt@depth] ([Errno -3] Temporary failure in name resolution). Reintento en 16s...
+2026-10-19 12:56:18 | WS         | WARNING | Caida en fstream[/marketbtcusdt@optionMarkPrice] ([Errno -3] Temporary failure in name resolution). Reintento en 2s...
+2026-10-19 12:56:20 | WS         | WARNING | Caida en fstream[/publicbtcusdt@optionTrade] ([Errno -3] Temporary failure in name resolution). Reintento en 16s...
+2026-10-19 12:56:20 | OPTIONS-BTC | INFO    | STATUS 1m -> trades: +4
+2026-10-19 12:56:20 | WS         | WARNING | Caida en fstream[/marketbtcusdt@optionMarkPrice] ([Errno -3] Temporary failure in name resolution). Reintento en 4s...
+2026-10-19 12:56:24 | WS         | WARNING | Caida en fstream[/marketbtcusdt@optionMarkPrice] ([Errno -3] Temporary failure in name resolution). Reintento en 8s...
+2026-10-19 12:56:32 | WS         | WARNING | Caida en fstream[btcusdt@forceOrder] ([Errno -3] Temporary failure in name resolution). Reintento en 32s...
+2026-10-19 12:56:32 | WS         | WARNING | Caida en fstream[/marketbtcusdt@optionMarkPrice] ([Errno -3] Temporary failure in name resolution). Reintento en 16s...
+2026-10-19 12:56:33 | WS         | WARNING | Caida en stream[btcusdt@depth] ([Errno -3] Temporary failure in name resolution). Reintento en 32s...
+2026-10-19 12:56:36 | WS         | WARNING | Caida en fstream[/publicbtcusdt@optionTrade] ([Errno -3] Temporary failure in name resolution). Reintento en 32s...
+2026-10-19 12:56:37 | SPOT-BTC   | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-19 12:56:48 | WS         | WARNING | Caida en fstream[/marketbtcusdt@optionMarkPrice] ([Errno -3] Temporary failure in name resolution). Reintento en 32s...
+2026-10-19 12:56:57 | FUTURES-BTC | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-19 14:20:02 | WS         | WARNING | Caida en fstream[btcusdt@forceOrder] ([Errno -3] Temporary failure in name resolution). Reintento en 60s...
+2026-10-19 14:20:03 | WS         | WARNING | Caida en stream[btcusdt@depth] ([Errno -3] Temporary failure in name resolution). Reintento en 60s...
+2026-10-19 14:20:06 | WS         | WARNING | Caida en fstream[/publicbtcusdt@optionTrade] ([Errno -3] Temporary failure in name resolution). Reintento en 60s...
+2026-10-19 14:20:18 | OPTIONS-BTC | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-19 14:20:18 | WS         | WARNING | Caida en fstream[/marketbtcusdt@optionMarkPrice] ([Errno -3] Temporary failure in name resolution). Reintento en 60s...
+2026-10-19 14:20:35 | SPOT-BTC   | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-19 14:20:55 | FUTURES-BTC | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-19 14:21:04 | WS         | WARNING | Caida en stream[btcusdt@depth] ([Errno 111] Connect call failed ('198.135.184.22', 9443)). Reintento en 60s...
+2026-10-19 14:21:12 | WS         | WARNING | Inactividad (1800s) en fstream[btcusdt@forceOrder]. Refrescando...
+2026-10-19 14:21:13 | WS         | WARNING | Caida en fstream[/publicbtcusdt@optionTrade] ([Errno 104] Connection reset by peer). Reintento en 60s...
+2026-10-19 14:21:13 | WS         | WARNING | Caida en fstream[btcusdt@forceOrder] ([Errno 104] Connection reset by peer). Reintento en 60s...
+2026-10-19 14:21:18 | OPTIONS-BTC | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-19 14:21:19 | WS         | WARNING | Caida en fstream[/marketbtcusdt@optionMarkPrice] ([Errno 104] Connection reset by peer). Reintento en 60s...
+2026-10-19 14:21:35 | SPOT-BTC   | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-19 14:21:55 | FUTURES-BTC | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-19 14:22:04 | WS         | WARNING | Caida en stream[btcusdt@depth] ([Errno 111] Connect call failed ('198.135.184.22', 9443)). Reintento en 60s...
+2026-10-19 14:22:13 | WS         | WARNING | Caida en fstream[/publicbtcusdt@optionTrade] ([Errno 104] Connection reset by peer). Reintento en 60s...
+2026-10-19 14:22:14 | WS         | WARNING | Caida en fstream[btcusdt@forceOrder] ([Errno 104] Connection reset by peer). Reintento en 60s...
+2026-10-19 14:22:18 | OPTIONS-BTC | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-19 14:22:19 | WS         | WARNING | Caida en fstream[/marketbtcusdt@optionMarkPrice] ([Errno 104] Connection reset by peer). Reintento en 60s...
+2026-10-19 14:22:35 | SPOT-BTC   | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-19 14:22:55 | FUTURES-BTC | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-19 14:23:04 | WS         | WARNING | Caida en stream[btcusdt@depth] ([Errno 111] Connect call failed ('198.135.184.22', 9443)). Reintento en 60s...
+2026-10-19 14:23:13 | WS         | WARNING | Caida en fstream[/publicbtcusdt@optionTrade] ([Errno 104] Connection reset by peer). Reintento en 60s...
+2026-10-19 14:23:14 | WS         | WARNING | Caida en fstream[btcusdt@forceOrder] ([Errno 104] Connection reset by peer). Reintento en 60s...
+2026-10-19 14:23:18 | OPTIONS-BTC | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-19 14:23:19 | WS         | WARNING | Caida en fstream[/marketbtcusdt@optionMarkPrice] ([Errno 104] Connection reset by peer). Reintento en 60s...
+2026-10-19 14:23:35 | SPOT-BTC   | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-19 14:23:55 | FUTURES-BTC | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-19 14:24:05 | WS         | WARNING | Caida en stream[btcusdt@depth] ([Errno 111] Connect call failed ('198.135.184.22', 9443)). Reintento en 60s...
+2026-10-19 14:24:13 | WS         | WARNING | Caida en fstream[/publicbtcusdt@optionTrade] ([Errno 104] Connection reset by peer). Reintento en 60s...
+2026-10-19 14:24:14 | WS         | WARNING | Caida en fstream[btcusdt@forceOrder] ([Errno 104] Connection reset by peer). Reintento en 60s...
+2026-10-19 14:24:18 | OPTIONS-BTC | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-19 14:24:19 | WS         | WARNING | Caida en fstream[/marketbtcusdt@optionMarkPrice] ([Errno 104] Connection reset by peer). Reintento en 60s...
+2026-10-19 14:24:35 | SPOT-BTC   | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-19 14:24:55 | FUTURES-BTC | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-19 14:25:05 | WS         | WARNING | Caida en stream[btcusdt@depth] ([Errno 111] Connect call failed ('198.135.184.22', 9443)). Reintento en 60s...
+2026-10-19 14:25:14 | WS         | WARNING | Caida en fstream[/publicbtcusdt@optionTrade] ([Errno 104] Connection reset by peer). Reintento en 60s...
+2026-10-19 14:25:14 | WS         | WARNING | Caida en fstream[btcusdt@forceOrder] ([Errno 104] Connection reset by peer). Reintento en 60s...
+2026-10-19 14:25:18 | OPTIONS-BTC | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-19 14:25:20 | WS         | WARNING | Caida en fstream[/marketbtcusdt@optionMarkPrice] ([Errno 104] Connection reset by peer). Reintento en 60s...
+2026-10-19 14:25:36 | SPOT-BTC   | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-19 14:25:56 | FUTURES-BTC | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-19 14:26:05 | WS         | WARNING | Caida en stream[btcusdt@depth] ([Errno 111] Connect call failed ('198.135.184.22', 9443)). Reintento en 60s...
+2026-10-19 14:26:14 | WS         | WARNING | Caida en fstream[/publicbtcusdt@optionTrade] ([Errno 104] Connection reset by peer). Reintento en 60s...
+2026-10-19 14:26:14 | WS         | WARNING | Caida en fstream[btcusdt@forceOrder] ([Errno 104] Connection reset by peer). Reintento en 60s...
+2026-10-19 14:26:18 | OPTIONS-BTC | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-19 14:26:20 | WS         | WARNING | Caida en fstream[/marketbtcusdt@optionMarkPrice] ([Errno 104] Connection reset by peer). Reintento en 60s...
+2026-10-19 14:26:36 | SPOT-BTC   | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-19 14:26:56 | FUTURES-BTC | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-19 14:26:56 | FUTURES-BTC | DEBUG   | CHECKPOINT ejecutado en DuckDB.
+2026-10-19 14:27:05 | WS         | WARNING | Caida en stream[btcusdt@depth] ([Errno 111] Connect call failed ('198.135.184.22', 9443)). Reintento en 60s...
+2026-10-19 14:27:14 | WS         | WARNING | Caida en fstream[/publicbtcusdt@optionTrade] ([Errno 104] Connection reset by peer). Reintento en 60s...
+2026-10-19 14:27:15 | WS         | WARNING | Caida en fstream[btcusdt@forceOrder] ([Errno 104] Connection reset by peer). Reintento en 60s...
+2026-10-19 14:27:18 | OPTIONS-BTC | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-19 14:27:20 | WS         | WARNING | Caida en fstream[/marketbtcusdt@optionMarkPrice] ([Errno 104] Connection reset by peer). Reintento en 60s...
+2026-10-19 14:27:36 | SPOT-BTC   | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-19 14:27:56 | FUTURES-BTC | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-19 14:28:05 | WS         | WARNING | Caida en stream[btcusdt@depth] ([Errno 111] Connect call failed ('198.135.184.22', 9443)). Reintento en 60s...
+2026-10-19 14:28:14 | WS         | WARNING | Caida en fstream[/publicbtcusdt@optionTrade] ([Errno 104] Connection reset by peer). Reintento en 60s...
+2026-10-19 14:28:15 | WS         | WARNING | Caida en fstream[btcusdt@forceOrder] ([Errno 104] Connection reset by peer). Reintento en 60s...
+2026-10-19 14:28:18 | OPTIONS-BTC | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-19 14:28:20 | WS         | WARNING | Caida en fstream[/marketbtcusdt@optionMarkPrice] ([Errno 104] Connection reset by peer). Reintento en 60s...
+2026-10-19 14:28:36 | SPOT-BTC   | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-19 14:28:56 | FUTURES-BTC | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-19 14:29:06 | WS         | WARNING | Caida en stream[btcusdt@depth] ([Errno 111] Connect call failed ('198.135.184.22', 9443)). Reintento en 60s...
+2026-10-19 14:29:14 | WS         | WARNING | Caida en fstream[/publicbtcusdt@optionTrade] ([Errno 104] Connection reset by peer). Reintento en 60s...
+2026-10-19 14:29:15 | WS         | WARNING | Caida en fstream[btcusdt@forceOrder] ([Errno 104] Connection reset by peer). Reintento en 60s...
+2026-10-19 14:29:18 | OPTIONS-BTC | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-19 14:29:21 | WS         | WARNING | Caida en fstream[/marketbtcusdt@optionMarkPrice] ([Errno 104] Connection reset by peer). Reintento en 60s...
+2026-10-19 14:29:36 | SPOT-BTC   | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-19 14:29:56 | FUTURES-BTC | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-19 14:30:06 | WS         | WARNING | Caida en stream[btcusdt@depth] ([Errno 111] Connect call failed ('198.135.184.22', 9443)). Reintento en 60s...
+2026-10-19 14:30:14 | WS         | WARNING | Caida en fstream[/publicbtcusdt@optionTrade] ([Errno 104] Connection reset by peer). Reintento en 60s...
+2026-10-19 14:30:15 | WS         | WARNING | Caida en fstream[btcusdt@forceOrder] ([Errno 104] Connection reset by peer). Reintento en 60s...
+2026-10-19 14:30:18 | OPTIONS-BTC | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-19 14:30:21 | WS         | WARNING | Caida en fstream[/marketbtcusdt@optionMarkPrice] ([Errno 104] Connection reset by peer). Reintento en 60s...
+2026-10-19 14:30:36 | SPOT-BTC   | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-19 14:30:36 | SPOT-BTC   | DEBUG   | CHECKPOINT ejecutado en DuckDB.
+2026-10-19 14:30:56 | FUTURES-BTC | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-19 14:31:06 | WS         | WARNING | Caida en stream[btcusdt@depth] ([Errno 111] Connect call failed ('198.135.184.22', 9443)). Reintento en 60s...
+2026-10-19 14:31:15 | WS         | WARNING | Caida en fstream[/publicbtcusdt@optionTrade] ([Errno 104] Connection reset by peer). Reintento en 60s...
+2026-10-19 14:31:15 | WS         | WARNING | Caida en fstream[btcusdt@forceOrder] ([Errno 104] Connection reset by peer). Reintento en 60s...
+2026-10-19 14:31:18 | OPTIONS-BTC | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-19 14:31:21 | WS         | WARNING | Caida en fstream[/marketbtcusdt@optionMarkPrice] ([Errno 104] Connection reset by peer). Reintento en 60s...
+2026-10-19 14:31:36 | SPOT-BTC   | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-19 14:31:56 | FUTURES-BTC | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-19 14:32:07 | WS         | WARNING | Caida en stream[btcusdt@depth] ([Errno 111] Connect call failed ('198.135.184.22', 9443)). Reintento en 60s...
+2026-10-19 14:32:15 | WS         | WARNING | Caida en fstream[/publicbtcusdt@optionTrade] ([Errno 104] Connection reset by peer). Reintento en 60s...
+2026-10-19 14:32:16 | WS         | WARNING | Caida en fstream[btcusdt@forceOrder] ([Errno 104] Connection reset by peer). Reintento en 60s...
+2026-10-19 14:32:19 | OPTIONS-BTC | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-19 14:32:21 | WS         | WARNING | Caida en fstream[/marketbtcusdt@optionMarkPrice] ([Errno 104] Connection reset by peer). Reintento en 60s...
+2026-10-19 14:32:36 | SPOT-BTC   | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-19 14:32:56 | FUTURES-BTC | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-19 14:33:07 | WS         | WARNING | Caida en stream[btcusdt@depth] ([Errno 111] Connect call failed ('198.135.184.22', 9443)). Reintento en 60s...
+2026-10-19 14:33:15 | WS         | WARNING | Caida en fstream[/publicbtcusdt@optionTrade] ([Errno 104] Connection reset by peer). Reintento en 60s...
+2026-10-19 14:33:16 | WS         | WARNING | Caida en fstream[btcusdt@forceOrder] ([Errno 104] Connection reset by peer). Reintento en 60s...
+2026-10-19 14:33:19 | OPTIONS-BTC | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-19 14:33:19 | OPTIONS-BTC | DEBUG   | CHECKPOINT ejecutado en DuckDB.
+2026-10-19 14:33:21 | WS         | WARNING | Caida en fstream[/marketbtcusdt@optionMarkPrice] ([Errno 104] Connection reset by peer). Reintento en 60s...
+2026-10-19 14:33:36 | SPOT-BTC   | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-19 14:33:56 | FUTURES-BTC | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-19 14:34:07 | WS         | WARNING | Caida en stream[btcusdt@depth] ([Errno 111] Connect call failed ('198.135.184.22', 9443)). Reintento en 60s...
+2026-10-19 14:34:16 | WS         | WARNING | Caida en fstream[/publicbtcusdt@optionTrade] ([Errno 104] Connection reset by peer). Reintento en 60s...
+2026-10-19 14:34:16 | WS         | WARNING | Caida en fstream[btcusdt@forceOrder] ([Errno 104] Connection reset by peer). Reintento en 60s...
+2026-10-19 14:34:19 | OPTIONS-BTC | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-19 14:34:22 | WS         | WARNING | Caida en fstream[/marketbtcusdt@optionMarkPrice] ([Errno 104] Connection reset by peer). Reintento en 60s...
+2026-10-19 14:34:36 | SPOT-BTC   | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-19 14:34:56 | FUTURES-BTC | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-19 14:35:07 | WS         | WARNING | Caida en stream[btcusdt@depth] ([Errno 111] Connect call failed ('198.135.184.22', 9443)). Reintento en 60s...
+2026-10-19 14:35:16 | WS         | WARNING | Caida en fstream[/publicbtcusdt@optionTrade] ([Errno 104] Connection reset by peer). Reintento en 60s...
+2026-10-19 14:35:16 | WS         | WARNING | Caida en fstream[btcusdt@forceOrder] ([Errno 104] Connection reset by peer). Reintento en 60s...
+2026-10-19 14:35:19 | OPTIONS-BTC | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-19 14:35:22 | WS         | WARNING | Caida en fstream[/marketbtcusdt@optionMarkPrice] ([Errno 104] Connection reset by peer). Reintento en 60s...
+2026-10-19 14:35:36 | SPOT-BTC   | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-19 14:35:56 | FUTURES-BTC | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-19 14:36:08 | WS         | WARNING | Caida en stream[btcusdt@depth] ([Errno 111] Connect call failed ('198.135.184.22', 9443)). Reintento en 60s...
+2026-10-19 14:36:16 | WS         | WARNING | Caida en fstream[/publicbtcusdt@optionTrade] ([Errno 104] Connection reset by peer). Reintento en 60s...
+2026-10-19 14:36:16 | WS         | WARNING | Caida en fstream[btcusdt@forceOrder] ([Errno 104] Connection reset by peer). Reintento en 60s...
+2026-10-19 14:36:19 | OPTIONS-BTC | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-19 14:36:23 | WS         | WARNING | Caida en fstream[/marketbtcusdt@optionMarkPrice] ([Errno 104] Connection reset by peer). Reintento en 60s...
+2026-10-19 14:36:36 | SPOT-BTC   | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-19 14:36:56 | FUTURES-BTC | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-19 14:37:08 | WS         | WARNING | Caida en stream[btcusdt@depth] ([Errno 111] Connect call failed ('198.135.184.22', 9443)). Reintento en 60s...
+2026-10-19 14:37:16 | WS         | WARNING | Caida en fstream[/publicbtcusdt@optionTrade] ([Errno 104] Connection reset by peer). Reintento en 60s...
+2026-10-19 14:37:17 | WS         | WARNING | Caida en fstream[btcusdt@forceOrder] ([Errno 104] Connection reset by peer). Reintento en 60s...
+2026-10-19 14:37:19 | OPTIONS-BTC | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-19 14:37:23 | WS         | WARNING | Caida en fstream[/marketbtcusdt@optionMarkPrice] ([Errno 104] Connection reset by peer). Reintento en 60s...
+2026-10-19 14:37:37 | SPOT-BTC   | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-19 14:37:56 | FUTURES-BTC | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-19 14:38:08 | WS         | WARNING | Caida en stream[btcusdt@depth] ([Errno 111] Connect call failed ('198.135.184.22', 9443)). Reintento en 60s...
+2026-10-19 14:38:16 | WS         | WARNING | Caida en fstream[/publicbtcusdt@optionTrade] ([Errno 104] Connection reset by peer). Reintento en 60s...
+2026-10-19 14:38:17 | WS         | WARNING | Caida en fstream[btcusdt@forceOrder] ([Errno 104] Connection reset by peer). Reintento en 60s...
+2026-10-19 14:38:19 | OPTIONS-BTC | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-19 14:38:23 | WS         | WARNING | Caida en fstream[/marketbtcusdt@optionMarkPrice] ([Errno 104] Connection reset by peer). Reintento en 60s...
+2026-10-19 14:38:37 | SPOT-BTC   | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-19 14:38:56 | FUTURES-BTC | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-19 14:39:08 | WS         | WARNING | Caida en stream[btcusdt@depth] ([Errno 111] Connect call failed ('198.135.184.22', 9443)). Reintento en 60s...
+2026-10-19 14:39:17 | WS         | WARNING | Caida en fstream[/publicbtcusdt@optionTrade] ([Errno 104] Connection reset by peer). Reintento en 60s...
+2026-10-19 14:39:17 | WS         | WARNING | Caida en fstream[btcusdt@forceOrder] ([Errno 104] Connection reset by peer). Reintento en 60s...
+2026-10-19 14:39:19 | OPTIONS-BTC | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-19 14:39:23 | WS         | WARNING | Caida en fstream[/marketbtcusdt@optionMarkPrice] ([Errno 104] Connection reset by peer). Reintento en 60s...
+2026-10-19 14:39:37 | SPOT-BTC   | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-19 14:39:56 | FUTURES-BTC | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-19 14:40:09 | WS         | WARNING | Caida en stream[btcusdt@depth] ([Errno 111] Connect call failed ('198.135.184.22', 9443)). Reintento en 60s...
+2026-10-19 14:40:17 | WS         | WARNING | Caida en fstream[/publicbtcusdt@optionTrade] ([Errno 104] Connection reset by peer). Reintento en 60s...
+2026-10-19 14:40:17 | WS         | WARNING | Caida en fstream[btcusdt@forceOrder] ([Errno 104] Connection reset by peer). Reintento en 60s...
+2026-10-19 14:40:19 | OPTIONS-BTC | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-19 14:40:23 | WS         | WARNING | Caida en fstream[/marketbtcusdt@optionMarkPrice] ([Errno 104] Connection reset by peer). Reintento en 60s...
+2026-10-19 14:40:37 | SPOT-BTC   | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-19 14:40:56 | FUTURES-BTC | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-19 14:41:09 | WS         | WARNING | Caida en stream[btcusdt@depth] ([Errno 111] Connect call failed ('198.135.184.22', 9443)). Reintento en 60s...
+2026-10-19 14:41:17 | WS         | WARNING | Caida en fstream[/publicbtcusdt@optionTrade] ([Errno 104] Connection reset by peer). Reintento en 60s...
+2026-10-19 14:41:18 | WS         | WARNING | Caida en fstream[btcusdt@forceOrder] ([Errno 104] Connection reset by peer). Reintento en 60s...
+2026-10-19 14:41:19 | OPTIONS-BTC | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-19 14:41:24 | WS         | WARNING | Caida en fstream[/marketbtcusdt@optionMarkPrice] ([Errno 104] Connection reset by peer). Reintento en 60s...
+2026-10-19 14:41:37 | SPOT-BTC   | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-19 14:41:57 | FUTURES-BTC | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-19 14:41:57 | FUTURES-BTC | DEBUG   | CHECKPOINT ejecutado en DuckDB.
+2026-10-19 14:42:09 | WS         | WARNING | Caida en stream[btcusdt@depth] ([Errno 111] Connect call failed ('198.135.184.22', 9443)). Reintento en 60s...
+2026-10-19 14:42:17 | WS         | WARNING | Caida en fstream[/publicbtcusdt@optionTrade] ([Errno 104] Connection reset by peer). Reintento en 60s...
+2026-10-19 14:42:18 | WS         | WARNING | Caida en fstream[btcusdt@forceOrder] ([Errno 104] Connection reset by peer). Reintento en 60s...
+2026-10-19 14:42:19 | OPTIONS-BTC | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-19 14:42:24 | WS         | WARNING | Caida en fstream[/marketbtcusdt@optionMarkPrice] ([Errno 104] Connection reset by peer). Reintento en 60s...
+2026-10-19 14:42:37 | SPOT-BTC   | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-19 14:42:57 | FUTURES-BTC | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-19 14:43:10 | WS         | WARNING | Caida en stream[btcusdt@depth] ([Errno 111] Connect call failed ('198.135.184.22', 9443)). Reintento en 60s...
+2026-10-19 14:43:18 | WS         | WARNING | Caida en fstream[/publicbtcusdt@optionTrade] ([Errno 104] Connection reset by peer). Reintento en 60s...
+2026-10-19 14:43:18 | WS         | WARNING | Caida en fstream[btcusdt@forceOrder] ([Errno 104] Connection reset by peer). Reintento en 60s...
+2026-10-19 14:43:19 | OPTIONS-BTC | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-19 14:43:24 | WS         | WARNING | Caida en fstream[/marketbtcusdt@optionMarkPrice] ([Errno 104] Connection reset by peer). Reintento en 60s...
+2026-10-19 14:43:37 | SPOT-BTC   | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-19 14:43:57 | FUTURES-BTC | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-19 14:44:10 | WS         | WARNING | Caida en stream[btcusdt@depth] ([Errno 111] Connect call failed ('198.135.184.22', 9443)). Reintento en 60s...
+2026-10-19 14:44:18 | WS         | WARNING | Caida en fstream[/publicbtcusdt@optionTrade] ([Errno 104] Connection reset by peer). Reintento en 60s...
+2026-10-19 14:44:18 | WS         | WARNING | Caida en fstream[btcusdt@forceOrder] ([Errno 104] Connection reset by peer). Reintento en 60s...
+2026-10-19 14:44:19 | OPTIONS-BTC | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-19 14:44:24 | WS         | WARNING | Caida en fstream[/marketbtcusdt@optionMarkPrice] ([Errno 104] Connection reset by peer). Reintento en 60s...
+2026-10-19 14:44:37 | SPOT-BTC   | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-19 14:44:57 | FUTURES-BTC | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-19 14:45:10 | WS         | WARNING | Caida en stream[btcusdt@depth] ([Errno 111] Connect call failed ('198.135.184.22', 9443)). Reintento en 60s...
+2026-10-19 14:45:18 | WS         | WARNING | Caida en fstream[/publicbtcusdt@optionTrade] ([Errno 104] Connection reset by peer). Reintento en 60s...
+2026-10-19 14:45:18 | WS         | WARNING | Caida en fstream[btcusdt@forceOrder] ([Errno 104] Connection reset by peer). Reintento en 60s...
+2026-10-19 14:45:19 | OPTIONS-BTC | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-19 14:45:25 | WS         | WARNING | Caida en fstream[/marketbtcusdt@optionMarkPrice] ([Errno 104] Connection reset by peer). Reintento en 60s...
+2026-10-19 14:45:37 | SPOT-BTC   | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-19 14:45:37 | SPOT-BTC   | DEBUG   | CHECKPOINT ejecutado en DuckDB.
+2026-10-19 14:45:57 | FUTURES-BTC | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-19 14:46:11 | WS         | WARNING | Caida en stream[btcusdt@depth] ([Errno 111] Connect call failed ('198.135.184.22', 9443)). Reintento en 60s...
+2026-10-19 14:46:18 | WS         | WARNING | Caida en fstream[/publicbtcusdt@optionTrade] ([Errno 104] Connection reset by peer). Reintento en 60s...
+2026-10-19 14:46:19 | WS         | WARNING | Caida en fstream[btcusdt@forceOrder] ([Errno 104] Connection reset by peer). Reintento en 60s...
+2026-10-19 14:46:19 | OPTIONS-BTC | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-19 14:46:25 | WS         | WARNING | Caida en fstream[/marketbtcusdt@optionMarkPrice] ([Errno 104] Connection reset by peer). Reintento en 60s...
+2026-10-19 14:46:37 | SPOT-BTC   | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-19 14:46:57 | FUTURES-BTC | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-19 14:47:11 | WS         | WARNING | Caida en stream[btcusdt@depth] ([Errno 111] Connect call failed ('198.135.184.22', 9443)). Reintento en 60s...
+2026-10-19 14:47:18 | WS         | WARNING | Caida en fstream[/publicbtcusdt@optionTrade] ([Errno 104] Connection reset by peer). Reintento en 60s...
+2026-10-19 14:47:19 | WS         | WARNING | Caida en fstream[btcusdt@forceOrder] ([Errno 104] Connection reset by peer). Reintento en 60s...
+2026-10-19 14:47:19 | OPTIONS-BTC | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-19 14:47:25 | WS         | WARNING | Caida en fstream[/marketbtcusdt@optionMarkPrice] ([Errno 104] Connection reset by peer). Reintento en 60s...
+2026-10-19 14:47:37 | SPOT-BTC   | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-19 14:47:57 | FUTURES-BTC | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-19 14:48:11 | WS         | WARNING | Caida en stream[btcusdt@depth] ([Errno 111] Connect call failed ('198.135.184.22', 9443)). Reintento en 60s...
+2026-10-19 14:48:18 | WS         | WARNING | Caida en fstream[/publicbtcusdt@optionTrade] ([Errno 104] Connection reset by peer). Reintento en 60s...
+2026-10-19 14:48:19 | WS         | WARNING | Caida en fstream[btcusdt@forceOrder] ([Errno 104] Connection reset by peer). Reintento en 60s...
+2026-10-19 14:48:19 | OPTIONS-BTC | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-19 14:48:19 | OPTIONS-BTC | DEBUG   | CHECKPOINT ejecutado en DuckDB.
+2026-10-19 14:48:25 | WS         | WARNING | Caida en fstream[/marketbtcusdt@optionMarkPrice] ([Errno 104] Connection reset by peer). Reintento en 60s...
+2026-10-19 14:48:37 | SPOT-BTC   | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-19 14:48:57 | FUTURES-BTC | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-19 14:49:11 | WS         | WARNING | Caida en stream[btcusdt@depth] ([Errno 111] Connect call failed ('198.135.184.22', 9443)). Reintento en 60s...
+2026-10-19 14:49:19 | WS         | WARNING | Caida en fstream[/publicbtcusdt@optionTrade] ([Errno 104] Connection reset by peer). Reintento en 60s...
+2026-10-19 14:49:19 | WS         | WARNING | Caida en fstream[btcusdt@forceOrder] ([Errno 104] Connection reset by peer). Reintento en 60s...
+2026-10-19 14:49:20 | OPTIONS-BTC | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-19 14:49:25 | WS         | WARNING | Caida en fstream[/marketbtcusdt@optionMarkPrice] ([Errno 104] Connection reset by peer). Reintento en 60s...
+2026-10-19 14:49:37 | SPOT-BTC   | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-19 14:49:57 | FUTURES-BTC | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-19 14:50:12 | WS         | WARNING | Caida en stream[btcusdt@depth] ([Errno 111] Connect call failed ('198.135.184.22', 9443)). Reintento en 60s...
+2026-10-19 14:50:19 | WS         | WARNING | Caida en fstream[/publicbtcusdt@optionTrade] ([Errno 104] Connection reset by peer). Reintento en 60s...
+2026-10-19 14:50:20 | WS         | WARNING | Caida en fstream[btcusdt@forceOrder] ([Errno 104] Connection reset by peer). Reintento en 60s...
+2026-10-19 14:50:20 | OPTIONS-BTC | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-19 14:50:26 | WS         | WARNING | Caida en fstream[/marketbtcusdt@optionMarkPrice] ([Errno 104] Connection reset by peer). Reintento en 60s...
+2026-10-19 14:50:37 | SPOT-BTC   | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-19 14:50:57 | FUTURES-BTC | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-19 14:51:12 | WS         | WARNING | Caida en stream[btcusdt@depth] ([Errno 111] Connect call failed ('198.135.184.22', 9443)). Reintento en 60s...
+2026-10-19 14:51:19 | WS         | WARNING | Caida en fstream[/publicbtcusdt@optionTrade] ([Errno 104] Connection reset by peer). Reintento en 60s...
+2026-10-19 14:51:20 | OPTIONS-BTC | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-19 14:51:20 | WS         | WARNING | Caida en fstream[btcusdt@forceOrder] ([Errno 104] Connection reset by peer). Reintento en 60s...
+2026-10-19 14:51:26 | WS         | WARNING | Caida en fstream[/marketbtcusdt@optionMarkPrice] ([Errno 104] Connection reset by peer). Reintento en 60s...
+2026-10-19 14:51:37 | SPOT-BTC   | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-19 14:51:57 | FUTURES-BTC | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-19 14:52:12 | WS         | WARNING | Caida en stream[btcusdt@depth] ([Errno 111] Connect call failed ('198.135.184.22', 9443)). Reintento en 60s...
+2026-10-19 14:52:19 | WS         | WARNING | Caida en fstream[/publicbtcusdt@optionTrade] ([Errno 104] Connection reset by peer). Reintento en 60s...
+2026-10-19 14:52:20 | OPTIONS-BTC | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-19 14:52:20 | WS         | WARNING | Caida en fstream[btcusdt@forceOrder] ([Errno 104] Connection reset by peer). Reintento en 60s...
+2026-10-19 14:52:26 | WS         | WARNING | Caida en fstream[/marketbtcusdt@optionMarkPrice] ([Errno 104] Connection reset by peer). Reintento en 60s...
+2026-10-19 14:52:38 | SPOT-BTC   | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-19 14:52:57 | FUTURES-BTC | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-19 14:53:12 | WS         | WARNING | Caida en stream[btcusdt@depth] ([Errno -3] Temporary failure in name resolution). Reintento en 60s...
+2026-10-19 14:53:19 | WS         | WARNING | Caida en fstream[/publicbtcusdt@optionTrade] ([Errno -3] Temporary failure in name resolution). Reintento en 60s...
+2026-10-19 14:53:20 | OPTIONS-BTC | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-19 14:53:20 | WS         | WARNING | Caida en fstream[btcusdt@forceOrder] ([Errno -3] Temporary failure in name resolution). Reintento en 60s...
+2026-10-19 14:53:26 | WS         | WARNING | Caida en fstream[/marketbtcusdt@optionMarkPrice] ([Errno -3] Temporary failure in name resolution). Reintento en 60s...
+2026-10-19 14:53:38 | SPOT-BTC   | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-19 14:53:57 | FUTURES-BTC | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-19 14:54:12 | WS         | WARNING | Caida en stream[btcusdt@depth] ([Errno -3] Temporary failure in name resolution). Reintento en 60s...
+2026-10-19 14:54:19 | WS         | WARNING | Caida en fstream[/publicbtcusdt@optionTrade] ([Errno -3] Temporary failure in name resolution). Reintento en 60s...
+2026-10-19 14:54:20 | OPTIONS-BTC | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-19 14:54:20 | WS         | WARNING | Caida en fstream[btcusdt@forceOrder] ([Errno -3] Temporary failure in name resolution). Reintento en 60s...
+2026-10-19 14:54:26 | WS         | WARNING | Caida en fstream[/marketbtcusdt@optionMarkPrice] ([Errno -3] Temporary failure in name resolution). Reintento en 60s...
+2026-10-19 14:54:38 | SPOT-BTC   | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-19 14:54:57 | FUTURES-BTC | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-19 14:55:12 | WS         | WARNING | Caida en stream[btcusdt@depth] ([Errno -3] Temporary failure in name resolution). Reintento en 60s...
+2026-10-19 14:55:19 | WS         | WARNING | Caida en fstream[/publicbtcusdt@optionTrade] ([Errno -3] Temporary failure in name resolution). Reintento en 60s...
+2026-10-19 14:55:20 | OPTIONS-BTC | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-19 14:55:20 | WS         | WARNING | Caida en fstream[btcusdt@forceOrder] ([Errno -3] Temporary failure in name resolution). Reintento en 60s...
+2026-10-19 14:55:26 | WS         | WARNING | Caida en fstream[/marketbtcusdt@optionMarkPrice] ([Errno -3] Temporary failure in name resolution). Reintento en 60s...
+2026-10-19 14:55:38 | SPOT-BTC   | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-19 14:55:57 | FUTURES-BTC | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-19 14:56:12 | WS         | WARNING | Caida en stream[btcusdt@depth] ([Errno -3] Temporary failure in name resolution). Reintento en 60s...
+2026-10-19 14:56:19 | WS         | WARNING | Caida en fstream[/publicbtcusdt@optionTrade] ([Errno -3] Temporary failure in name resolution). Reintento en 60s...
+2026-10-19 14:56:20 | OPTIONS-BTC | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-19 14:56:20 | WS         | WARNING | Caida en fstream[btcusdt@forceOrder] ([Errno -3] Temporary failure in name resolution). Reintento en 60s...
+2026-10-19 14:56:26 | WS         | WARNING | Caida en fstream[/marketbtcusdt@optionMarkPrice] ([Errno -3] Temporary failure in name resolution). Reintento en 60s...
+2026-10-19 14:56:38 | SPOT-BTC   | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-19 14:56:57 | FUTURES-BTC | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-19 14:56:57 | FUTURES-BTC | DEBUG   | CHECKPOINT ejecutado en DuckDB.
+2026-10-19 14:57:12 | WS         | WARNING | Caida en stream[btcusdt@depth] ([Errno -3] Temporary failure in name resolution). Reintento en 60s...
+2026-10-19 14:57:19 | WS         | WARNING | Caida en fstream[/publicbtcusdt@optionTrade] ([Errno -3] Temporary failure in name resolution). Reintento en 60s...
+2026-10-19 14:57:20 | WS         | WARNING | Caida en fstream[btcusdt@forceOrder] ([Errno -3] Temporary failure in name resolution). Reintento en 60s...
+2026-10-19 14:57:20 | OPTIONS-BTC | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-19 14:57:26 | WS         | WARNING | Caida en fstream[/marketbtcusdt@optionMarkPrice] ([Errno -3] Temporary failure in name resolution). Reintento en 60s...
+2026-10-19 14:57:38 | SPOT-BTC   | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-19 14:57:58 | FUTURES-BTC | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-19 14:58:12 | WS         | WARNING | Caida en stream[btcusdt@depth] ([Errno -3] Temporary failure in name resolution). Reintento en 60s...
+2026-10-19 14:58:19 | WS         | WARNING | Caida en fstream[/publicbtcusdt@optionTrade] ([Errno -3] Temporary failure in name resolution). Reintento en 60s...
+2026-10-19 14:58:20 | WS         | WARNING | Caida en fstream[btcusdt@forceOrder] ([Errno -3] Temporary failure in name resolution). Reintento en 60s...
+2026-10-19 14:58:20 | OPTIONS-BTC | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-19 14:58:26 | WS         | WARNING | Caida en fstream[/marketbtcusdt@optionMarkPrice] ([Errno -3] Temporary failure in name resolution). Reintento en 60s...
+2026-10-19 14:58:38 | SPOT-BTC   | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-19 14:58:45 | FUTURES-BTC | INFO    | Parada recibida. Vaciando buffers y eliminando .wal
+2026-10-19 14:58:45 | OPTIONS-BTC | INFO    | Parada recibida. Vaciando buffers y eliminando .wal
+2026-10-19 14:58:45 | SPOT-BTC   | INFO    | Parada recibida. Vaciando buffers y eliminando .wal
+2026-10-19 14:58:45 | FUTURES-BTC | INFO    | Base de datos cerrada y .wal consolidado.
+2026-10-19 14:58:45 | FUTURES-BTC | INFO    | Futures Worker detenido correctamente.
+2026-10-19 14:58:45 | SPOT-BTC   | INFO    | Base de datos cerrada y .wal consolidado.
+2026-10-19 14:58:45 | OPTIONS-BTC | INFO    | Base de datos cerrada y .wal consolidado.
+2026-10-19 19:57:35 | FUTURES-BTC | INFO    | Iniciando Futures Worker...
+2026-10-19 19:57:35 | FUTURES-BTC | INFO    | T0 leido correctamente | Modo: live_only (Vision desactivado)
+2026-10-19 19:57:36 | WS         | INFO    | Conectado -> fstream[btcusdt@forceOrder]
+2026-10-19 19:57:36 | WS         | DEBUG   | Full URL conectada: wss://fstream.binance.com/ws/btcusdt@forceOrder
+2026-10-19 19:57:38 | WS         | INFO    | Conectado -> fstream[/publicbtcusdt@optionTrade]
+2026-10-19 19:57:38 | WS         | DEBUG   | Full URL conectada: wss://fstream.binance.com/public/ws/btcusdt@optionTrade
+2026-10-19 19:57:38 | WS         | INFO    | Conectado -> fstream[/marketbtcusdt@optionMarkPrice]
+2026-10-19 19:57:38 | WS         | DEBUG   | Full URL conectada: wss://fstream.binance.com/market/ws/btcusdt@optionMarkPrice
+2026-10-19 19:57:38 | WS         | INFO    | Conectado -> stream[btcusdt@depth]
+2026-10-19 19:57:38 | WS         | DEBUG   | Full URL conectada: wss://stream.binance.com:9443/ws/btcusdt@depth
+2026-10-19 19:57:47 | WS         | INFO    | Conectado -> fstream[btc-261225-85000-c..+24 @depth5]
+2026-10-19 19:57:47 | WS         | DEBUG   | Full URL conectada: wss://fstream.binance.com/public/stream?streams=btc-261225-85000-c@depth5@100ms/btc-261225-85000-p@depth5@100ms/btc-261225-80000-c@depth5@100ms/btc-261225-80000-p@depth5@100ms/btc-261225-90000-c@depth5@100ms/btc-261225-95000-c@depth5@100ms/btc-261225-60000-p@depth5@100ms/btc-261225-100000-c@depth5@100ms/btc-261225-70000-p@depth5@100ms/btc-261225-65000-p@depth5@100ms/btc-261225-55000-p@depth5@100ms/btc-261225-75000-p@depth5@100ms/btc-261225-72000-p@depth5@100ms/btc-261225-68000-p@depth5@100ms/btc-261225-82000-c@depth5@100ms/btc-261225-82000-p@depth5@100ms/btc-261225-78000-p@depth5@100ms/btc-261225-88000-c@depth5@100ms/btc-261225-88000-p@depth5@100ms/btc-261225-62000-p@depth5@100ms/btc-270326-100000-c@depth5@100ms/btc-270326-50000-p@depth5@100ms/btc-270326-120000-c@depth5@100ms/btc-270326-66000-p@depth5@100ms/btc-270326-60000-p@depth5@100ms
+2026-10-19 19:57:47 | WS         | INFO    | Conectado -> fstream[btc-270326-82000-c..+24 @depth5]
+2026-10-19 19:57:47 | WS         | DEBUG   | Full URL conectada: wss://fstream.binance.com/public/stream?streams=btc-270326-82000-c@depth5@100ms/btc-270326-82000-p@depth5@100ms/btc-270326-110000-c@depth5@100ms/btc-270326-86000-c@depth5@100ms/btc-270326-86000-p@depth5@100ms/btc-270326-78000-p@depth5@100ms/btc-270326-62000-p@depth5@100ms/btc-270326-64000-p@depth5@100ms/btc-270326-72000-p@depth5@100ms/btc-270326-76000-p@depth5@100ms/btc-270326-90000-c@depth5@100ms/btc-270326-95000-c@depth5@100ms/btc-270326-90000-p@depth5@100ms/btc-270326-74000-p@depth5@100ms/btc-270326-115000-c@depth5@100ms/btc-270326-55000-p@depth5@100ms/btc-261225-86000-c@depth5@100ms/btc-261225-84000-c@depth5@100ms/btc-261225-86000-p@depth5@100ms/btc-261225-76000-p@depth5@100ms/btc-261225-84000-p@depth5@100ms/btc-270326-80000-c@depth5@100ms/btc-261225-74000-p@depth5@100ms/btc-270326-80000-p@depth5@100ms/btc-270326-70000-p@depth5@100ms
+2026-10-19 19:57:48 | WS         | INFO    | Conectado -> fstream[btc-270326-94000-c..+24 @depth5]
+2026-10-19 19:57:48 | WS         | DEBUG   | Full URL conectada: wss://fstream.binance.com/public/stream?streams=btc-270326-94000-c@depth5@100ms/btc-270326-98000-c@depth5@100ms/btc-270326-94000-p@depth5@100ms/btc-270326-105000-c@depth5@100ms/btc-270326-92000-c@depth5@100ms/btc-261225-98000-c@depth5@100ms/btc-270326-92000-p@depth5@100ms/btc-270326-84000-c@depth5@100ms/btc-270326-88000-c@depth5@100ms/btc-261225-92000-c@depth5@100ms/btc-270326-84000-p@depth5@100ms/btc-270326-88000-p@depth5@100ms/btc-270326-56000-p@depth5@100ms/btc-270326-65000-p@depth5@100ms/btc-270326-58000-p@depth5@100ms/btc-270326-54000-p@depth5@100ms/btc-270326-68000-p@depth5@100ms/btc-270326-52000-p@depth5@100ms/btc-261225-64000-p@depth5@100ms/btc-261225-58000-p@depth5@100ms/btc-261225-66000-p@depth5@100ms/btc-261030-86000-c@depth5@100ms/btc-261030-80000-p@depth5@100ms/btc-261030-72000-p@depth5@100ms/btc-261030-76000-p@depth5@100ms
+2026-10-19 19:57:48 | WS         | INFO    | Conectado -> fstream[btc-261030-74000-p..+24 @depth5]
+2026-10-19 19:57:48 | WS         | DEBUG   | Full URL conectada: wss://fstream.binance.com/public/stream?streams=btc-261030-74000-p@depth5@100ms/btc-261030-71000-p@depth5@100ms/btc-261030-75000-p@depth5@100ms/btc-261225-96000-c@depth5@100ms/btc-261030-73000-p@depth5@100ms/btc-261030-84000-c@depth5@100ms/btc-261030-78000-p@depth5@100ms/btc-261030-82000-c@depth5@100ms/btc-261030-82000-p@depth5@100ms/btc-261030-85000-c@depth5@100ms/btc-261030-88000-c@depth5@100ms/btc-261030-77000-p@depth5@100ms/btc-261030-79000-p@depth5@100ms/btc-261030-81000-c@depth5@100ms/btc-261030-81000-p@depth5@100ms/btc-261030-87000-c@depth5@100ms/btc-270326-96000-c@depth5@100ms/btc-261225-102000-c@depth5@100ms/btc-261030-83000-c@depth5@100ms/btc-261030-83000-p@depth5@100ms/btc-270326-85000-c@depth5@100ms/btc-270326-85000-p@depth5@100ms/btc-261225-94000-c@depth5@100ms/btc-261023-79000-p@depth5@100ms/btc-261023-81000-p@depth5@100ms
+2026-10-19 19:57:48 | WS         | INFO    | Conectado -> fstream[btc-261023-80000-p..+24 @depth5]
+2026-10-19 19:57:48 | WS         | DEBUG   | Full URL conectada: wss://fstream.binance.com/public/stream?streams=btc-261023-80000-p@depth5@100ms/btc-261023-82000-c@depth5@100ms/btc-261023-82000-p@depth5@100ms/btc-261023-83000-c@depth5@100ms/btc-261023-85000-c@depth5@100ms/btc-261023-84000-c@depth5@100ms/btc-261023-83500-c@depth5@100ms/btc-261023-81500-c@depth5@100ms/btc-261023-81500-p@depth5@100ms/btc-261023-82500-c@depth5@100ms/btc-261023-82500-p@depth5@100ms/btc-261023-84500-c@depth5@100ms/btc-261020-81000-p@depth5@100ms/btc-261020-82000-c@depth5@100ms/btc-261020-82000-p@depth5@100ms/btc-261020-82500-c@depth5@100ms/btc-261020-81500-p@depth5@100ms/btc-261021-80000-p@depth5@100ms/btc-261021-81000-p@depth5@100ms/btc-261021-82000-c@depth5@100ms/btc-261021-82000-p@depth5@100ms/btc-261021-82500-c@depth5@100ms/btc-261021-82500-p@depth5@100ms/btc-261021-83000-c@depth5@100ms/btc-261020-81750-c@depth5@100ms
+2026-10-19 19:57:49 | WS         | INFO    | Conectado -> fstream[btc-261021-81500-c..+7 @depth5]
+2026-10-19 19:57:49 | WS         | DEBUG   | Full URL conectada: wss://fstream.binance.com/public/stream?streams=btc-261021-81500-c@depth5@100ms/btc-261020-82750-c@depth5@100ms/btc-261020-81750-p@depth5@100ms/btc-261021-81500-p@depth5@100ms/btc-261020-81250-p@depth5@100ms/btc-261020-82250-c@depth5@100ms/btc-261021-80500-p@depth5@100ms/btc-261021-83500-c@depth5@100ms
+2026-10-19 19:58:35 | FUTURES-BTC | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-19 19:58:39 | SPOT-BTC   | INFO    | STATUS 1m -> ob_diff: +60 | ob_snapshot: +1
+2026-10-19 19:58:42 | OPTIONS-BTC | INFO    | STATUS 1m -> griegas: +676 | oi: +676 | options: +676 | top_orderbook: +1,583 | trades: +1
+2026-10-19 19:59:35 | FUTURES-BTC | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-19 19:59:43 | SPOT-BTC   | INFO    | STATUS 1m -> ob_diff: +65
+2026-10-19 19:59:50 | OPTIONS-BTC | INFO    | STATUS 1m -> top_orderbook: +2,420 | trades: +8
+2026-10-19 20:00:35 | FUTURES-BTC | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-19 20:00:50 | SPOT-BTC   | INFO    | STATUS 1m -> ob_diff: +66
+2026-10-19 20:01:04 | OPTIONS-BTC | INFO    | STATUS 1m -> top_orderbook: +3,638 | trades: +12
+2026-10-19 20:01:35 | FUTURES-BTC | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-19 20:02:00 | SPOT-BTC   | INFO    | STATUS 1m -> ob_diff: +69
+2026-10-19 20:02:36 | FUTURES-BTC | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-19 20:03:09 | SPOT-BTC   | INFO    | STATUS 1m -> ob_diff: +70
+2026-10-19 20:03:36 | FUTURES-BTC | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-19 20:03:42 | WS         | WARNING | Caida en fstream[/marketbtcusdt@optionMarkPrice] (sent 1011 (internal error) keepalive ping timeout; no close frame received). Reintento en 1s...
+2026-10-19 20:04:19 | SPOT-BTC   | INFO    | STATUS 1m -> ob_diff: +70
+2026-10-19 20:04:36 | FUTURES-BTC | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-19 20:04:37 | WS         | WARNING | Inactividad (1800s) en fstream[/marketbtcusdt@optionMarkPrice]. Refrescando...
+2026-10-19 20:05:32 | SPOT-BTC   | INFO    | STATUS 1m -> ob_diff: +73
+2026-10-19 20:05:36 | FUTURES-BTC | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-19 20:06:36 | FUTURES-BTC | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-19 20:06:44 | SPOT-BTC   | INFO    | STATUS 1m -> ob_diff: +72
+2026-10-19 20:07:33 | OPTIONS-BTC | INFO    | STATUS 1m -> top_orderbook: +20,781 | trades: +29
+2026-10-19 20:07:33 | WS         | WARNING | Inactividad (1800s) en fstream[/marketbtcusdt@optionMarkPrice]. Refrescando...
+2026-10-19 20:07:36 | FUTURES-BTC | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-19 20:07:57 | SPOT-BTC   | INFO    | STATUS 1m -> ob_diff: +73
+2026-10-19 20:08:27 | WS         | WARNING | Caida en fstream[btc-270326-94000-c..+24 @depth5] (sent 1011 (internal error) keepalive ping timeout; no close frame received). Reintento en 1s...
+2026-10-19 20:08:36 | FUTURES-BTC | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-19 20:08:38 | WS         | WARNING | Caida en fstream[/publicbtcusdt@optionTrade] (sent 1011 (internal error) keepalive ping timeout; no close frame received). Reintento en 1s...
+2026-10-19 20:08:38 | WS         | WARNING | Caida en fstream[btc-261023-80000-p..+24 @depth5] (sent 1011 (internal error) keepalive ping timeout; no close frame received). Reintento en 1s...
+2026-10-19 20:08:43 | WS         | WARNING | Inactividad (1800s) en fstream[/marketbtcusdt@optionMarkPrice]. Refrescando...
+2026-10-19 20:08:43 | WS         | WARNING | Caida en fstream[btc-261225-85000-c..+24 @depth5] (sent 1011 (internal error) keepalive ping timeout; no close frame received). Reintento en 1s...
+2026-10-19 20:08:45 | WS         | WARNING | Caida en fstream[btc-270326-82000-c..+24 @depth5] (sent 1011 (internal error) keepalive ping timeout; no close frame received). Reintento en 1s...
+2026-10-19 20:08:46 | WS         | INFO    | Reconectado -> fstream[btc-270326-94000-c..+24 @depth5]
+2026-10-19 20:08:46 | WS         | DEBUG   | Full URL conectada: wss://fstream.binance.com/public/stream?streams=btc-270326-94000-c@depth5@100ms/btc-270326-98000-c@depth5@100ms/btc-270326-94000-p@depth5@100ms/btc-270326-105000-c@depth5@100ms/btc-270326-92000-c@depth5@100ms/btc-261225-98000-c@depth5@100ms/btc-270326-92000-p@depth5@100ms/btc-270326-84000-c@depth5@100ms/btc-270326-88000-c@depth5@100ms/btc-261225-92000-c@depth5@100ms/btc-270326-84000-p@depth5@100ms/btc-270326-88000-p@depth5@100ms/btc-270326-56000-p@depth5@100ms/btc-270326-65000-p@depth5@100ms/btc-270326-58000-p@depth5@100ms/btc-270326-54000-p@depth5@100ms/btc-270326-68000-p@depth5@100ms/btc-270326-52000-p@depth5@100ms/btc-261225-64000-p@depth5@100ms/btc-261225-58000-p@depth5@100ms/btc-261225-66000-p@depth5@100ms/btc-261030-86000-c@depth5@100ms/btc-261030-80000-p@depth5@100ms/btc-261030-72000-p@depth5@100ms/btc-261030-76000-p@depth5@100ms
+2026-10-19 20:08:47 | WS         | INFO    | Reconectado -> fstream[/publicbtcusdt@optionTrade]
+2026-10-19 20:08:47 | WS         | DEBUG   | Full URL conectada: wss://fstream.binance.com/public/ws/btcusdt@optionTrade
+2026-10-19 20:08:47 | WS         | INFO    | Reconectado -> fstream[btc-261225-85000-c..+24 @depth5]
+2026-10-19 20:08:47 | WS         | DEBUG   | Full URL conectada: wss://fstream.binance.com/public/stream?streams=btc-261225-85000-c@depth5@100ms/btc-261225-85000-p@depth5@100ms/btc-261225-80000-c@depth5@100ms/btc-261225-80000-p@depth5@100ms/btc-261225-90000-c@depth5@100ms/btc-261225-95000-c@depth5@100ms/btc-261225-60000-p@depth5@100ms/btc-261225-100000-c@depth5@100ms/btc-261225-70000-p@depth5@100ms/btc-261225-65000-p@depth5@100ms/btc-261225-55000-p@depth5@100ms/btc-261225-75000-p@depth5@100ms/btc-261225-72000-p@depth5@100ms/btc-261225-68000-p@depth5@100ms/btc-261225-82000-c@depth5@100ms/btc-261225-82000-p@depth5@100ms/btc-261225-78000-p@depth5@100ms/btc-261225-88000-c@depth5@100ms/btc-261225-88000-p@depth5@100ms/btc-261225-62000-p@depth5@100ms/btc-270326-100000-c@depth5@100ms/btc-270326-50000-p@depth5@100ms/btc-270326-120000-c@depth5@100ms/btc-270326-66000-p@depth5@100ms/btc-270326-60000-p@depth5@100ms
+2026-10-19 20:08:47 | WS         | INFO    | Reconectado -> fstream[/marketbtcusdt@optionMarkPrice]
+2026-10-19 20:08:47 | WS         | DEBUG   | Full URL conectada: wss://fstream.binance.com/market/ws/btcusdt@optionMarkPrice
+2026-10-19 20:08:47 | WS         | INFO    | Reconectado -> fstream[btc-261023-80000-p..+24 @depth5]
+2026-10-19 20:08:47 | WS         | DEBUG   | Full URL conectada: wss://fstream.binance.com/public/stream?streams=btc-261023-80000-p@depth5@100ms/btc-261023-82000-c@depth5@100ms/btc-261023-82000-p@depth5@100ms/btc-261023-83000-c@depth5@100ms/btc-261023-85000-c@depth5@100ms/btc-261023-84000-c@depth5@100ms/btc-261023-83500-c@depth5@100ms/btc-261023-81500-c@depth5@100ms/btc-261023-81500-p@depth5@100ms/btc-261023-82500-c@depth5@100ms/btc-261023-82500-p@depth5@100ms/btc-261023-84500-c@depth5@100ms/btc-261020-81000-p@depth5@100ms/btc-261020-82000-c@depth5@100ms/btc-261020-82000-p@depth5@100ms/btc-261020-82500-c@depth5@100ms/btc-261020-81500-p@depth5@100ms/btc-261021-80000-p@depth5@100ms/btc-261021-81000-p@depth5@100ms/btc-261021-82000-c@depth5@100ms/btc-261021-82000-p@depth5@100ms/btc-261021-82500-c@depth5@100ms/btc-261021-82500-p@depth5@100ms/btc-261021-83000-c@depth5@100ms/btc-261020-81750-c@depth5@100ms
+2026-10-19 20:08:49 | WS         | INFO    | Reconectado -> fstream[btc-270326-82000-c..+24 @depth5]
+2026-10-19 20:08:49 | WS         | DEBUG   | Full URL conectada: wss://fstream.binance.com/public/stream?streams=btc-270326-82000-c@depth5@100ms/btc-270326-82000-p@depth5@100ms/btc-270326-110000-c@depth5@100ms/btc-270326-86000-c@depth5@100ms/btc-270326-86000-p@depth5@100ms/btc-270326-78000-p@depth5@100ms/btc-270326-62000-p@depth5@100ms/btc-270326-64000-p@depth5@100ms/btc-270326-72000-p@depth5@100ms/btc-270326-76000-p@depth5@100ms/btc-270326-90000-c@depth5@100ms/btc-270326-95000-c@depth5@100ms/btc-270326-90000-p@depth5@100ms/btc-270326-74000-p@depth5@100ms/btc-270326-115000-c@depth5@100ms/btc-270326-55000-p@depth5@100ms/btc-261225-86000-c@depth5@100ms/btc-261225-84000-c@depth5@100ms/btc-261225-86000-p@depth5@100ms/btc-261225-76000-p@depth5@100ms/btc-261225-84000-p@depth5@100ms/btc-270326-80000-c@depth5@100ms/btc-261225-74000-p@depth5@100ms/btc-270326-80000-p@depth5@100ms/btc-270326-70000-p@depth5@100ms
+2026-10-19 20:09:11 | SPOT-BTC   | INFO    | STATUS 1m -> ob_diff: +73
+2026-10-19 20:09:36 | FUTURES-BTC | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-19 20:10:08 | OPTIONS-BTC | INFO    | STATUS 1m -> top_orderbook: +7,436 | trades: +11
+2026-10-19 20:10:23 | SPOT-BTC   | INFO    | STATUS 1m -> ob_diff: +73
+2026-10-19 20:10:36 | FUTURES-BTC | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-19 20:11:36 | FUTURES-BTC | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-19 20:11:36 | SPOT-BTC   | INFO    | STATUS 1m -> ob_diff: +73
+2026-10-19 20:12:24 | OPTIONS-BTC | INFO    | STATUS 1m -> top_orderbook: +6,226 | trades: +6
+2026-10-19 20:12:36 | FUTURES-BTC | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-19 20:12:36 | FUTURES-BTC | DEBUG   | CHECKPOINT ejecutado en DuckDB.
+2026-10-19 20:12:48 | SPOT-BTC   | INFO    | STATUS 1m -> ob_diff: +72
+2026-10-19 20:13:36 | FUTURES-BTC | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-19 20:14:01 | SPOT-BTC   | INFO    | STATUS 1m -> ob_diff: +73
+2026-10-19 20:14:32 | OPTIONS-BTC | INFO    | STATUS 1m -> griegas: +676 | oi: +676 | options: +676 | top_orderbook: +4,876 | trades: +3
+2026-10-19 20:14:36 | FUTURES-BTC | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-19 20:15:12 | SPOT-BTC   | INFO    | STATUS 1m -> ob_diff: +71
+2026-10-19 20:15:12 | SPOT-BTC   | DEBUG   | CHECKPOINT ejecutado en DuckDB.
+2026-10-19 20:15:36 | FUTURES-BTC | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-19 20:16:02 | OPTIONS-BTC | INFO    | STATUS 1m -> top_orderbook: +3,249 | trades: +7
+2026-10-19 20:16:25 | SPOT-BTC   | INFO    | STATUS 1m -> ob_diff: +72
+2026-10-19 20:16:36 | FUTURES-BTC | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-19 20:17:33 | OPTIONS-BTC | INFO    | STATUS 1m -> top_orderbook: +3,878 | trades: +4
+2026-10-19 20:17:36 | FUTURES-BTC | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-19 20:17:37 | SPOT-BTC   | INFO    | STATUS 1m -> ob_diff: +73
+2026-10-19 20:18:36 | FUTURES-BTC | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-19 20:18:54 | SPOT-BTC   | INFO    | STATUS 1m -> ob_diff: +76
+2026-10-19 20:19:37 | FUTURES-BTC | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-19 20:20:10 | SPOT-BTC   | INFO    | STATUS 1m -> ob_diff: +76
+2026-10-19 20:20:21 | OPTIONS-BTC | INFO    | STATUS 1m -> top_orderbook: +7,634 | trades: +4
+2026-10-19 20:20:37 | FUTURES-BTC | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-19 20:21:47 | FUTURES-BTC | INFO    | Iniciando Futures Worker...
+2026-10-19 20:21:47 | FUTURES-BTC | INFO    | T0 leido correctamente | Modo: live_only (Vision desactivado)
+2026-10-19 20:21:48 | WS         | INFO    | Conectado -> fstream[btcusdt@forceOrder]
+2026-10-19 20:21:48 | WS         | DEBUG   | Full URL conectada: wss://fstream.binance.com/ws/btcusdt@forceOrder
+2026-10-19 20:22:06 | FUTURES-BTC | INFO    | Parada recibida. Vaciando buffers y eliminando .wal
+2026-10-19 20:23:55 | SPOT-BTC   | INFO    | Iniciando Spot Worker...
+2026-10-19 20:23:55 | SPOT-BTC   | INFO    | T0 leido correctamente | Modo: live_only (Vision desactivado)
+2026-10-19 20:23:55 | FUTURES-BTC | INFO    | Iniciando Futures Worker...
+2026-10-19 20:23:55 | FUTURES-BTC | INFO    | T0 leido correctamente | Modo: live_only (Vision desactivado)
+2026-10-19 20:23:56 | WS         | INFO    | Conectado -> fstream[btcusdt@forceOrder]
+2026-10-19 20:23:56 | WS         | DEBUG   | Full URL conectada: wss://fstream.binance.com/ws/btcusdt@forceOrder
+2026-10-19 20:23:58 | WS         | INFO    | Conectado -> stream[btcusdt@depth]
+2026-10-19 20:23:58 | WS         | DEBUG   | Full URL conectada: wss://stream.binance.com:9443/ws/btcusdt@depth
+2026-10-19 20:24:55 | FUTURES-BTC | INFO    | STATUS 1m -> En espera de nuevos eventos (0 filas en el ultimo min)
+2026-10-19 20:24:59 | SPOT-BTC   | INFO    | STATUS 1m -> ob_diff: +61 | ob_snapshot: +1
+2026-10-19 20:25:07 | FUTURES-BTC | INFO    | Parada recibida. Vaciando buffers y eliminando .wal
+2026-10-19 20:25:07 | SPOT-BTC   | INFO    | Parada recibida. Vaciando buffers y eliminando .wal
+2026-10-19 20:25:12 | WS         | DEBUG   | Cerrando socket por parada: stream[btcusdt@depth]
+2026-10-19 20:25:12 | WS         | DEBUG   | Cerrando socket por parada: fstream[btcusdt@forceOrder]
+2026-10-19 20:25:12 | FUTURES-BTC | INFO    | Base de datos cerrada y .wal consolidado.
+2026-10-19 20:25:13 | SPOT-BTC   | INFO    | Base de datos cerrada y .wal consolidado.
+2026-10-19 20:31:06 | SPOT-BTC   | INFO    | Iniciando Spot Worker...
+2026-10-19 20:31:06 | SPOT-BTC   | INFO    | T0 leido correctamente | Modo: live_only (Vision desactivado)
+2026-10-19 20:31:06 | FUTURES-BTC | INFO    | Iniciando Futures Worker...
+2026-10-19 20:31:06 | FUTURES-BTC | INFO    | T0 leido correctamente | Modo: live_only (Vision desactivado)
+2026-10-19 20:31:07 | WS         | INFO    | Conectado -> fstream[btcusdt@forceOrder]
+2026-10-19 20:31:07 | WS         | DEBUG   | Full URL conectada: wss://fstream.binance.com/ws/btcusdt@forceOrder
+2026-10-19 20:31:09 | WS         | INFO    | Conectado -> stream[btcusdt@depth]
+2026-10-19 20:31:09 | WS         | DEBUG   | Full URL conectada: wss://stream.binance.com:9443/ws/btcusdt@depth
+2026-10-19 20:31:29 | FUTURES-BTC | INFO    | Parada recibida. Vaciando buffers y eliminando .wal...
+2026-10-19 20:31:29 | SPOT-BTC   | INFO    | Parada recibida. Vaciando buffers y eliminando .wal...
+2026-10-19 20:31:34 | WS         | DEBUG   | Cerrando socket por parada: fstream[btcusdt@forceOrder]
+2026-10-19 20:31:34 | FUTURES-BTC | INFO    | Base de datos cerrada y .wal consolidado.
+2026-10-19 20:31:34 | WS         | DEBUG   | Cerrando socket por parada: stream[btcusdt@depth]
+2026-10-19 20:31:35 | SPOT-BTC   | INFO    | Base de datos cerrada y .wal consolidado.
+2026-10-19 21:11:21 | SPOT-BTC   | INFO    | Iniciando Spot Worker...
+2026-10-19 21:11:21 | FUTURES-BTC | INFO    | Iniciando Futures Worker...
+2026-10-19 21:11:21 | FUTURES-BTC | INFO    | T0 leido correctamente | Modo: live_only (Vision desactivado)
+2026-10-19 21:11:21 | SPOT-BTC   | INFO    | T0 leido correctamente | Modo: live_only (Vision desactivado)
+2026-10-19 21:11:22 | WS         | INFO    | Conectado -> fstream[btcusdt@forceOrder]
+2026-10-19 21:11:22 | WS         | DEBUG   | Full URL conectada: wss://fstream.binance.com/ws/btcusdt@forceOrder
+2026-10-19 21:11:24 | WS         | INFO    | Conectado -> stream[btcusdt@depth]
+2026-10-19 21:11:24 | WS         | DEBUG   | Full URL conectada: wss://stream.binance.com:9443/ws/btcusdt@depth
+2026-10-19 21:11:25 | FUTURES-BTC | INFO    | Parada recibida. Vaciando buffers y eliminando .wal...
+2026-10-19 21:11:26 | SPOT-BTC   | INFO    | Parada recibida. Vaciando buffers y eliminando .wal...
+2026-10-19 21:11:30 | WS         | DEBUG   | Cerrando socket por parada: fstream[btcusdt@forceOrder]
+2026-10-19 21:11:30 | FUTURES-BTC | INFO    | Base de datos cerrada y .wal consolidado.
+2026-10-19 21:11:31 | WS         | DEBUG   | Cerrando socket por parada: stream[btcusdt@depth]
+2026-10-19 21:11:31 | SPOT-BTC   | INFO    | Base de datos cerrada y .wal consolidado.
+2026-10-19 21:12:28 | SPOT-BTC   | INFO    | Iniciando Spot Worker...
+2026-10-19 21:12:28 | FUTURES-BTC | INFO    | Iniciando Futures Worker...
+2026-10-19 21:12:28 | SPOT-BTC   | INFO    | T0 leido correctamente | Modo: live_only (Vision desactivado)
+2026-10-19 21:12:28 | FUTURES-BTC | INFO    | T0 leido correctamente | Modo: live_only (Vision desactivado)
+2026-10-19 21:12:28 | WS         | DEBUG   | Cerrando socket por parada: fstream[/marketbtcusdt@optionMarkPrice]
+2026-10-19 21:12:28 | WS         | DEBUG   | Cerrando socket por parada: fstream[/publicbtcusdt@optionTrade]
+2026-10-19 21:12:28 | OPTIONS-BTC | INFO    | Base de datos cerrada y .wal consolidado.
+2026-10-19 21:12:29 | WS         | INFO    | Conectado -> fstream[btcusdt@forceOrder]
+2026-10-19 21:12:29 | WS         | DEBUG   | Full URL conectada: wss://fstream.binance.com/ws/btcusdt@forceOrder
+2026-10-19 21:12:31 | WS         | INFO    | Conectado -> stream[btcusdt@depth]
+2026-10-19 21:12:31 | WS         | DEBUG   | Full URL conectada: wss://stream.binance.com:9443/ws/btcusdt@depth
+2026-10-19 21:12:38 | WS         | DEBUG   | Cerrando socket por parada: fstream[/marketbtcusdt@optionMarkPrice]
+2026-10-19 21:12:38 | WS         | DEBUG   | Cerrando socket por parada: fstream[/publicbtcusdt@optionTrade]
+2026-10-19 21:12:38 | OPTIONS-BTC | INFO    | Base de datos cerrada y .wal consolidado.
+2026-10-19 21:12:48 | WS         | DEBUG   | Cerrando socket por parada: fstream[/marketbtcusdt@optionMarkPrice]
+2026-10-19 21:12:48 | WS         | DEBUG   | Cerrando socket por parada: fstream[/publicbtcusdt@optionTrade]
+2026-10-19 21:12:48 | OPTIONS-BTC | INFO    | Base de datos cerrada y .wal consolidado.
+2026-10-19 21:12:52 | SPOT-BTC   | INFO    | Parada recibida. Vaciando buffers y eliminando .wal...
+2026-10-19 21:12:52 | FUTURES-BTC | INFO    | Parada recibida. Vaciando buffers y eliminando .wal...
+2026-10-19 21:12:57 | WS         | DEBUG   | Cerrando socket por parada: stream[btcusdt@depth]
+2026-10-19 21:12:57 | SPOT-BTC   | INFO    | Base de datos cerrada y .wal consolidado.
+2026-10-19 21:12:57 | WS         | DEBUG   | Cerrando socket por parada: fstream[btcusdt@forceOrder]
+2026-10-19 21:12:57 | FUTURES-BTC | INFO    | Base de datos cerrada y .wal consolidado.
+2026-10-19 21:14:08 | SPOT-BTC   | INFO    | Iniciando Spot Worker...
+2026-10-19 21:14:08 | FUTURES-BTC | INFO    | Iniciando Futures Worker...
+2026-10-19 21:14:08 | SPOT-BTC   | INFO    | T0 leido correctamente | Modo: live_only (Vision desactivado)
+2026-10-19 21:14:08 | FUTURES-BTC | INFO    | T0 leido correctamente | Modo: live_only (Vision desactivado)
+2026-10-19 21:14:09 | WS         | INFO    | Conectado -> fstream[btcusdt@forceOrder]
+2026-10-19 21:14:09 | WS         | DEBUG   | Full URL conectada: wss://fstream.binance.com/ws/btcusdt@forceOrder
+2026-10-19 21:14:10 | WS         | INFO    | Conectado -> fstream[/marketbtcusdt@optionMarkPrice]
+2026-10-19 21:14:10 | WS         | DEBUG   | Full URL conectada: wss://fstream.binance.com/market/ws/btcusdt@optionMarkPrice
+2026-10-19 21:14:10 | WS         | INFO    | Conectado -> fstream[/publicbtcusdt@optionTrade]
+2026-10-19 21:14:10 | WS         | DEBUG   | Full URL conectada: wss://fstream.binance.com/public/ws/btcusdt@optionTrade
+2026-10-19 21:14:12 | WS         | INFO    | Conectado -> stream[btcusdt@depth]
+2026-10-19 21:14:12 | WS         | DEBUG   | Full URL conectada: wss://stream.binance.com:9443/ws/btcusdt@depth
+2026-10-19 21:15:01 | SPOT-BTC   | INFO    | Parada recibida. Vaciando buffers y eliminando .wal...
+2026-10-19 21:15:01 | FUTURES-BTC | INFO    | Parada recibida. Vaciando buffers y eliminando .wal...
+2026-10-19 21:15:02 | OPTIONS-BTC | INFO    | Parada recibida. Vaciando buffers y eliminando .wal...
+2026-10-19 21:15:06 | WS         | DEBUG   | Cerrando socket por parada: stream[btcusdt@depth]
+2026-10-19 21:15:06 | SPOT-BTC   | INFO    | Base de datos cerrada y .wal consolidado.
+2026-10-19 21:15:06 | WS         | DEBUG   | Cerrando socket por parada: fstream[btcusdt@forceOrder]
+2026-10-19 21:15:06 | FUTURES-BTC | INFO    | Base de datos cerrada y .wal consolidado.
+2026-10-19 21:15:07 | WS         | DEBUG   | Cerrando socket por parada: fstream[/marketbtcusdt@optionMarkPrice]
+2026-10-19 21:15:07 | WS         | DEBUG   | Cerrando socket por parada: fstream[/publicbtcusdt@optionTrade]
+2026-10-19 21:15:07 | OPTIONS-BTC | INFO    | Base de datos cerrada y .wal consolidado.
+2026-10-19 21:17:42 | SPOT-BTC   | INFO    | Iniciando Spot Worker...
+2026-10-19 21:17:42 | SPOT-BTC   | INFO    | T0 leido correctamente | Modo: live_only (Vision desactivado)
+2026-10-19 21:17:42 | FUTURES-BTC | INFO    | Iniciando Futures Worker...
+2026-10-19 21:17:42 | FUTURES-BTC | INFO    | T0 leido correctamente | Modo: live_only (Vision desactivado)
+2026-10-19 21:17:43 | WS         | INFO    | Conectado -> fstream[btcusdt@forceOrder]
+2026-10-19 21:17:43 | WS         | DEBUG   | Full URL conectada: wss://fstream.binance.com/ws/btcusdt@forceOrder
+2026-10-19 21:17:45 | WS         | INFO    | Conectado -> stream[btcusdt@depth]
+2026-10-19 21:17:45 | WS         | DEBUG   | Full URL conectada: wss://stream.binance.com:9443/ws/btcusdt@depth
+2026-10-19 21:17:46 | WS         | INFO    | Conectado -> fstream[/marketbtcusdt@optionMarkPrice]
+2026-10-19 21:17:46 | WS         | DEBUG   | Full URL conectada: wss://fstream.binance.com/market/ws/btcusdt@optionMarkPrice
+2026-10-19 21:17:46 | WS         | INFO    | Conectado -> fstream[/publicbtcusdt@optionTrade]
+2026-10-19 21:17:46 | WS         | DEBUG   | Full URL conectada: wss://fstream.binance.com/public/ws/btcusdt@optionTrade
+2026-10-19 21:17:55 | WS         | INFO    | Conectado -> fstream[btc-261225-85000-c..+24 @depth5]
+2026-10-19 21:17:55 | WS         | DEBUG   | Full URL conectada: wss://fstream.binance.com/public/stream?streams=btc-261225-85000-c@depth5@100ms/btc-261225-85000-p@depth5@100ms/btc-261225-80000-c@depth5@100ms/btc-261225-80000-p@depth5@100ms/btc-261225-90000-c@depth5@100ms/btc-261225-95000-c@depth5@100ms/btc-261225-60000-p@depth5@100ms/btc-261225-100000-c@depth5@100ms/btc-261225-70000-p@depth5@100ms/btc-261225-65000-p@depth5@100ms/btc-261225-55000-p@depth5@100ms/btc-261225-75000-p@depth5@100ms/btc-261225-72000-p@depth5@100ms/btc-261225-68000-p@depth5@100ms/btc-261225-82000-c@depth5@100ms/btc-261225-82000-p@depth5@100ms/btc-261225-78000-p@depth5@100ms/btc-261225-88000-c@depth5@100ms/btc-261225-88000-p@depth5@100ms/btc-261225-62000-p@depth5@100ms/btc-270326-100000-c@depth5@100ms/btc-270326-50000-p@depth5@100ms/btc-270326-120000-c@depth5@100ms/btc-270326-66000-p@depth5@100ms/btc-270326-60000-p@depth5@100ms
+2026-10-19 21:17:56 | WS         | INFO    | Conectado -> fstream[btc-270326-82000-c..+24 @depth5]
+2026-10-19 21:17:56 | WS         | DEBUG   | Full URL conectada: wss://fstream.binance.com/public/stream?streams=btc-270326-82000-c@depth5@100ms/btc-270326-82000-p@depth5@100ms/btc-270326-110000-c@depth5@100ms/btc-270326-86000-c@depth5@100ms/btc-270326-86000-p@depth5@100ms/btc-270326-78000-p@depth5@100ms/btc-270326-62000-p@depth5@100ms/btc-270326-64000-p@depth5@100ms/btc-270326-72000-p@depth5@100ms/btc-270326-76000-p@depth5@100ms/btc-270326-90000-c@depth5@100ms/btc-270326-95000-c@depth5@100ms/btc-270326-90000-p@depth5@100ms/btc-270326-74000-p@depth5@100ms/btc-270326-115000-c@depth5@100ms/btc-270326-55000-p@depth5@100ms/btc-261225-86000-c@depth5@100ms/btc-261225-84000-c@depth5@100ms/btc-261225-86000-p@depth5@100ms/btc-261225-76000-p@depth5@100ms/btc-261225-84000-p@depth5@100ms/btc-270326-80000-c@depth5@100ms/btc-261225-74000-p@depth5@100ms/btc-270326-80000-p@depth5@100ms/btc-270326-70000-p@depth5@100ms
+2026-10-19 21:17:56 | WS         | INFO    | Conectado -> fstream[btc-270326-94000-c..+24 @depth5]
+2026-10-19 21:17:56 | WS         | DEBUG   | Full URL conectada: wss://fstream.binance.com/public/stream?streams=btc-270326-94000-c@depth5@100ms/btc-270326-98000-c@depth5@100ms/btc-270326-94000-p@depth5@100ms/btc-270326-105000-c@depth5@100ms/btc-270326-92000-c@depth5@100ms/btc-261225-98000-c@depth5@100ms/btc-270326-92000-p@depth5@100ms/btc-270326-84000-c@depth5@100ms/btc-270326-88000-c@depth5@100ms/btc-261225-92000-c@depth5@100ms/btc-270326-84000-p@depth5@100ms/btc-270326-88000-p@depth5@100ms/btc-270326-56000-p@depth5@100ms/btc-270326-65000-p@depth5@100ms/btc-270326-58000-p@depth5@100ms/btc-270326-54000-p@depth5@100ms/btc-270326-68000-p@depth5@100ms/btc-270326-52000-p@depth5@100ms/btc-261225-64000-p@depth5@100ms/btc-261225-58000-p@depth5@100ms/btc-261225-66000-p@depth5@100ms/btc-261030-86000-c@depth5@100ms/btc-261030-80000-p@depth5@100ms/btc-261030-72000-p@depth5@100ms/btc-261030-76000-p@depth5@100ms
+2026-10-19 21:17:56 | WS         | INFO    | Conectado -> fstream[btc-261030-74000-p..+24 @depth5]
+2026-10-19 21:17:56 | WS         | DEBUG   | Full URL conectada: wss://fstream.binance.com/public/stream?streams=btc-261030-74000-p@depth5@100ms/btc-261030-71000-p@depth5@100ms/btc-261030-75000-p@depth5@100ms/btc-261225-96000-c@depth5@100ms/btc-261030-73000-p@depth5@100ms/btc-261030-84000-c@depth5@100ms/btc-261030-78000-p@depth5@100ms/btc-261030-82000-c@depth5@100ms/btc-261030-82000-p@depth5@100ms/btc-261030-85000-c@depth5@100ms/btc-261030-88000-c@depth5@100ms/btc-261030-77000-p@depth5@100ms/btc-261030-79000-p@depth5@100ms/btc-261030-81000-c@depth5@100ms/btc-261030-81000-p@depth5@100ms/btc-261030-87000-c@depth5@100ms/btc-270326-96000-c@depth5@100ms/btc-261225-102000-c@depth5@100ms/btc-261030-83000-c@depth5@100ms/btc-261030-83000-p@depth5@100ms/btc-270326-85000-c@depth5@100ms/btc-270326-85000-p@depth5@100ms/btc-261225-94000-c@depth5@100ms/btc-261023-79000-p@depth5@100ms/btc-261023-81000-p@depth5@100ms
+2026-10-19 21:17:57 | WS         | INFO    | Conectado -> fstream[btc-261023-80000-p..+24 @depth5]
+2026-10-19 21:17:57 | WS         | DEBUG   | Full URL conectada: wss://fstream.binance.com/public/stream?streams=btc-261023-80000-p@depth5@100ms/btc-261023-82000-c@depth5@100ms/btc-261023-82000-p@depth5@100ms/btc-261023-83000-c@depth5@100ms/btc-261023-85000-c@depth5@100ms/btc-261023-84000-c@depth5@100ms/btc-261023-83500-c@depth5@100ms/btc-261023-81500-c@depth5@100ms/btc-261023-81500-p@depth5@100ms/btc-261023-82500-c@depth5@100ms/btc-261023-82500-p@depth5@100ms/btc-261023-84500-c@depth5@100ms/btc-261020-81000-p@depth5@100ms/btc-261020-82000-c@depth5@100ms/btc-261020-82000-p@depth5@100ms/btc-261020-82500-c@depth5@100ms/btc-261020-81500-p@depth5@100ms/btc-261021-80000-p@depth5@100ms/btc-261021-81000-p@depth5@100ms/btc-261021-82000-c@depth5@100ms/btc-261021-82000-p@depth5@100ms/btc-261021-82500-c@depth5@100ms/btc-261021-82500-p@depth5@100ms/btc-261021-83000-c@depth5@100ms/btc-261021-84000-c@depth5@100ms
+2026-10-19 21:17:57 | WS         | INFO    | Conectado -> fstream[btc-261020-81750-c..+8 @depth5]
+2026-10-19 21:17:57 | WS         | DEBUG   | Full URL conectada: wss://fstream.binance.com/public/stream?streams=btc-261020-81750-c@depth5@100ms/btc-261021-81500-c@depth5@100ms/btc-261020-82750-c@depth5@100ms/btc-261020-81750-p@depth5@100ms/btc-261021-81500-p@depth5@100ms/btc-261020-81250-p@depth5@100ms/btc-261020-82250-c@depth5@100ms/btc-261021-80500-p@depth5@100ms/btc-261021-83500-c@depth5@100ms
+2026-10-19 21:18:18 | OPTIONS-BTC | INFO    | Parada recibida. Vaciando buffers y eliminando .wal...
+2026-10-19 21:18:19 | FUTURES-BTC | INFO    | Parada recibida. Vaciando buffers y eliminando .wal...
+2026-10-19 21:18:19 | SPOT-BTC   | INFO    | Parada recibida. Vaciando buffers y eliminando .wal...
+2026-10-19 21:18:23 | WS         | DEBUG   | Cerrando socket por parada: fstream[/marketbtcusdt@optionMarkPrice]
+2026-10-19 21:18:23 | WS         | DEBUG   | Cerrando socket por parada: fstream[/publicbtcusdt@optionTrade]
+2026-10-19 21:18:23 | WS         | DEBUG   | Cerrando socket por parada: fstream[btc-261225-85000-c..+24 @depth5]
+2026-10-19 21:18:23 | WS         | DEBUG   | Cerrando socket por parada: fstream[btc-270326-82000-c..+24 @depth5]
+2026-10-19 21:18:23 | WS         | DEBUG   | Cerrando socket por parada: fstream[btc-270326-94000-c..+24 @depth5]
+2026-10-19 21:18:23 | WS         | DEBUG   | Cerrando socket por parada: fstream[btc-261030-74000-p..+24 @depth5]
+2026-10-19 21:18:23 | WS         | DEBUG   | Cerrando socket por parada: fstream[btc-261023-80000-p..+24 @depth5]
+2026-10-19 21:18:23 | WS         | DEBUG   | Cerrando socket por parada: fstream[btc-261020-81750-c..+8 @depth5]
+2026-10-19 21:18:24 | WS         | DEBUG   | Cerrando socket por parada: fstream[btcusdt@forceOrder]
+2026-10-19 21:18:24 | FUTURES-BTC | INFO    | Base de datos cerrada y .wal consolidado.
+2026-10-19 21:18:24 | OPTIONS-BTC | INFO    | Base de datos cerrada y .wal consolidado.
+2026-10-19 21:18:24 | WS         | DEBUG   | Cerrando socket por parada: stream[btcusdt@depth]
+2026-10-19 21:18:24 | SPOT-BTC   | INFO    | Base de datos cerrada y .wal consolidado.
