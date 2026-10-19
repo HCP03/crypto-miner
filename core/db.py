@@ -13,8 +13,12 @@ class DB_Manager:
         self.log = get_logger(f"{self.db_type.upper()}-{self.underlying}")
 
         self.data_dir = os.getenv("DATA_DIR", "data")
-        self.DB_path = f'{self.data_dir}/{self.underlying}/{db_type}_data.db'
-        os.makedirs(f'{self.data_dir}/{self.underlying}', exist_ok=True)
+        self.exchange = os.getenv("EXCHANGE", "binance").lower()
+        self.log = get_logger(f"{self.db_type.upper()}-{self.exchange.upper()}-{self.underlying}")
+
+        base_path = f"{self.data_dir}/{self.exchange}/{self.underlying}"
+        self.DB_path = f"{base_path}/{db_type}_data.db"
+        os.makedirs(base_path, exist_ok=True)
 
         self.con = db.connect(self.DB_path)
         self._buffers = defaultdict(list)
@@ -122,16 +126,17 @@ class DB_Manager:
             if cycles >= 180:
                 try:
                     self.con.execute("FORCE CHECKPOINT;")
+                    self.con.execute("CHECKPOINT;")
                     self.log.debug("CHECKPOINT ejecutado en DuckDB.")
                 except Exception:
                     pass
                 cycles = 0
 
-            trigger_file = f"{self.data_dir}/{self.underlying}/EXPORT_{self.db_type.upper()}"
+            trigger_file = f"{self.data_dir}/{self.exchange}/{self.underlying}/EXPORT_{self.db_type.upper()}"
             if os.path.exists(trigger_file):
                 try:
                     os.remove(trigger_file)
-                    self.export_incremental_parquet(export_dir=f"exports/{self.underlying}")
+                    self.export_incremental_parquet(export_dir=f"exports/{self.exchange}/{self.underlying}")
                 except Exception as e:
                     self.log.error(f"Error exportando Parquet: {e}")
 

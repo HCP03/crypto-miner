@@ -12,6 +12,7 @@ from core.routines import RoutineManager
 
 DATA_DIR = os.getenv("DATA_DIR", "data")
 TMP_DIR = Path(f"{DATA_DIR}/tmp_spot")
+EXCHANGE = os.getenv("EXCHANGE", "binance").lower()
 
 async def _spot_snapshot_action(db: Spot_DB, symbol: str):
     """Adaptador de la logica exacta de un snapshot spot para pasarlo al bucle periodico"""

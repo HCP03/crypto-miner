@@ -6,9 +6,15 @@ class DBValidator:
     def __init__(self, underlying: str, db_type: str):
         self.underlying = underlying.upper()
         self.db_type = db_type
-        self.db_path = f"data/{self.underlying}/{self.db_type}_data.db"
+        
+        self.exchange = os.getenv("EXCHANGE", "binance").lower()
+        self.data_dir = os.getenv("DATA_DIR", "data")
+        
+        self.db_path = f"{self.data_dir}/{self.exchange}/{self.underlying}/{self.db_type}_data.db"
+        
         if not os.path.exists(self.db_path):
             raise FileNotFoundError(f"No existe la base de datos: {self.db_path}")
+            
         self.con = duckdb.connect(self.db_path, read_only=True)
         self.failures = 0
         self.warnings = 0

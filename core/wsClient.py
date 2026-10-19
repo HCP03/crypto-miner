@@ -12,7 +12,13 @@ class WSClient:
     MAX_SESSION_SEC = (23 * 3600) + (50 * 60)
 
     @staticmethod
-    async def fetch(url: str, parser_callback, handler_callback, read_timeout: float = 1800.0):
+    async def fetch(
+        url: str, 
+        parser_callback, 
+        handler_callback, 
+        read_timeout: float = 1800.0,
+        subscribe_msg: dict = None
+    ):
         retry_delay = 1
         tag = short_ws_url(url)
         first_connect = True
@@ -28,12 +34,17 @@ class WSClient:
                     close_timeout=5,
                     max_queue=4096
                 ) as websocket:
+                    
                     if first_connect:
                         log.info(f"Conectado -> {tag}")
                         first_connect = False
                     else:
                         log.info(f"Reconectado -> {tag}")
                     log.debug(f"Full URL conectada: {url}")
+
+                    if subscribe_msg:
+                        await websocket.send(json.dumps(subscribe_msg))
+                        log.debug(f"Suscripcion enviada a {tag}")
 
                     retry_delay = 1
                     
@@ -47,6 +58,15 @@ class WSClient:
 
                         try:
                             data = json.loads(message)
+
+                            if isinstance(data, dict) and data.get("method") == "heartbeat" and data.get("params", {}).get("type") == "test_request":
+                                await websocket.send(json.dumps({
+                                    "jsonrpc": "2.0",
+                                    "method": "public/test",
+                                    "params": {}
+                                }))
+                                continue
+
                             parsed_record = parser_callback(data)
                             
                             if parsed_record is not None:
@@ -74,6 +94,7 @@ class WSClient:
 
     @staticmethod
     def parse_trade(data: dict) -> tuple | None:
+        """Parser por defecto para Binance Spot/Futures (mantenido por compatibilidad)"""
         payload = data.get("data", data)
         if "p" in payload and "q" in payload:
             taker = -1 if payload.get("m") else 1

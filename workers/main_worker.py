@@ -11,11 +11,12 @@ WORKERS_CONFIG = {
     "FUTURES": "workers.futures_worker",
     "SPOT": "workers.spot_worker",
     "OPTIONS": "workers.options_worker",
+    "DERIBIT": "workers.deribit_worker"
 }
 
 
-def options_db_has_greeks(underlying: str, data_dir:str = "data") -> bool:
-    db_path = f"{data_dir}/{underlying}/options_data.db"
+def options_db_has_greeks(underlying: str, exchange: str = "binance", data_dir: str = "data") -> bool:
+    db_path = f"{data_dir}/{exchange.lower()}/{underlying.upper()}/options_data.db"
     if not os.path.exists(db_path):
         return False
     try:
@@ -100,27 +101,15 @@ async def run_supervisor(config: dict):
     data_dir = config.get("global", {}).get("data_dir", "data")
     stop_file = f"{data_dir}/STOP_ALL"
 
+    # Limpiamos el archivo de parada si quedo colgado de un crasheo anterior
     if os.path.exists(stop_file):
         os.remove(stop_file)
 
-    binance_cfg = config.get("exchanges", {}).get("binance", {})
-    if not binance_cfg.get("enabled", False):
-        print("[MAIN] Binance esta desactivado en config.yaml. Saliendo...", flush=True)
-        return
-
-    underlyings = binance_cfg.get("symbols", ["BTC"])
-    sync_env = {
-        "SYNC_MODE": binance_cfg.get("sync_mode", "live_only"),
-        "SYNC_START": binance_cfg.get("sync_start", ""),
-        "SYNC_END": binance_cfg.get("sync_end", ""),
-        "MAX_GAP_DAYS": str(binance_cfg.get("max_gap_days", 3)),
-        "DATA_DIR": data_dir
-    }
-
     print("=" * 75, flush=True)
-    print(f"[MAIN] Iniciando Supervisor General para {underlyings}", flush=True)
+    print(f"[MAIN] Iniciando Supervisor General", flush=True)
     print("=" * 75, flush=True)
 
+    # Identificador de procesos: (underlying, "WORKER_exchange") -> ej: ("BTC", "OPTIONS_binance")
     processes: dict[tuple[str, str], asyncio.subprocess.Process] = {}
     log_tasks: dict[tuple[str, str], asyncio.Task] = {}
     stop_event = asyncio.Event()
@@ -129,7 +118,6 @@ async def run_supervisor(config: dict):
     def _on_shutdown_signal(signum, frame):
         if not stop_event.is_set():
             print("\n[MAIN] Senal de apagado recibida. Notificando a los workers...", flush=True)
-            # Crear el archivo que los hijos están vigilando
             os.makedirs(data_dir, exist_ok=True)
             with open(stop_file, "w") as f:
                 f.write("STOP")
@@ -139,70 +127,115 @@ async def run_supervisor(config: dict):
     signal.signal(signal.SIGTERM, _on_shutdown_signal)
 
     try:
-        for idx, underlying in enumerate(underlyings):
-            if stop_event.is_set():
-                break
+        # 1. Iterar dinamicamente sobre los exchanges configurados en el YAML
+        for exchange_name, ex_config in config.get("exchanges", {}).items():
+            if not ex_config.get("enabled", False):
+                continue
 
-            if idx > 0:
-                await asyncio.sleep(5)
+            symbols = ex_config.get("symbols", ["BTC"])
+            sync_mode = ex_config.get("sync_mode", "live_only")
+            workers_config = ex_config.get("workers", {})
+            
+            sync_env = {
+                "SYNC_MODE": sync_mode,
+                "SYNC_START": ex_config.get("sync_start", ""),
+                "SYNC_END": ex_config.get("sync_end", ""),
+                "MAX_GAP_DAYS": str(ex_config.get("max_gap_days", 3)),
+                "DATA_DIR": data_dir,
+                "EXCHANGE": exchange_name  # Clave vital para enrutar las carpetas data/exchange/
+            }
 
-            # Solo necesitamos --init-only si estamos en modo 'greeks' y options_data.db aun no existe
-            if sync_env["SYNC_MODE"] == "greeks" and not options_db_has_greeks(underlying):
-                print(f"[MAIN] options_data.db no existe para {underlying}. Ejecutando --init-only...", flush=True)
-                init_proc, init_log = await spawn_worker(
-                    f"OPT-INIT-{underlying}", WORKERS_CONFIG["OPTIONS"], underlying, sync_env, extra_args=["--init-only"]
-                )
-                await init_proc.wait()
-                init_log.cancel()
-                print(f"[MAIN] Primer snapshot de {underlying} completado y DB cerrada.", flush=True)
-                
-            fut_t0_ready = asyncio.Event()
-            spt_t0_ready = asyncio.Event()
+            for idx, underlying in enumerate(symbols):
+                if stop_event.is_set():
+                    break
 
-            proc_fut, log_fut = await spawn_worker(
-                f"FUT-{underlying}", WORKERS_CONFIG["FUTURES"], underlying, sync_env, t0_event=fut_t0_ready
-            )
-            processes[(underlying, "FUTURES")] = proc_fut
-            log_tasks[(underlying, "FUTURES")] = log_fut
-
-            proc_spt, log_spt = await spawn_worker(
-                f"SPT-{underlying}", WORKERS_CONFIG["SPOT"], underlying, sync_env, t0_event=spt_t0_ready
-            )
-            processes[(underlying, "SPOT")] = proc_spt
-            log_tasks[(underlying, "SPOT")] = log_spt
-
-            try:
-                await asyncio.wait_for(
-                    asyncio.gather(fut_t0_ready.wait(), spt_t0_ready.wait()),
-                    timeout=10.0
-                )
-            except asyncio.TimeoutError:
-                pass
-
-            if not stop_event.is_set():
-                proc_opt, log_opt = await spawn_worker(
-                    f"OPT-{underlying}", WORKERS_CONFIG["OPTIONS"], underlying, sync_env
-                )
-                processes[(underlying, "OPTIONS")] = proc_opt
-                log_tasks[(underlying, "OPTIONS")] = log_opt
-
-        while not stop_event.is_set():
-            for (underlying, w_name), proc in list(processes.items()):
-                if proc and proc.returncode is not None and not stop_event.is_set():
-                    proc_key = f"{w_name[:3]}-{underlying}"
-                    print(
-                        f"[MAIN WATCHDOG] Alerta: {proc_key} termino con codigo {proc.returncode}. "
-                        f"Reiniciando en 5 segundos...",
-                        flush=True
-                    )
-                    if (underlying, w_name) in log_tasks:
-                        log_tasks[(underlying, w_name)].cancel()
+                if idx > 0:
                     await asyncio.sleep(5)
+                if exchange_name == "binance":
+                    # --init-only para Opciones Binance (arranque en frio)
+                    if sync_mode == "greeks" and workers_config.get("options", {}).get("enabled"):
+                        if not options_db_has_greeks(underlying, exchange_name, data_dir):
+                            print(f"[MAIN] options_data.db no existe para {underlying} ({exchange_name}). Ejecutando --init-only...", flush=True)
+                            init_proc, init_log = await spawn_worker(
+                                f"OPT-INIT-{underlying}", WORKERS_CONFIG["OPTIONS"], underlying, sync_env, extra_args=["--init-only"]
+                            )
+                            await init_proc.wait()
+                            init_log.cancel()
+                            print(f"[MAIN] Primer snapshot de {underlying} completado y DB cerrada.", flush=True)
+
+                    fut_t0_ready = asyncio.Event()
+                    spt_t0_ready = asyncio.Event()
+                    wait_events = []
+
+                    if workers_config.get("futures", {}).get("enabled"):
+                        proc_fut, log_fut = await spawn_worker(
+                            f"FUT-{underlying}", WORKERS_CONFIG["FUTURES"], underlying, sync_env, t0_event=fut_t0_ready
+                        )
+                        processes[(underlying, f"FUTURES_{exchange_name}")] = proc_fut
+                        log_tasks[(underlying, f"FUTURES_{exchange_name}")] = log_fut
+                        wait_events.append(fut_t0_ready.wait())
+
+                    if workers_config.get("spot", {}).get("enabled"):
+                        proc_spt, log_spt = await spawn_worker(
+                            f"SPT-{underlying}", WORKERS_CONFIG["SPOT"], underlying, sync_env, t0_event=spt_t0_ready
+                        )
+                        processes[(underlying, f"SPOT_{exchange_name}")] = proc_spt
+                        log_tasks[(underlying, f"SPOT_{exchange_name}")] = log_spt
+                        wait_events.append(spt_t0_ready.wait())
+
+                    # Esperamos a que Spot y Futuros lean su T0 de la base de datos de Opciones
+                    if wait_events:
+                        try:
+                            await asyncio.wait_for(asyncio.gather(*wait_events), timeout=10.0)
+                        except asyncio.TimeoutError:
+                            pass
+
+                    # Lanzamos finalmente las Opciones
+                    if workers_config.get("options", {}).get("enabled") and not stop_event.is_set():
+                        proc_opt, log_opt = await spawn_worker(
+                            f"OPT-{underlying}", WORKERS_CONFIG["OPTIONS"], underlying, sync_env
+                        )
+                        processes[(underlying, f"OPTIONS_{exchange_name}")] = proc_opt
+                        log_tasks[(underlying, f"OPTIONS_{exchange_name}")] = log_opt
+
+                elif exchange_name == "deribit":
+                    if workers_config.get("options", {}).get("enabled") and not stop_event.is_set():
+                        proc_der, log_der = await spawn_worker(
+                            f"DER-{underlying}", WORKERS_CONFIG["DERIBIT"], underlying, sync_env
+                        )
+                        processes[(underlying, f"DERIBIT_{exchange_name}")] = proc_der
+                        log_tasks[(underlying, f"DERIBIT_{exchange_name}")] = log_der
+
+        # 2. Bucle Watchdog (Supervision constante)
+        while not stop_event.is_set():
+            for (underlying, w_key), proc in list(processes.items()):
+                if proc and proc.returncode is not None and not stop_event.is_set():
+                    # Parsear la clave (ej: "OPTIONS_binance" -> worker_type="OPTIONS", exch="binance")
+                    worker_type, exch = w_key.split("_", 1)
+                    proc_tag = f"{worker_type[:3]}-{underlying}"
+                    print(f"[MAIN WATCHDOG] Alerta: {proc_tag} ({exch}) termino con codigo {proc.returncode}. Reiniciando en 5s...", flush=True)
+                    
+                    if (underlying, w_key) in log_tasks:
+                        log_tasks[(underlying, w_key)].cancel()
+                        
+                    await asyncio.sleep(5)
+                    
+                    # Recuperar variables especificas de este exchange desde config original
+                    re_sync_env = config["exchanges"].get(exch, {})
+                    env_vars = {
+                        "SYNC_MODE": re_sync_env.get("sync_mode", "live_only"),
+                        "SYNC_START": re_sync_env.get("sync_start", ""),
+                        "SYNC_END": re_sync_env.get("sync_end", ""),
+                        "MAX_GAP_DAYS": str(re_sync_env.get("max_gap_days", 3)),
+                        "DATA_DIR": data_dir,
+                        "EXCHANGE": exch
+                    }
+                    
                     new_proc, new_log = await spawn_worker(
-                        proc_key, WORKERS_CONFIG[w_name], underlying, sync_env
+                        proc_tag, WORKERS_CONFIG[worker_type], underlying, env_vars
                     )
-                    processes[(underlying, w_name)] = new_proc
-                    log_tasks[(underlying, w_name)] = new_log
+                    processes[(underlying, w_key)] = new_proc
+                    log_tasks[(underlying, w_key)] = new_log
 
             try:
                 await asyncio.wait_for(stop_event.wait(), timeout=5.0)
@@ -226,7 +259,7 @@ async def run_supervisor(config: dict):
                     pass
 
         await asyncio.gather(
-            *(_wait_or_kill(f"{w_name[:3]}-{und}", proc) for (und, w_name), proc in processes.items()),
+            *(_wait_or_kill(f"{w_key.split('_')[0][:3]}-{und}", proc) for (und, w_key), proc in processes.items()),
             return_exceptions=True
         )
 

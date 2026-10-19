@@ -8,8 +8,10 @@ class RoutineManager:
     @staticmethod
     def get_first_greeks_date(underlying: str, fallback_date: datetime) -> datetime:
         data_dir = os.getenv("DATA_DIR", "data")
-        options_db_path = Path(f"{data_dir}/{underlying.upper()}/options_data.db")
+        exchange = os.getenv("EXCHANGE", "binance").lower()
         
+        # NUEVA RUTA
+        options_db_path = Path(f"{data_dir}/{exchange}/{underlying.upper()}/options_data.db")
         if not options_db_path.exists():
             return fallback_date
 

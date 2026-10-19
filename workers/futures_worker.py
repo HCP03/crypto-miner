@@ -12,6 +12,7 @@ from core.routines import RoutineManager
 
 DATA_DIR = os.getenv("DATA_DIR", "data")
 TMP_DIR = Path(f"{DATA_DIR}/tmp_futures")
+EXCHANGE = os.getenv("EXCHANGE", "binance").lower()
 
 async def run_futures_worker(underlying: str = "BTC", fallback_days_back: int = 3):
     underlying = underlying.upper().replace("USDT", "")
