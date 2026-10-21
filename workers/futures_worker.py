@@ -19,19 +19,29 @@ async def run_futures_worker(underlying: str = "BTC", fallback_days_back: int = 
     shutil.rmtree(TMP_DIR / underlying, ignore_errors=True)
 
     db = futures_DB(underlying=underlying)
-    db.log.info("Iniciando Futures Worker...")
+    db.log.info("Iniciando Futures Worker")
 
     liq_handler = db.make_ws_handler(table_name="liquidations", batch_size=25)
+    history_only = os.getenv("HISTORY_ONLY", "false").lower() == "true"
     fallback_start = datetime.now(timezone.utc) - timedelta(days=fallback_days_back)
 
-    tasks = [
-        asyncio.create_task(WSFutures.stream_liquidations(underlying, liq_handler), name="ws_liquidations"),
-        asyncio.create_task(RoutineManager.vision_daily_sync_loop(
-            underlying=underlying, db=db, fallback_start_date=fallback_start, 
-            sync_func=RestFutures.sync_day_vision, tmp_dir=TMP_DIR / underlying
-        ), name="vision_sync"),
-        asyncio.create_task(db.auto_flush_loop(interval=5), name="db_auto_flush"),
-    ]
+    if history_only:
+        tasks = [
+            asyncio.create_task(RoutineManager.vision_daily_sync_loop(
+                underlying=underlying, db=db, fallback_start_date=fallback_start, 
+                sync_func=RestFutures.sync_day_vision, tmp_dir=TMP_DIR / underlying
+            ), name="vision_sync"),
+            asyncio.create_task(db.auto_flush_loop(interval=5), name="db_auto_flush"),
+        ]
+    else:
+        tasks = [
+            asyncio.create_task(WSFutures.stream_liquidations(underlying, liq_handler), name="ws_liquidations"),
+            asyncio.create_task(RoutineManager.vision_daily_sync_loop(
+                underlying=underlying, db=db, fallback_start_date=fallback_start, 
+                sync_func=RestFutures.sync_day_vision, tmp_dir=TMP_DIR / underlying
+            ), name="vision_sync"),
+            asyncio.create_task(db.auto_flush_loop(interval=5), name="db_auto_flush"),
+        ]
 
     lifecycle = WorkerLifecycle(db, RestFutures, "Futures Worker", underlying)
     await lifecycle.run(tasks)

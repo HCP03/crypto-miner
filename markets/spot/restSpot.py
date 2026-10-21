@@ -11,6 +11,13 @@ class RestSpot(RestClient):
         symbol = symbol.upper()
         return symbol if symbol.endswith("USDT") else f"{symbol}USDT"
 
+    @staticmethod
+    def _get_day_bounds_ms(date_obj):
+        """Calcula el inicio y fin de un dia en milisegundos (UTC)."""
+        start_ms = int(date_obj.replace(hour=0, minute=0, second=0, microsecond=0).timestamp() * 1000)
+        end_ms = start_ms + 86399999
+        return start_ms, end_ms
+    
     # ==========================================================
     #                 ENDPOINTS EN TIEMPO REAL (API)
     # ==========================================================
@@ -48,28 +55,42 @@ class RestSpot(RestClient):
         return None
  
     @classmethod
-    def get_trades_sql(cls, file_path: Path, date_obj: datetime) -> str:
+    def get_trades_sql(self, file_path: Path, date_obj: datetime) -> str:
         """
         En Binance Vision Spot, el CSV NO tiene cabecera y el timestamp viene en MICROSEGUNDOS (16 dígitos)
         o milisegundos (13 dígitos) en años antiguos. Normalizamos siempre a MILISEGUNDOS (13 dígitos).
         Columnas CSV Spot: id(0), price(1), qty(2), quoteQty(3), time(4), isBuyerMaker(5), isBestMatch(6)
         """
-        start_ms, end_ms = cls._get_day_bounds_ms(date_obj)
+        start_ms = int(date_obj.replace(hour=0, minute=0, second=0, microsecond=0).timestamp() * 1000)
+        end_ms = start_ms + 86399999
+
         return f"""
+            WITH valid_rows AS (
+                SELECT 
+                    TRY_CAST(column1 AS DOUBLE) AS price,
+                    TRY_CAST(column2 AS DOUBLE) AS qty,
+                    TRY_CAST(column3 AS DOUBLE) AS quoteQty,
+                    CASE 
+                        WHEN TRY_CAST(column4 AS BIGINT) > 100000000000000 
+                        THEN (TRY_CAST(column4 AS BIGINT) // 1000)
+                        ELSE TRY_CAST(column4 AS BIGINT)
+                    END AS ts,
+                    CASE WHEN TRY_CAST(column5 AS BOOLEAN) THEN -1 ELSE 1 END AS taker
+                FROM read_csv_auto('{file_path}', header=False)
+                WHERE TRY_CAST(column4 AS BIGINT) IS NOT NULL 
+                  AND TRY_CAST(column1 AS DOUBLE) IS NOT NULL
+            )
             INSERT INTO trades (price, qty, quoteQty, timestamp, taker)
             SELECT 
-                column01::DOUBLE AS price,
-                SUM(column02::DOUBLE) AS qty,
-                SUM(column03::DOUBLE) AS quoteQty,
-                CASE 
-                    WHEN column04::BIGINT > 100000000000000 THEN (column04::BIGINT // 1000)
-                    ELSE column04::BIGINT 
-                END AS ts,
-                CASE WHEN column05::BOOLEAN THEN -1 ELSE 1 END AS taker
-            FROM read_csv('{file_path}', header=False, auto_detect=True)
+                price,
+                SUM(qty) AS qty,
+                SUM(quoteQty) AS quoteQty,
+                ts AS timestamp,
+                taker
+            FROM valid_rows
             WHERE ts >= {start_ms} AND ts <= {end_ms}
             GROUP BY ts, price, taker
-            ON CONFLICT DO NOTHING;
+            ON CONFLICT (timestamp, price, qty, taker) DO NOTHING;
         """
     @classmethod
     async def sync_day_vision(cls, symbol: str, date_obj: datetime, db, tmp_dir: Path) -> bool:
@@ -91,3 +112,5 @@ class RestSpot(RestClient):
             finally:
                 cls.remove_file(csv_path)
         return False
+
+    

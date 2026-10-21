@@ -54,7 +54,7 @@ class RoutineManager:
 
         db.log.info(f"T0 leido correctamente | Modo: {sync_mode} (Base: {t0_date.strftime('%Y-%m-%d')})")
         initial_mode_done = False
-
+        
         while True:
             try:
                 now = datetime.now(timezone.utc)
@@ -103,6 +103,9 @@ class RoutineManager:
                             curr += timedelta(days=1)
 
                     initial_mode_done = True
+                    if os.getenv("HISTORY_ONLY", "false").lower() == "true":
+                        db.log.info("Histórico completado. Terminando tarea de Vision")
+                        break
                 else:
                     curr = t0_date
                     while curr <= yesterday:

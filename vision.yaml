@@ -1,0 +1,26 @@
+global:
+  log_level: "INFO"
+  export_dir: "exports"
+  data_dir: "data"
+
+exchanges:
+  binance:
+    enabled: true
+    symbols: ["ETH"]
+    sync_mode: "greeks"          # Usa T0 de griegas pero sin modo live
+    sync_start: ""
+    sync_end: ""
+    max_gap_days: 3
+    history_only: true           # <-- Flag para terminar al completar Vision
+    workers:
+      options:
+        enabled: false           # Opciones no tiene Vision; desactivado
+      futures:
+        enabled: true
+        fallback_days_back: 3
+      spot:
+        enabled: true
+        snapshot_interval_min: 30
+
+  deribit:
+    enabled: false

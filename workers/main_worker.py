@@ -142,7 +142,8 @@ async def run_supervisor(config: dict):
                 "SYNC_END": ex_config.get("sync_end", ""),
                 "MAX_GAP_DAYS": str(ex_config.get("max_gap_days", 3)),
                 "DATA_DIR": data_dir,
-                "EXCHANGE": exchange_name  # Clave vital para enrutar las carpetas data/exchange/
+                "EXCHANGE": exchange_name,
+                "HISTORY_ONLY": str(ex_config.get("history_only", False)).lower()
             }
 
             for idx, underlying in enumerate(symbols):
@@ -210,6 +211,9 @@ async def run_supervisor(config: dict):
         while not stop_event.is_set():
             for (underlying, w_key), proc in list(processes.items()):
                 if proc and proc.returncode is not None and not stop_event.is_set():
+                    if proc.returncode == 0 and sync_env.get("HISTORY_ONLY") == "true":
+                        processes.pop((underlying, w_key), None)
+                        continue
                     # Parsear la clave (ej: "OPTIONS_binance" -> worker_type="OPTIONS", exch="binance")
                     worker_type, exch = w_key.split("_", 1)
                     proc_tag = f"{worker_type[:3]}-{underlying}"
