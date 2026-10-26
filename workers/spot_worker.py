@@ -66,13 +66,16 @@ async def run_spot_worker(underlying: str = "BTC", snapshot_interval_min: int = 
             )])
 
     if history_only:
-        tasks = [
-            asyncio.create_task(RoutineManager.vision_daily_sync_loop(
-                underlying=underlying, db=db, fallback_start_date=fallback_start, 
-                sync_func=RestSpot.sync_day_vision, tmp_dir=TMP_DIR / underlying
-            ), name="vision_spot_trades"),
-            asyncio.create_task(db.auto_flush_loop(interval=5), name="db_auto_flush"),
-        ]
+        asyncio.create_task(db.auto_flush_loop(interval=5), name="db_auto_flush")
+        
+        await RoutineManager.vision_daily_sync_loop(
+            underlying=underlying, db=db, fallback_start_date=fallback_start, 
+            sync_func=RestSpot.sync_day_vision, tmp_dir=TMP_DIR / underlying
+        )
+        
+        db.log.info("Descarga historica completada. Apagando worker limpio.")
+        db.close()
+        os._exit(0)
     else:
         tasks = [
             asyncio.create_task(WSspot.stream_diff_ob(underlying, ob_diff_handler), name="ws_spot_ob_diff"),

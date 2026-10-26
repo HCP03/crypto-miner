@@ -1,0 +1,25 @@
+global:
+  log_level: "INFO"
+  export_dir: "exports"
+  data_dir: "data"
+
+exchanges:
+  binance:
+    enabled: true
+    symbols: ["BTC"]
+    sync_mode: "range"      
+    sync_start: "2024-09-17"     
+    sync_end: "2026-01-01"       
+    max_gap_days: 30
+    history_only: true           
+    workers:
+      options:
+        enabled: false           
+      futures:
+        enabled: true
+        fallback_days_back: 30
+      spot:
+        enabled: true
+
+  deribit:
+    enabled: false

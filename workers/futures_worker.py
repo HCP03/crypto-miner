@@ -26,13 +26,16 @@ async def run_futures_worker(underlying: str = "BTC", fallback_days_back: int = 
     fallback_start = datetime.now(timezone.utc) - timedelta(days=fallback_days_back)
 
     if history_only:
-        tasks = [
-            asyncio.create_task(RoutineManager.vision_daily_sync_loop(
-                underlying=underlying, db=db, fallback_start_date=fallback_start, 
-                sync_func=RestFutures.sync_day_vision, tmp_dir=TMP_DIR / underlying
-            ), name="vision_sync"),
-            asyncio.create_task(db.auto_flush_loop(interval=5), name="db_auto_flush"),
-        ]
+        asyncio.create_task(db.auto_flush_loop(interval=5), name="db_auto_flush")
+        
+        await RoutineManager.vision_daily_sync_loop(
+            underlying=underlying, db=db, fallback_start_date=fallback_start, 
+            sync_func=RestFutures.sync_day_vision, tmp_dir=TMP_DIR / underlying
+        )
+        
+        db.log.info("Descarga historica completada. Apagando worker limpio.")
+        db.close()
+        os._exit(0)
     else:
         tasks = [
             asyncio.create_task(WSFutures.stream_liquidations(underlying, liq_handler), name="ws_liquidations"),
