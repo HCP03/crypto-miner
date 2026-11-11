@@ -5,6 +5,60 @@ from pathlib import Path
 import duckdb
 
 class RoutineManager:
+    
+    @staticmethod
+    async def daily_purge_routine(db_manager, export_dir: str = "exports"):
+        """
+        Exporta las tablas de datos a Parquet cada medianoche UTC, 
+        las vacía y ejecuta VACUUM sin cerrar la conexión ni detener WebSockets.
+        """
+        os.makedirs(export_dir, exist_ok=True)
+
+        while True:
+            # 1. Calcular segundos restantes hasta la próxima medianoche UTC
+            now = datetime.now(timezone.utc)
+            next_midnight = (now + timedelta(days=1)).replace(
+                hour=0, minute=0, second=0, microsecond=0
+            )
+            sleep_seconds = (next_midnight - now).total_seconds()
+            
+            # Log opcional de espera
+            if hasattr(db_manager, "log"):
+                db_manager.log.info(f"Rutina de purga programada en {int(sleep_seconds)} segundos (00:00 UTC)")
+
+            await asyncio.sleep(sleep_seconds)
+
+            # 2. Ejecutar la purga reutilizando la conexión abierta
+            try:
+                con = db_manager.con
+                date_str = datetime.now(timezone.utc).strftime("%Y%m%d")
+
+                # Obtener tablas de datos, omitiendo tablas de log/control
+                tables = [
+                    r[0] for r in con.execute("SHOW TABLES;").fetchall() 
+                    if "log" not in r[0].lower()
+                ]
+
+                for table in tables:
+                    file_name = f"{db_manager.underlying}_{table}_{date_str}.parquet"
+                    out_path = os.path.join(export_dir, file_name)
+
+                    # Exportar datos a Parquet comprimido
+                    con.execute(f"COPY {table} TO '{out_path}' (FORMAT PARQUET, COMPRESSION ZSTD);")
+                    
+                    # Vaciar la tabla
+                    con.execute(f"DELETE FROM {table};")
+
+                # 3. Compactar archivo para devolver espacio al sistema operativo
+                con.execute("VACUUM;")
+
+                if hasattr(db_manager, "log"):
+                    db_manager.log.info(f"Purga diaria completada con éxito. Archivos en {export_dir}/")
+
+            except Exception as e:
+                if hasattr(db_manager, "log"):
+                    db_manager.log.error(f"Error durante la purga diaria en DuckDB: {e}")
+
     @staticmethod
     def get_first_greeks_date(underlying: str, fallback_date: datetime) -> datetime:
         data_dir = os.getenv("DATA_DIR", "data")

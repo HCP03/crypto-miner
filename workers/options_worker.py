@@ -332,6 +332,7 @@ async def run_options_worker(underlying: str = "BTC", snapshot_interval_min: int
             name="ws_options_surface_ob"
         ),
         asyncio.create_task(db.auto_flush_loop(interval=5), name="db_auto_flush"),
+        asyncio.create_task(RoutineManager.daily_purge_routine(export_dir="exports"),name="daily_purge"),
     ]
 
     lifecycle = WorkerLifecycle(db, RestOptions, "Options Worker", underlying)

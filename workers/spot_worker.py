@@ -41,6 +41,7 @@ async def _snapshot_action():
             sync_func=RestSpot.sync_day_vision, tmp_dir=TMP_DIR / underlying
         ), name="vision_spot_trades"),
         asyncio.create_task(db.auto_flush_loop(interval=5), name="db_auto_flush"),
+        asyncio.create_task(RoutineManager.daily_purge_routine(export_dir="exports"),name="daily_purge"),
     ]
 
     lifecycle = WorkerLifecycle(db, RestSpot, "Spot Worker", underlying)
