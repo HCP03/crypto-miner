@@ -44,7 +44,7 @@ async def run_futures_worker(underlying: str = "BTC", fallback_days_back: int = 
                 sync_func=RestFutures.sync_day_vision, tmp_dir=TMP_DIR / underlying
             ), name="vision_sync"),
             asyncio.create_task(db.auto_flush_loop(interval=5), name="db_auto_flush"),
-            asyncio.create_task(RoutineManager.daily_purge_routine(export_dir="exports"),name="daily_purge"),
+            asyncio.create_task(RoutineManager.daily_purge_routine(db_manager=db,export_dir="exports"),name="daily_purge"),
         ]   
 
     lifecycle = WorkerLifecycle(db, RestFutures, "Futures Worker", underlying)
