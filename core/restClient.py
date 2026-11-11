@@ -67,26 +67,26 @@ class RestClient:
     # ==========================================================
     @classmethod
     async def download_zip(cls, url: str, dest_zip_path: Path) -> bool:
-        """Descarga un archivo ZIP en streaming de forma asíncrona."""
+        """Descarga un archivo ZIP en streaming de forma asíncrona optimizada para archivos grandes."""
         session = await cls.get_session()
         dest_zip_path.parent.mkdir(parents=True, exist_ok=True)
-
         async with cls._semaphore:
             try:
-                async with session.get(url, timeout=aiohttp.ClientTimeout(total=60)) as response:
+                # 1. Timeout ampliado a 30 mins totales, pero 30s de inactividad de red
+                timeout = aiohttp.ClientTimeout(total=1800, sock_read=30)
+                async with session.get(url, timeout=timeout) as response:
                     if response.status == 404:
                         return False
                     response.raise_for_status()
-
                     with open(dest_zip_path, 'wb') as f:
-                        async for chunk in response.content.iter_chunked(65536): # Chunks de 64KB
+                        # 2. Chunks de 1MB en lugar de 64KB para no saturar el I/O del disco
+                        async for chunk in response.content.iter_chunked(1024 * 1024):
                             f.write(chunk)
                 return True
             except Exception as e:
-                print(f"   ⚠️ Error descargando ZIP ({url}): {e}")
+                print(f"     Error descargando ZIP ({url}): {e}")
                 cls.remove_file(dest_zip_path)
                 return False
-
     @classmethod
     def unzip_and_remove(cls, zip_path: Path, final_csv_path: Path) -> Path | None:
         """Descomprime el CSV del ZIP, lo renombra al formato deseado y elimina el ZIP."""

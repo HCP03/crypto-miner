@@ -21,6 +21,10 @@ class DB_Manager:
         os.makedirs(base_path, exist_ok=True)
 
         self.con = db.connect(self.DB_path)
+        self.con.execute("PRAGMA memory_limit='4GB';")
+        os.makedirs(f"{self.data_dir}/tmp_duckdb", exist_ok=True)
+        self.con.execute(f"PRAGMA temp_directory='{self.data_dir}/tmp_duckdb';")
+
         self._buffers = defaultdict(list)
         self._minute_counts = defaultdict(int)
         self._closed = False

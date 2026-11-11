@@ -277,7 +277,7 @@ async def run_supervisor(config: dict):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Crypto Data Collector")
-    parser.add_argument("--config", default="workers/config.yaml", help="Ruta al archivo YAML de configuracion")
+    parser.add_argument("--config", default="workers/default_config.yaml", help="Ruta al archivo YAML de configuracion")
     args = parser.parse_args()
 
     try:
