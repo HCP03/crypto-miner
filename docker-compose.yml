@@ -10,7 +10,7 @@ services:
       - ./data:/app/data
       - ./exports:/app/exports
       - ./logs:/app/logs
-      - ./default_config.yaml:/app/config.yaml:ro
+      - ./workers/default_config.yaml:/app/config.yaml:ro
     deploy:
       resources:
         limits:
