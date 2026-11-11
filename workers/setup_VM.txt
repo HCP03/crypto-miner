@@ -1,0 +1,1 @@
+5 0 * * * docker exec crypto_miner python -m workers.purge_edge >> /home/user/crypto-miner/logs/purge.log 2>&1

@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  miner:
+    build: .
+    container_name: crypto_miner
+    restart: unless-stopped
+    volumes:
+      # Map host directories to container directories for persistence
+      - ./data:/app/data
+      - ./exports:/app/exports
+      - ./logs:/app/logs
+      - ./config.yaml:/app/config.yaml:ro
+    deploy:
+      resources:
+        limits:
+          memory: 1G # Prevents the container from crashing the VM if a memory leak occurs
