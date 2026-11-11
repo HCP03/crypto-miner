@@ -19,7 +19,7 @@ exchanges:
         enabled: true
         fallback_days_back: 3
       spot:
-        enabled: true
+        enabled: false
         snapshot_interval_min: 15
 
   deribit:

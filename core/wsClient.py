@@ -31,8 +31,8 @@ class WSClient:
                     url,
                     ping_interval=20,
                     ping_timeout=20,
-                    close_timeout=5,
-                    max_queue=4096
+                    close_timeout=10,
+                    max_queue=2**10
                 ) as websocket:
                     
                     if first_connect:
