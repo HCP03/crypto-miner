@@ -165,7 +165,8 @@ async def run_deribit_worker(underlying: str = "BTC", snapshot_interval_min: int
             RoutineManager.periodic_snapshot_loop(db, _snapshot_action, snapshot_interval_min), 
             name="deribit_rest_contracts"
         ),
-        asyncio.create_task(db.auto_flush_loop(interval=5), name="db_auto_flush")
+        asyncio.create_task(db.auto_flush_loop(interval=5), name="db_auto_flush"),
+        asyncio.create_task(RoutineManager.daily_purge_routine(db_manager=db,export_dir="exports"),name="daily_purge"),
     ]
 
     lifecycle = WorkerLifecycle(db, RestDeribit, "Deribit Worker", underlying)
