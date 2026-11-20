@@ -6,7 +6,7 @@ global:
 exchanges:
   binance:
     enabled: true
-    symbols: ["BTC", "ETH"]
+    symbols: ["BTC"]
     sync_mode: "live_only"      
     sync_start: ""              
     sync_end: ""                
@@ -19,12 +19,12 @@ exchanges:
         enabled: true
         fallback_days_back: 3
       spot:
-        enabled: false
+        enabled: true
         snapshot_interval_min: 15
 
   deribit:
     enabled: true
-    symbols: ["BTC", "ETH"]
+    symbols: ["BTC"]
     sync_mode: "live_only"      
     workers:
       options:
