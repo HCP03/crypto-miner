@@ -13,7 +13,7 @@ class WSDeribit:
     def parse_trade(message: dict) -> list[tuple] | None:
         if "params" not in message or "data" not in message["params"]:
             return None
-        
+
         channel = message["params"].get("channel", "")
         if not channel.startswith("trades."):
             return None
@@ -21,11 +21,17 @@ class WSDeribit:
         data_array = message["params"]["data"]
         parsed = []
         for t in data_array:
+            trade_id = int(t.get("trade_seq") or 0)
+            ts = int(t["timestamp"])
+            symbol = t["instrument_name"]
             price = float(t["price"])
             qty = float(t["amount"])
-            taker = 1 if t["direction"] == "buy" else -1
-            parsed.append((price, qty, price * qty, int(t["timestamp"]), taker))
-            
+            quote_qty = price * qty
+            side = 1 if t.get("direction") == "buy" else -1
+            block = str(t["block_trade_id"]) if t.get("block_trade_id") else None
+
+            parsed.append((trade_id, ts, symbol, price, qty, quote_qty, side, block))
+
         return parsed
 
     @staticmethod

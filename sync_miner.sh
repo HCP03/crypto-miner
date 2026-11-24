@@ -1,21 +1,26 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-LOCAL_RAW_DIR="./imports/raw"
-mkdir -p "$LOCAL_RAW_DIR"
+ENV_FILE="${MINER_ENV_FILE:-./.env}"
+if [ -f "$ENV_FILE" ]; then
+  # shellcheck disable=SC1090
+  set -a
+  source "$ENV_FILE"
+  set +a
+fi
 
-SSH_KEY="$HOME/.ssh/google_compute_engine"
+: "${VM_ASIA_USER:?Falta definir VM_ASIA_USER en $ENV_FILE}"
+: "${VM_ASIA_IP:?Falta definir VM_ASIA_IP en $ENV_FILE}"
+: "${VM_ASIA_PATH:?Falta definir VM_ASIA_PATH en $ENV_FILE}"
+: "${VM_USA_USER:?Falta definir VM_USA_USER en $ENV_FILE}"
+: "${VM_USA_IP:?Falta definir VM_USA_IP en $ENV_FILE}"
+: "${VM_USA_PATH:?Falta definir VM_USA_PATH en $ENV_FILE}"
+
+LOCAL_RAW_DIR="${LOCAL_RAW_DIR:-./imports/raw}"
+SSH_KEY="${SSH_KEY:-$HOME/.ssh/google_compute_engine}"
 SSH_OPTS="ssh -i $SSH_KEY -o BatchMode=yes -o ConnectTimeout=15"
 
-# VM 1: Binance (Asia / India)
-VM_ASIA_USER="live-miner-asia"
-VM_ASIA_IP="IP_EXTERNA_ASIA"
-VM_ASIA_PATH="/home/$VM_ASIA_USER/crypto-miner/exports"
-
-# VM 2: Deribit (USA / Oracle)
-VM_USA_USER="live-miner-usa"
-VM_USA_IP="IP_EXTERNA_USA"
-VM_USA_PATH="/home/$VM_USA_USER/crypto-miner/exports"
+mkdir -p "$LOCAL_RAW_DIR"
 
 sync_vm() {
   local label="$1"
@@ -26,10 +31,9 @@ sync_vm() {
 
   mkdir -p "$target_dir"
   echo "========================================================"
-  echo "Sincronizando [$label] desde ${user}@${ip}:${remote_dir}..."
+  echo "Sincronizando [$label] (${user}@${ip})..."
   echo "========================================================"
 
-  # Comprueba si hay algún .parquet remoto antes de lanzar rsync
   if ! $SSH_OPTS "${user}@${ip}" "ls ${remote_dir}/*.parquet >/dev/null 2>&1"; then
     echo "ℹ No hay archivos .parquet nuevos en [$label]."
     return 0
