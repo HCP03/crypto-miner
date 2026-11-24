@@ -46,18 +46,17 @@ class WSDeribit:
         d = message["params"]["data"]
         symbol = d["instrument_name"]
         ts = int(d["timestamp"])
-        
         greeks = d.get("greeks", {})
-        
+
         griegas_tuple = (
-            symbol, 
+            symbol,
             float(d.get("mark_price") or 0.0),
-            float(d.get("bid_iv") or 0.0), 
-            float(d.get("ask_iv") or 0.0), 
+            float(d.get("bid_iv") or 0.0),
+            float(d.get("ask_iv") or 0.0),
             float(d.get("mark_iv") or 0.0),
-            float(greeks.get("delta") or 0.0), 
-            float(greeks.get("theta") or 0.0), 
-            float(greeks.get("gamma") or 0.0), 
+            float(greeks.get("delta") or 0.0),
+            float(greeks.get("theta") or 0.0),
+            float(greeks.get("gamma") or 0.0),
             float(greeks.get("vega") or 0.0),
             0.0, 0.0, 0.0, ts
         )
@@ -66,7 +65,7 @@ class WSDeribit:
 
         bids = [[float(d.get("best_bid_price") or 0.0), float(d.get("best_bid_amount") or 0.0)]]
         asks = [[float(d.get("best_ask_price") or 0.0), float(d.get("best_ask_amount") or 0.0)]]
-        
+
         ob_tuple = (
             symbol, ts, ts, bids, asks,
             float(d.get("bid_iv") or 0.0), float(d.get("ask_iv") or 0.0), float(d.get("mark_iv") or 0.0),

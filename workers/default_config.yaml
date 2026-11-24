@@ -1,32 +1,25 @@
 global:
-  log_level: "INFO"
-  export_dir: "exports"
-  data_dir: "data"             
+  data_dir: "data"
 
 exchanges:
-  binance:
-    enabled: false
-    symbols: ["BTC"]
-    sync_mode: "live_only"      
-    sync_start: ""              
-    sync_end: ""                
-    max_gap_days: 3
-    workers:
-      options:
-        enabled: true
-        snapshot_interval_min: 15
-      futures:
-        enabled: true
-        fallback_days_back: 3
-      spot:
-        enabled: true
-        snapshot_interval_min: 15
-
   deribit:
     enabled: true
-    symbols: ["BTC"]
-    sync_mode: "live_only"      
+    sync_mode: "live_only"
+    symbols:
+      - "BTC"
     workers:
       options:
         enabled: true
-        snapshot_interval_min: 15
+
+  binance:
+    enabled: false
+    sync_mode: "live_only"
+    symbols:
+      - "BTC"
+    workers:
+      futures:
+        enabled: true
+      spot:
+        enabled: true
+      options:
+        enabled: true

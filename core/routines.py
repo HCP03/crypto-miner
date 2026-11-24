@@ -2,66 +2,19 @@ import os
 import asyncio
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
-import duckdb
+
 
 class RoutineManager:
-    @staticmethod
-    async def daily_purge_routine(db_manager, export_dir: str = "exports", prefix: str = ""):
-        """
-        Exporta las tablas de datos a Parquet cada medianoche UTC, 
-        las vacía y ejecuta VACUUM sin cerrar la conexión ni detener WebSockets.
-        """
-        os.makedirs(export_dir, exist_ok=True)
-
-        while True:
-            now = datetime.now(timezone.utc)
-            next_midnight = (now + timedelta(days=1)).replace(
-                hour=0, minute=0, second=0, microsecond=0
-            )
-            sleep_seconds = (next_midnight - now).total_seconds()
-            
-            if hasattr(db_manager, "log"):
-                db_manager.log.info(f"[{prefix.upper()}] Purga diaria programada en {int(sleep_seconds)}s (00:00 UTC)")
-
-            await asyncio.sleep(sleep_seconds)
-
-            try:
-                con = db_manager.con
-                date_str = datetime.now(timezone.utc).strftime("%Y%m%d")
-
-                tables = [
-                    r[0] for r in con.execute("SHOW TABLES;").fetchall() 
-                    if "log" not in r[0].lower()
-                ]
-
-                pfx = f"{prefix}_" if prefix else ""
-                for table in tables:
-                    # Ejemplo de nombre resultante: spot_BTC_trades_20261111.parquet
-                    file_name = f"{pfx}{db_manager.underlying}_{table}_{date_str}.parquet"
-                    out_path = os.path.join(export_dir, file_name)
-
-                    con.execute(f"COPY {table} TO '{out_path}' (FORMAT PARQUET, COMPRESSION ZSTD);")
-                    con.execute(f"DELETE FROM {table};")
-
-                con.execute("VACUUM;")
-
-                if hasattr(db_manager, "log"):
-                    db_manager.log.info(f"[{prefix.upper()}] Purga completada. Archivos en {export_dir}/")
-
-            except Exception as e:
-                if hasattr(db_manager, "log"):
-                    db_manager.log.error(f"[{prefix.upper()}] Error durante la purga en DuckDB: {e}")   
     @staticmethod
     def get_first_greeks_date(underlying: str, fallback_date: datetime) -> datetime:
         data_dir = os.getenv("DATA_DIR", "data")
         exchange = os.getenv("EXCHANGE", "binance").lower()
-        
-        # NUEVA RUTA
         options_db_path = Path(f"{data_dir}/{exchange}/{underlying.upper()}/options_data.db")
         if not options_db_path.exists():
             return fallback_date
 
         try:
+            import duckdb
             con = duckdb.connect(str(options_db_path), read_only=True)
             try:
                 tables = [r[0] for r in con.execute("SHOW TABLES;").fetchall()]
@@ -75,107 +28,12 @@ class RoutineManager:
                         return dt.replace(hour=0, minute=0, second=0, microsecond=0)
             finally:
                 con.close()
-        except Exception as e:
+        except Exception:
             pass
         return fallback_date
 
     @staticmethod
-    async def vision_daily_sync_loop(underlying: str, db, fallback_start_date: datetime, sync_func, tmp_dir: Path):
-        """
-        Bucle universal de Binance Vision. 
-        'sync_func' debe ser la funcion Rest Spot o Futuros que descarga el dia.
-        """
-        sync_mode = os.getenv("SYNC_MODE", "greeks").lower()
-        start_str = os.getenv("SYNC_START", "")
-        end_str = os.getenv("SYNC_END", "")
-        max_gap_days = int(os.getenv("MAX_GAP_DAYS", "3"))
-
-        if sync_mode == "live_only":
-            db.log.info("T0 leido correctamente | Modo: live_only (Vision desactivado)")
-            return
-
-        t0_date = RoutineManager.get_first_greeks_date(underlying, fallback_start_date).replace(
-            hour=0, minute=0, second=0, microsecond=0
-        ) if sync_mode == "greeks" else fallback_start_date
-
-        db.log.info(f"T0 leido correctamente | Modo: {sync_mode} (Base: {t0_date.strftime('%Y-%m-%d')})")
-        initial_mode_done = False
-        
-        while True:
-            try:
-                now = datetime.now(timezone.utc)
-                yesterday = (now - timedelta(days=1)).replace(hour=0, minute=0, second=0, microsecond=0)
-
-                if not initial_mode_done:
-                    if sync_mode == "range" and start_str and end_str:
-                        s_date = datetime.strptime(start_str, "%Y-%m-%d").replace(tzinfo=timezone.utc)
-                        e_date = min(datetime.strptime(end_str, "%Y-%m-%d").replace(tzinfo=timezone.utc), yesterday)
-                        db.log.info(f"Vision Sync [Rango]: {s_date.strftime('%Y-%m-%d')} -> {e_date.strftime('%Y-%m-%d')}")
-                        curr = s_date
-                        while curr <= e_date:
-                            await sync_func(underlying, curr, db, tmp_dir)
-                            curr += timedelta(days=1)
-                        t0_date = s_date
-
-                    elif sync_mode == "from_date" and start_str:
-                        s_date = datetime.strptime(start_str, "%Y-%m-%d").replace(tzinfo=timezone.utc)
-                        db.log.info(f"Vision Sync [Desde Fecha]: {s_date.strftime('%Y-%m-%d')} -> {yesterday.strftime('%Y-%m-%d')}")
-                        curr = s_date
-                        while curr <= yesterday:
-                            await sync_func(underlying, curr, db, tmp_dir)
-                            curr += timedelta(days=1)
-                        t0_date = s_date
-
-                    elif sync_mode == "backfill_max":
-                        db.log.info(f"Vision Sync [Backfill]: Max gap={max_gap_days}d")
-                        curr = yesterday
-                        consecutive_missing = 0
-                        while consecutive_missing <= max_gap_days:
-                            had_data = await sync_func(underlying, curr, db, tmp_dir)
-                            if had_data:
-                                consecutive_missing = 0
-                                t0_date = curr
-                            else:
-                                consecutive_missing += 1
-                                db.log.warning(f"Vision Sync: Sin datos el {curr.strftime('%Y-%m-%d')} (Gap {consecutive_missing}/{max_gap_days})")
-                            curr -= timedelta(days=1)
-                        db.log.info(f"Vision Sync [Backfill]: Completado hasta {t0_date.strftime('%Y-%m-%d')}.")
-
-                    else:
-                        db.log.info(f"Vision Sync [Default T0]: {t0_date.strftime('%Y-%m-%d')} -> {yesterday.strftime('%Y-%m-%d')}")
-                        curr = t0_date
-                        while curr <= yesterday:
-                            await sync_func(underlying, curr, db, tmp_dir)
-                            curr += timedelta(days=1)
-
-                    initial_mode_done = True
-                    if os.getenv("HISTORY_ONLY", "false").lower() == "true":
-                        db.log.info("Histórico completado. Terminando tarea de Vision")
-                        break
-                else:
-                    curr = t0_date
-                    while curr <= yesterday:
-                        await sync_func(underlying, curr, db, tmp_dir)
-                        curr += timedelta(days=1)
-
-                now = datetime.now(timezone.utc)
-                next_run = now.replace(hour=4, minute=0, second=0, microsecond=0)
-                if now >= next_run:
-                    next_run += timedelta(days=1)
-
-                sleep_seconds = (next_run - now).total_seconds()
-                db.log.info(f"Vision al dia. Proxima revision en {sleep_seconds / 3600:.1f}h (04:00 UTC).")
-                await asyncio.sleep(sleep_seconds)
-
-            except asyncio.CancelledError:
-                break
-            except Exception as e:
-                db.log.error(f"Error en bucle Vision ({e}). Reintentando en 5m...")
-                await asyncio.sleep(300)
-
-    @staticmethod
     async def periodic_snapshot_loop(db, snapshot_coro, t_minute: int, *args, **kwargs):
-        """Ejecuta una corrutina de snapshot de forma infinita cada t_minute."""
         while True:
             try:
                 await snapshot_coro(*args, **kwargs)

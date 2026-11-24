@@ -4,12 +4,16 @@ services:
     container_name: crypto_miner
     restart: unless-stopped
     volumes:
-      # Map host directories to container directories for persistence
       - ./data:/app/data
       - ./exports:/app/exports
       - ./logs:/app/logs
-      - ./workers/default_config.yaml:/app/config.yaml:ro
+      - ./workers/default_config.yaml:/app/workers/default_config.yaml:ro
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
     deploy:
       resources:
         limits:
-          memory: 1G # Prevents the container from crashing the VM if a memory leak occurs
+          memory: 512M

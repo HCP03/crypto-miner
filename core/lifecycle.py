@@ -1,6 +1,7 @@
 import asyncio
 import os
 
+
 class WorkerLifecycle:
     def __init__(self, db, rest_api_class, worker_name: str, underlying: str):
         self.db = db
@@ -14,16 +15,15 @@ class WorkerLifecycle:
         if self.closing:
             return
         self.closing = True
-        self.db.log.info("Parada recibida. Vaciando buffers y eliminando .wal...")
+        self.db.log.info("Parada recibida. Vaciando buffers a disco...")
         for t in self.tasks:
             if not t.done():
                 t.cancel()
 
     async def _watch_stop_file(self):
-        """Vigila la existencia del archivo de parada universal"""
         data_dir = os.getenv("DATA_DIR", "data")
         stop_file = f"{data_dir}/STOP_ALL"
-        
+
         while not self.closing:
             if os.path.exists(stop_file):
                 self.shutdown_gracefully()
@@ -42,7 +42,7 @@ class WorkerLifecycle:
             self.shutdown_gracefully()
         finally:
             watcher_task.cancel()
-            print(f"[{self.worker_name}] Guardando datos pendientes de {self.underlying} en DuckDB...", flush=True)
+            print(f"[{self.worker_name}] Guardando datos pendientes de {self.underlying}...", flush=True)
             self.db.close()
             if self.rest_api:
                 await self.rest_api.close_session()

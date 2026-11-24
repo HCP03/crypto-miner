@@ -1,6 +1,4 @@
 *.venv
-*.env
-!.env.example
 *.db
 __pycache__/
 *.py[cod]
@@ -10,5 +8,3 @@ __pycache__/
 *.zip
 *.csv
 *.wal
-*.so
-*.parquet

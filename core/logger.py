@@ -6,13 +6,9 @@ from urllib.parse import urlparse
 
 
 def short_ws_url(url: str) -> str:
-    """
-    Acorta las URLs gigantes de WebSockets para que no inunden la consola.
-    Ej: 'wss://nbstream.binance.com/eoptions/stream?streams=s1/s2/s3...' -> 'eoptions (25 streams)'
-    """
     try:
         parsed = urlparse(url)
-        host_tag = parsed.netloc.split(".")[0]  # fstream, stream, nbstream...
+        host_tag = parsed.netloc.split(".")[0]
         if "streams=" in parsed.query:
             streams_part = parsed.query.split("streams=")[1]
             stream_list = streams_part.split("/")
@@ -28,9 +24,6 @@ def short_ws_url(url: str) -> str:
 
 
 def get_logger(name: str, log_dir: str = "logs") -> logging.Logger:
-    """
-    Configura un logger con salida limpia por consola (INFO) y archivo rotativo detallado (DEBUG).
-    """
     os.makedirs(log_dir, exist_ok=True)
     logger = logging.getLogger(name)
 
@@ -40,7 +33,6 @@ def get_logger(name: str, log_dir: str = "logs") -> logging.Logger:
     logger.setLevel(logging.DEBUG)
     logger.propagate = False
 
-    # 1. Formato corto y limpio para la Terminal (solo INFO o superior)
     console_handler = logging.StreamHandler(sys.stdout)
     console_handler.setLevel(logging.INFO)
     console_fmt = logging.Formatter(
@@ -49,7 +41,6 @@ def get_logger(name: str, log_dir: str = "logs") -> logging.Logger:
     )
     console_handler.setFormatter(console_fmt)
 
-    # 2. Formato completo en archivo rotativo (max 10 MB x 3 archivos)
     file_path = os.path.join(log_dir, "collector.log")
     file_handler = RotatingFileHandler(
         file_path, maxBytes=10 * 1024 * 1024, backupCount=3, encoding="utf-8"

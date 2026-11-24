@@ -13,16 +13,16 @@ class WSClient:
 
     @staticmethod
     async def fetch(
-        url: str, 
-        parser_callback, 
-        handler_callback, 
+        url: str,
+        parser_callback,
+        handler_callback,
         read_timeout: float = 1800.0,
         subscribe_msg: dict = None
     ):
         retry_delay = 1
         tag = short_ws_url(url)
         first_connect = True
-        
+
         while True:
             session_start = time.time()
             planned_rotation = False
@@ -34,7 +34,7 @@ class WSClient:
                     close_timeout=10,
                     max_queue=2**10
                 ) as websocket:
-                    
+
                     if first_connect:
                         log.info(f"Conectado -> {tag}")
                         first_connect = False
@@ -47,7 +47,7 @@ class WSClient:
                         log.debug(f"Suscripcion enviada a {tag}")
 
                     retry_delay = 1
-                    
+
                     while True:
                         if (time.time() - session_start) >= WSClient.MAX_SESSION_SEC:
                             log.info(f"Rotacion preventiva 24h -> {tag}")
@@ -59,7 +59,11 @@ class WSClient:
                         try:
                             data = json.loads(message)
 
-                            if isinstance(data, dict) and data.get("method") == "heartbeat" and data.get("params", {}).get("type") == "test_request":
+                            if (
+                                isinstance(data, dict)
+                                and data.get("method") == "heartbeat"
+                                and data.get("params", {}).get("type") == "test_request"
+                            ):
                                 await websocket.send(json.dumps({
                                     "jsonrpc": "2.0",
                                     "method": "public/test",
@@ -68,7 +72,7 @@ class WSClient:
                                 continue
 
                             parsed_record = parser_callback(data)
-                            
+
                             if parsed_record is not None:
                                 if asyncio.iscoroutinefunction(handler_callback):
                                     await handler_callback(parsed_record)
@@ -94,7 +98,6 @@ class WSClient:
 
     @staticmethod
     def parse_trade(data: dict) -> tuple | None:
-        """Parser por defecto para Binance Spot/Futures (mantenido por compatibilidad)"""
         payload = data.get("data", data)
         if "p" in payload and "q" in payload:
             taker = -1 if payload.get("m") else 1
