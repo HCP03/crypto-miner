@@ -5,7 +5,7 @@ global:
 
 exchanges:
   binance:
-    enabled: true
+    enabled: false
     symbols: ["BTC"]
     sync_mode: "live_only"      
     sync_start: ""              
