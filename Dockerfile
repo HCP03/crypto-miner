@@ -18,4 +18,4 @@ COPY workers/ ./workers/
 # Note: We exclude analytics/ as that will run locally, saving RAM on the VM
 
 # Run the supervisor by default
-CMD ["python", "-m", "workers.main_worker", "--config", "config.yaml"]
+CMD ["python", "-m", "workers.main_worker", "--config", "default_config.yaml"]
