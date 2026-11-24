@@ -3,7 +3,7 @@ global:
 
 exchanges:
   deribit:
-    enabled: true
+    enabled: false
     sync_mode: "live_only"
     symbols:
       - "BTC"
@@ -12,14 +12,10 @@ exchanges:
         enabled: true
 
   binance:
-    enabled: false
+    enabled: true
     sync_mode: "live_only"
     symbols:
       - "BTC"
     workers:
-      futures:
-        enabled: true
-      spot:
-        enabled: true
-      options:
+      binance:
         enabled: true
