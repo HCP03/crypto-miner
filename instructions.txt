@@ -1,0 +1,14 @@
+binance
+docker compose --profile binance up -d --build
+
+deribit
+docker compose --profile deribit up -d --build
+
+ver logs 
+docker compose logs -f --tail 50
+
+apagar el container
+  todos
+    docker compose --profile "*" down --timeout 20
+  especifico
+    docker compose --profile "*" down --timeout 20

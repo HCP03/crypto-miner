@@ -1,19 +1,41 @@
 services:
-  miner:
+  binance:
     build: .
-    container_name: crypto_miner
+    image: crypto-miner:latest
+    container_name: crypto_miner_binance
+    profiles: ["binance"]
     restart: unless-stopped
+    environment:
+      WORKER_MODULE: "workers.binance_worker"
+      UNDERLYING: "${UNDERLYING:-BTC}"
+      ENABLE_FUTURES: "${ENABLE_FUTURES:-true}"
+      ENABLE_SPOT: "${ENABLE_SPOT:-true}"
+      ENABLE_OPTIONS: "${ENABLE_OPTIONS:-true}"
     volumes:
       - ./data:/app/data
       - ./exports:/app/exports
       - ./logs:/app/logs
-      - ./workers/default_config.yaml:/app/workers/default_config.yaml:ro
     logging:
       driver: "json-file"
       options:
         max-size: "10m"
         max-file: "3"
-    deploy:
-      resources:
-        limits:
-          memory: 512M
+
+  deribit:
+    build: .
+    image: crypto-miner:latest
+    container_name: crypto_miner_deribit
+    profiles: ["deribit"]
+    restart: unless-stopped
+    environment:
+      WORKER_MODULE: "workers.deribit_worker"
+      UNDERLYING: "${UNDERLYING:-BTC}"
+    volumes:
+      - ./data:/app/data
+      - ./exports:/app/exports
+      - ./logs:/app/logs
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"

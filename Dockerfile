@@ -13,4 +13,4 @@ COPY core/ ./core/
 COPY markets/ ./markets/
 COPY workers/ ./workers/
 
-CMD ["python", "-m", "workers.main_worker", "--config", "workers/default_config.yaml"]
+CMD python -u -m ${WORKER_MODULE:-workers.binance_worker}
